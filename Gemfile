@@ -46,3 +46,5 @@ end
 gem 'devise'
 gem 'rolify'
 gem 'cancancan'
+
+gem 'bootstrap-sass'

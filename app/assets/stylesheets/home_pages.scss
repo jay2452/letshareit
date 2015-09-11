@@ -1,3 +1,15 @@
-// Place all the styles related to the home_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main_home_page {
+	height: 100vh;
+	display: flex;
+
+}
+
+.main_about_page {
+	height: 99vh;
+}
+.main_how_upload_page{
+	height: 99vh;
+}
+.main_contact_page{
+	height: 99vh;
+}

@@ -1,2 +1,53 @@
-<h1>HomePages#index</h1>
-<p>Find me in app/views/home_pages/index.html.erb</p>
+<div class="container">
+	<% if !user_signed_in? %>
+		<div class="main_home_page">
+			<div class="col-md-6">
+				<div style="margin-top:10%;">
+					<h4><%= link_to "About", '#' %></h4>
+					<h4><%= link_to "How to Upload", '#' %></h4>
+					<h4><%= link_to "Semester", '#' %></h4>
+					<h4><%= link_to "Contact Us", '#' %></h4>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<h3 align="center">Recent uploads</h3>
+				<div class="panel panel-default">
+				  	<div class="panel-heading">Search Box</div>
+					<div class="panel-body">Panel Content</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="main_about_page">
+			<b><h3 align="center">ABOUT</h3></b>
+
+		</div>
+
+		<div class="main_how_upload_page">
+			<b><h3 align="center">How to Upload</h3></b>
+		</div>
+
+		<div class="main_contact_page">
+			<b><h3 align="center">Contact Us</h3></b>
+		</div>
+
+
+	<% else # if user is signed in %>
+
+		
+		<div class="col-md-6">
+			<h3>Lets Upload your document</h3>
+		</div>
+
+		<div class="col-md-6">
+			<h3 align="center">Recent uploads</h3>
+			<div class="panel panel-default">
+			  	<div class="panel-heading">Search Box</div>
+				<div class="panel-body">Panel Content</div>
+			</div>
+		</div>
+
+	<% end -%>
+</div>
