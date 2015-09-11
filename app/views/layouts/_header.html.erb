@@ -1,20 +1,19 @@
 <nav class="navbar navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">LetShareIt</a>
+      <a class="navbar-brand" href="#"><b>LetShareIt</b></a>
     </div>
     <div>
       
 
       <ul class="nav navbar-nav navbar-right">
-        <ul class="nav navbar-nav">
-          <div class="input-group" style="margin-top:5%; margin-right:30%;">
+        <ul class="nav navbar-nav navbar-left">
+          <div class="input-group" style="margin-top:5%;">
             <%= form_tag ("") ,{class: "form-inline", role: "form", method: :get} do %>
-              <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %> 
-              <div class="input-group-btn">
-                <%= submit_tag "Search", class: "btn btn-default" %>
-                <i class="glyphicon glyphicon-search"></i>
+              <div class="form-group">
+                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Files" %>  
               </div>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
             <% end %>
           </div>
         </ul>
