@@ -48,3 +48,4 @@ gem 'rolify'
 gem 'cancancan'
 
 gem 'bootstrap-sass'
+gem 'paperclip'

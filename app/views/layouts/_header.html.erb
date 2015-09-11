@@ -10,9 +10,15 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-            <li><%= link_to "logged in as: #{current_user.email}" %></li>
-            <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-            <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= gravatar_for current_user %>
+              <%# defined in application helper %>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
           <% else %>
             <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
