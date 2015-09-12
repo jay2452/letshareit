@@ -1,12 +1,10 @@
 .main_home_page_1 {
 	background-color: #FAAC58;
-
 }
 
 .main_home_page {
 	height: 100vh;
 	display: flex;
-
 }
 
 .main_about_page {
@@ -19,7 +17,7 @@
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 .main_how_upload_page{
-	height: 70vh;
+	height: 73vh;
 }
 .main_contact_page{
 	height: 20vh;
@@ -27,7 +25,6 @@
 
 .not_signed_middle {
 	background-image: url("share1.jpg");
-	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 

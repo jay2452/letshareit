@@ -7,7 +7,7 @@
 					<div style="margin-top:10%;">
 						<h4><%= link_to "About", '#about_us' %></h4>
 						<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
-						<h4><%= link_to "Subjects", '#' %></h4>
+						<h4><%= link_to "Subjects", subjects_path %></h4>
 						<h4><%= link_to "Contact Us", '#contact' %></h4>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 				<a href="#top">goto Top ^</a>
 			</div>
 	</div>
-	<div>
+	<div class="margin-top:-2%;">
 		<% else # if user is signed in %>
 
 
@@ -51,6 +51,8 @@
 					<h4>Lets Upload your document</h4>
 					<input id="input-id" type="file" class="file" data-preview-file-type="text" >
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
+
+					<%= link_to "Subjects", subjects_path %>
 				</div>
 
 				<div class="col-md-6">

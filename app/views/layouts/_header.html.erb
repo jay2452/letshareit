@@ -4,11 +4,9 @@
       <a class="navbar-brand" href="<%= root_path %>"><b>LetShareIt</b></a>
     </div>
     <div>
-      
-
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-left">
-          <div class="input-group" style="margin-top:6%;">
+          <div class="input-group" style="margin-top:5%;">
             <%= form_tag ("") ,{class: "form-inline", role: "form", method: :get} do %>
               <div class="form-group">
                 <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Files" %>  
