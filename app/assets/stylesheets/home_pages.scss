@@ -1,3 +1,8 @@
+.main_home_page_1 {
+	background-color: #FAAC58;
+
+}
+
 .main_home_page {
 	height: 100vh;
 	display: flex;
@@ -5,11 +10,28 @@
 }
 
 .main_about_page {
-	height: 99vh;
+	height: 100vh;
+	margin-top: -1.5%;
+	background-image: url("share2.jpeg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.78;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 .main_how_upload_page{
-	height: 99vh;
+	height: 70vh;
 }
 .main_contact_page{
-	height: 99vh;
+	height: 20vh;
+}
+
+.not_signed_middle {
+	background-image: url("share1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.not_signed_in_panel {
+	opacity: 0.5;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
 }
