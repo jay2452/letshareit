@@ -1,61 +1,67 @@
-<div class="container">
-	<% if !user_signed_in? %> <a name="top"></a>
-		<div class="main_home_page">
-			<div class="col-md-6">
-				<div style="margin-top:10%;">
-					<h4><%= link_to "About", '#about_us' %></h4>
-					<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
-					<h4><%= link_to "Semester", '#' %></h4>
-					<h4><%= link_to "Contact Us", '#contact' %></h4>
+<div style="margin-top:-2%;">
+	<div class="clearfix"></div>
+	<div class="main_home_page_1">
+		<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
+			<div class="main_home_page">
+				<div class="col-md-2">
+					<div style="margin-top:10%;">
+						<h4><%= link_to "About", '#about_us' %></h4>
+						<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
+						<h4><%= link_to "Subjects", subjects_path %></h4>
+						<h4><%= link_to "Contact Us", '#contact' %></h4>
+					</div>
 				</div>
-			</div>
 
-			<div class="col-md-6">
-				<h3 align="center">Recent uploads</h3>
-				<div class="panel panel-default">
-				  	<div class="panel-heading">Search Box</div>
-					<div class="panel-body">Panel Content</div>
+			
+				<div class="col-md-10 not_signed_middle">
+					<div class="panel not_signed_in_panel" style="margin-top:30%;">
+						<div class="panel-heading">Recent Uploads</div>
+						<div class="panel-body">Panel Content</div>
+					</div>
 				</div>
+
 			</div>
 
-		</div>
-
-		<div class="main_about_page">
-			<a name="about_us"></a>
-			<b><h3 align="center">ABOUT</h3></b>
-			<a href="#top">goto Top ^</a>
-		</div>
-
-		<div class="main_how_upload_page">
-			<a name="how_to_upload"></a>
-			<b><h3 align="center">How to Upload</h3></b>
-			<a href="#top">goto Top ^</a>
-		</div>
-
-		<div class="main_contact_page">
-			<a name="contact"></a>
-			<b><h3 align="center">Contact Us</h3></b>
-			<a href="#top">goto Top ^</a>
-		</div>
-
-
-	<% else # if user is signed in %>
-
-
-		<div>
-			<div class="col-md-6">
-				<h3>Lets Upload your document</h3>
-				<input id="input-id" type="file" class="file" data-preview-file-type="text" >
-				<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
+			<div class="main_about_page" style="background-color: white;">
+				<a name="about_us"></a>
+				<b><h3 align="center">ABOUT</h3></b>
+				<a href="#top">goto Top ^</a>
 			</div>
 
-			<div class="col-md-6">
-				<h3 align="center">Recent uploads</h3>
-				<div class="panel panel-default">
-				  	<div class="panel-heading">Search Box</div>
-					<div class="panel-body">Panel Content</div>
+			<div class="main_how_upload_page">
+				<a name="how_to_upload"></a>
+				<b><h3 align="center">How to Upload</h3></b>
+				<a href="#top">goto Top ^</a>
+				<p align="right"> <%= image_tag "share4.png", size: "160" %></p>
+			</div>
+
+			<div class="main_contact_page">
+				<a name="contact"></a>
+				<b><h3 align="center">Contact Us</h3></b>
+				<a href="#top">goto Top ^</a>
+			</div>
+	</div>
+	<div class="margin-top:-2%;">
+		<% else # if user is signed in %>
+
+
+			<div>
+				<div class="col-md-6">
+					<br>
+					<h4>Lets Upload your document</h4>
+					<input id="input-id" type="file" class="file" data-preview-file-type="text" >
+					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
+
+					<%= link_to "Subjects", subjects_path %>
 				</div>
-			</div>
-		</div>	
-	<% end -%>
+
+				<div class="col-md-6">
+					<h3 align="center">Recent uploads</h3>
+					<div class="panel panel-default">
+						<div class="panel-body">Panel Content</div>
+					</div>
+				</div>
+			</div>	
+		<% end -%>
+	</div>
 </div>
