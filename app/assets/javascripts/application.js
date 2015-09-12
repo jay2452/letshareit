@@ -21,8 +21,14 @@ $(document).ready(function(){
 		$('#notice_wrapper').fadeOut("slow", function() {
 			$(this).remove();
 		})
-	}, 4500);
+	}, 3000);
 	
 	$('[data-toggle="tooltip"]').tooltip(); 	
 
 });
+
+// initialize with defaults
+$("#input-id").fileinput();
+
+// with plugin options
+$("#input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
