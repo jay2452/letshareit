@@ -15,3 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
+#ignore all uploads
+/public/system/uploads
