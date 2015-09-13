@@ -15,5 +15,26 @@
   <%= @subject.branch %>
 </p>
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<h3> Recent Uploads </h3>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Uploaded By</th>
+      <th>Uploaded Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uploads.each do |upload| %>
+      <tr>
+        <td><%= upload.topic %></td>
+        <td><%= upload.user.name %></td>
+        <td><%= time_ago_in_words(upload.created_at) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= link_to 'Back', subjects_path %>

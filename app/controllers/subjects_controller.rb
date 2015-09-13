@@ -10,6 +10,8 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @uploads = Upload.where("subject_id = ?", @subject.id).order(created_at: :desc)
+    p @uploads
   end
 
   # GET /subjects/new
