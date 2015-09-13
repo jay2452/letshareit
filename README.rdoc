@@ -6,7 +6,7 @@
 * Rails version
 	Rails 4.2.4
 
-A Platform For Open Sharing Of Study Materils Specially Engineering Under Graduate Students.
+A Platform For Open Sharing Of Study Materils Specially For Engineering Under Graduate Students.
 
 Still In Development Stage.
 coming Soon.....!!
