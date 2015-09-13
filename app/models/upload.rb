@@ -4,6 +4,7 @@ class Upload < ActiveRecord::Base
 
   has_attached_file :file
   validates_attachment :file
-  validates_attachment_content_type :file, content_type: %w(file/jpeg file/jpg file/docx file/pptx
-  															file/xls file/odt file/txt)
+  validates_attachment_content_type :file, content_type: %w(image/jpeg image/jpg application/pdf 
+  															application/msword 
+  																application/vnd.openxmlformats-officedocument.wordprocessingml.document)
 end
