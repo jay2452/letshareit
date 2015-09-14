@@ -1,0 +1,21 @@
+<%= form_for(@user_preference) do |f| %>
+  <% if @user_preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_preference.errors.count, "error") %> prohibited this user_preference from being saved:</h2>
+
+      <ul>
+      <% @user_preference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field"=>
+    <%= f.label :subject_id %><br>
+    <%= f.select :subject_id, all_subjects.all.collect { |s| [ s.name, s.id ]}, include_blank: true, multiple: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

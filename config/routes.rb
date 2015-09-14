@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :user_preferences
   resources :uploads
   resources :subjects
   devise_for :users, :controllers => { :registrations => "registrations"}

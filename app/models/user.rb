@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
    has_many :uploads
    belongs_to :branch
+   has_many :user_preferences
 end
