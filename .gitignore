@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 #ignore all uploads
-/public/system/uploads
+/public/system/uploads.env
