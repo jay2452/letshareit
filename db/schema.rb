@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913134738) do
+ActiveRecord::Schema.define(version: 20150914033256) do
+
+  create_table "branches", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -27,10 +33,12 @@ ActiveRecord::Schema.define(version: 20150913134738) do
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
     t.string   "code"
-    t.string   "branch"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "branch_id"
   end
+
+  add_index "subjects", ["branch_id"], name: "index_subjects_on_branch_id"
 
   create_table "uploads", force: :cascade do |t|
     t.string   "topic"
@@ -61,8 +69,10 @@ ActiveRecord::Schema.define(version: 20150913134738) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.integer  "branch_id"
   end
 
+  add_index "users", ["branch_id"], name: "index_users_on_branch_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

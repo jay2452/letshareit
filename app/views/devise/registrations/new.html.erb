@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label "Branch" %><br />
+    <%= f.select :branch_id, all_branch.all.collect { |b|  [b.name, b.id] } %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

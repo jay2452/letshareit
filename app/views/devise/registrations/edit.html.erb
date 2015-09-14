@@ -13,6 +13,11 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label "Branch" %><br />
+    <%= f.select :branch_id, all_branch.all.collect { |b|  [b.name, b.id] } %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
