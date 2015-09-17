@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-  get 'profile/show', as: 'profile'
+  get 'profile/' => 'profile#show', as: 'profile' 
 
   resources :user_preferences
   resources :uploads

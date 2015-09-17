@@ -8,7 +8,7 @@
         <b><%= Branch.first.name %></b>
         <p style="padding-left:5%;">
           <% Branch.first.subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
       </div>
@@ -20,7 +20,7 @@
           <b><%= Branch.second.name %></b>
           <p style="padding-left:5%;">
             <% Branch.second.subjects.each do |subject| %>
-              <%= subject.name %><br>
+              <%= link_to subject.name, subject_path(subject) %><br>
             <% end -%>
           </p>
         </div>
@@ -35,7 +35,7 @@
         <b><%= Branch.third.name %></b>
         <p style="padding-left:5%;">
           <% Branch.third.subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -48,7 +48,7 @@
         <b><%= Branch.fourth.name %></b>
         <p style="padding-left:5%;">
           <% Branch.fourth.subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -63,7 +63,7 @@
         <b><%= Branch.fifth.name %></b>
         <p style="padding-left:5%;">
           <% Branch.fifth.subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -76,7 +76,7 @@
         <b><%= Branch.find(6).name %></b>
         <p style="padding-left:5%;">
           <% Branch.find(6).subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -91,7 +91,7 @@
         <b><%= Branch.find(7).name %></b>
         <p style="padding-left:5%;">
           <% Branch.find(7).subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -104,7 +104,7 @@
         <b><%= Branch.find(8).name %></b>
         <p style="padding-left:5%;">
           <% Branch.find(8).subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
@@ -119,7 +119,7 @@
         <b><%= Branch.find(9).name %></b>
         <p style="padding-left:5%;">
           <% Branch.find(9).subjects.each do |subject| %>
-            <%= subject.name %><br>
+            <%= link_to subject.name, subject_path(subject) %><br>
           <% end -%>
         </p>
         </div>
