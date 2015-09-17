@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    @branches = Branch.all
   end
 
   # GET /subjects/1

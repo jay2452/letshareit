@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
    has_many :uploads
    belongs_to :branch
    has_many :user_preferences
+   has_many :subjects, :through => :user_preferences
 end

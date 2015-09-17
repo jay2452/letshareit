@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'profile/show', as: 'profile'
+
   resources :user_preferences
   resources :uploads
   resources :subjects

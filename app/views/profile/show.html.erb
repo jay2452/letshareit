@@ -1,0 +1,18 @@
+<div class="container">
+	<%# @user defined in profile controller  %>
+	<%= gravatar_for @user %>
+
+	<%= @user.email %> <br>
+	<%= @user.name %> <br>
+
+	<p>
+		Your preferences : <br>
+		<% @user.subjects.each do |subject| %>
+			<%= subject.name %><br>
+		<% end -%>
+
+	</p>
+
+
+	<%= link_to "change your subject preferences", user_preferences_path %>
+</div>
