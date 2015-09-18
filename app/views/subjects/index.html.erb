@@ -5,21 +5,26 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron first_year">
-        <b><%= Branch.first.name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.first.subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.5;">
+          <b><%= Branch.first.name %></b>
+          <p style="padding-left:5%;">
+            <% Branch.first.subjects.each do |subject| %>
+              <%= link_to subject.name, subject_path(subject) %><br>
+            <% end -%>
+          </p>
+        </div>
       </div>
     </div>
-
+    <!-- cse panel -->
     <div class="col-md-6">
       <div class="jumbotron cse">
         <div class="panel panel-default" style="opacity:0.5;">
-          <b><%= Branch.second.name %></b>
+          <b><%= Branch.second.name %>/ <%= Branch.third.name %></b>
           <p style="padding-left:5%;">
             <% Branch.second.subjects.each do |subject| %>
+              <%= link_to subject.name, subject_path(subject) %><br>
+            <% end -%>
+            <% Branch.third.subjects.each do |subject| %>
               <%= link_to subject.name, subject_path(subject) %><br>
             <% end -%>
           </p>
@@ -29,19 +34,6 @@
   </section>
 
   <section>
-    <div class="col-md-6">
-      <div class="jumbotron it">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.third.name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.third.subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
-        </div>
-      </div>
-    </div>
-
     <div class="col-md-6">
       <div class="jumbotron civil">
         <div class="panel panel-default" style="opacity:0.5;">
