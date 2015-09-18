@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<!-- 
 <p>
   <strong>Name:</strong>
   <%= @subject.name %>
 </p>
+
 
 <p>
   <strong>Code:</strong>
@@ -37,4 +38,31 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Back', subjects_path %>
+<%= link_to 'Back', subjects_path %> -->
+
+<div>
+  <div class="subject_show_page_nav">
+    <div class="col-md-4" align="center">
+      <b>Subject :</b> <%= @subject.name %>
+    </div>
+
+    <div class="col-md-4" align="center">
+      <b>Code : </b><%= @subject.code %>
+    </div>
+
+    <div class="col-md-4" align="center">
+      <b>Branch : </b><%= @subject.branch.name %>
+    </div>
+  </div>
+  <!-- <hr style="margin-top: -0.1%; color:black;"> -->
+  <div class="subject_show_page">
+    <div class="container">
+      <br>
+      <div>
+        <div class="panel panel-default">
+          dcnldsc
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

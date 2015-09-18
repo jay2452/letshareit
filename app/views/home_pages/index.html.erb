@@ -17,7 +17,7 @@
 					<div class="panel not_signed_in_panel" style="margin-top:30%;">
 						<div class="panel-heading">Recent Uploads</div>
 						<div class="panel-body">
-						<% Upload.all.order(created_at: :desc).limit(5).each do |upload| %>
+						<% Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
 							<%= link_to upload.topic, upload.file.url , target: "_blank" %><br>
 						<% end -%>
 						</div>
@@ -55,7 +55,7 @@
 					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
 					<%= form_for (@upload) do |f| %>
-						Subject: <%= f.text_field :topic %><br>
+						Topic: <%= f.text_field :topic %><br>
 						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, include_blank: false %><br>
 						<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
 						<%= f.submit "upload" %>
