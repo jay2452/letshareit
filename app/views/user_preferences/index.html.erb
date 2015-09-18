@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<!-- 
 <h1>Listing User Preferences</h1>
 
 <table>
@@ -27,3 +27,16 @@
 <br>
 
 <%= link_to 'New User preference', new_user_preference_path %>
+ -->
+
+<div class="container">
+  <div>
+    <b>Your subjects Preferences :</b> <br>
+    <% current_user.user_preferences.each do |preference| %>
+      <%= preference.subject.name %><br>
+    <% end -%>
+  </div>
+  <h3>
+  <%= link_to 'New User preference', new_user_preference_path %>
+  </h3>
+</div>

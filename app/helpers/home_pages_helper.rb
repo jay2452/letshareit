@@ -1,6 +1,10 @@
 module HomePagesHelper
 
 	def recent_uploads
-		Upload.where("user_id = ?", current_user.id)
+		arr = []
+		current_user.feeds.each do |f|
+			arr << f.topic
+		end
+		return arr
 	end
 end

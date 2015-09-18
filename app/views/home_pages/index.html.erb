@@ -17,7 +17,9 @@
 					<div class="panel not_signed_in_panel" style="margin-top:30%;">
 						<div class="panel-heading">Recent Uploads</div>
 						<div class="panel-body">
-						<%= Upload.limit(5) %>
+						<% Upload.all.order(created_at: :desc).limit(5).each do |upload| %>
+							<%= link_to upload.topic, upload.file.url , target: "_blank" %><br>
+						<% end -%>
 						</div>
 					</div>
 				</div>
@@ -52,19 +54,12 @@
 					<h4>Lets Upload your document</h4>
 					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
-					<%= form_tag('/uploads', {controller: "uploads", action: "create"}) do %>
-						<%= hidden_field_tag user_id: current_user.id %>
-						<div class="field">
-							<%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "name"), include_blank: false %>
-						</div>
-						<div>
-							<%= file_field_tag 'file', class: "file", id: "input-id" , :"data-preview-file-type" => :text %>
-						</div>
-						<div>
-							<%= submit_tag 'upload' %>
-						</div>
+					<%= form_for (@upload) do |f| %>
+						Subject: <%= f.text_field :topic %><br>
+						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, include_blank: false %><br>
+						<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
+						<%= f.submit "upload" %>
 					<% end -%>
-
 					<%= link_to "Subjects", subjects_path %> | 
 					<%= link_to "Uploads", uploads_path %>
 				</div>
@@ -73,9 +68,9 @@
 					<h3 align="center">Recent uploads</h3>
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<%# recent_uploads %> <%# defined in home_pages helper %>
-							<% Upload.where("user_id = ?", current_user.id).each do |upload| %>
-								<%= upload.topic %><br>
+							<% recent_uploads.each do |upload| %> <%# defined in application helper %>
+							<%# current_user.recent_feeds %>
+								<%= link_to upload, '#' %><br>
 							<% end -%>
 						</div>
 					</div>
