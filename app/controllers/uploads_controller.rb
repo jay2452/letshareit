@@ -14,7 +14,7 @@ class UploadsController < ApplicationController
 
   # GET /uploads/new
   def new
-    @upload = Upload.new
+    @upload = current_user.uploads.build
   end
 
   # GET /uploads/1/edit
@@ -24,8 +24,7 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.json
   def create
-    @upload = Upload.new(upload_params)
-
+    @upload = current_user.uploads.build(upload_params)
     respond_to do |format|
       if @upload.save
         format.html { redirect_to @upload, notice: 'Upload was successfully created.' }

@@ -16,7 +16,9 @@
 				<div class="col-md-10 not_signed_middle">
 					<div class="panel not_signed_in_panel" style="margin-top:30%;">
 						<div class="panel-heading">Recent Uploads</div>
-						<div class="panel-body">Panel Content</div>
+						<div class="panel-body">
+						<%= Upload.limit(5) %>
+						</div>
 					</div>
 				</div>
 
@@ -44,22 +46,38 @@
 	<div class="margin-top:-2%;">
 		<% else # if user is signed in %>
 
-
 			<div>
 				<div class="col-md-6">
 					<br>
 					<h4>Lets Upload your document</h4>
-					<input id="input-id" type="file" class="file" data-preview-file-type="text" >
+					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
+					<%= form_tag('/uploads', {controller: "uploads", action: "create"}) do %>
+						<%= hidden_field_tag user_id: current_user.id %>
+						<div class="field">
+							<%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "name"), include_blank: false %>
+						</div>
+						<div>
+							<%= file_field_tag 'file', class: "file", id: "input-id" , :"data-preview-file-type" => :text %>
+						</div>
+						<div>
+							<%= submit_tag 'upload' %>
+						</div>
+					<% end -%>
 
-					<%= link_to "Subjects", subjects_path %>
+					<%= link_to "Subjects", subjects_path %> | 
 					<%= link_to "Uploads", uploads_path %>
 				</div>
 
 				<div class="col-md-6">
 					<h3 align="center">Recent uploads</h3>
 					<div class="panel panel-default">
-						<div class="panel-body">Panel Content</div>
+						<div class="panel-body">
+							<%# recent_uploads %> <%# defined in home_pages helper %>
+							<% Upload.where("user_id = ?", current_user.id).each do |upload| %>
+								<%= upload.topic %><br>
+							<% end -%>
+						</div>
 					</div>
 				</div>
 			</div>	
