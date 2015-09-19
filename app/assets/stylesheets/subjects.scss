@@ -6,6 +6,10 @@
     transition: width 2s, height 2s;
 }
 
+.first_year .panel-body p{
+    color: #000;
+}
+
 
 .cse{
 	background-color: white;
@@ -93,14 +97,24 @@
 
 .subject_show_page_nav{
     background-color: #FAAC58;
-    height: 10vh;
+    height: 15vh;
     margin-top: -1.5%;
     padding-top: 1.5em;
 }
 
+.affix {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.affix + .subject_show_page {
+    /*padding-top: 70px;*/
+}
+
 .subject_show_page{
     background-color: #EBCCEB;
-    height: 100vh;
+    min-height: 78vh;
 }
 
 .show_page_panel{

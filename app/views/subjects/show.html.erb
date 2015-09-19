@@ -1,33 +1,56 @@
 <div>
   <p id="notice"><%= notice %></p>
-  <div class="subject_show_page_nav">
+  <nav class="subject_show_page_nav navbar-fixed" data-spy="affix" data-offset-top="100">
+    <br>
     <div class="col-md-4" align="center">
-      <b>Subject :</b> <%= @subject.name %>
+      <font size="4"> <b>Subject :</b> <%= @subject.name %> </font>
     </div>
 
     <div class="col-md-4" align="center">
-      <b>Code : </b><%= @subject.code %>
+      <font size="4"><b>Code : </b><%= @subject.code %></font>
     </div>
 
     <div class="col-md-4" align="center">
-      <b>Branch : </b><%= @subject.branch.name %>
+      <font size="4"><b>Branch : </b><%= @subject.branch.name %></font>
     </div>
-  </div>
+  </nav>
   <!-- <hr style="margin-top: -0.1%; color:black;"> -->
   <div class="subject_show_page">
-    <div class="container">
+    <div class="container-fluid">
       <br>
       <div class="panel panel-default show_page_panel">
         <div class="panel panel-body">
           <% @uploads.each do |upload| %>
-              <h3>
+              <h4>
                 <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                 <small>
                   uploaded by <%= upload.user.name %> &nbsp; 
                   <small><%= time_ago_in_words(upload.created_at) %> ago</small>
                 </small>
-              </h3>
+              </h4>
           <% end %>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
+          <h2>dvfvrr</h2>
         </div>
       </div>
     </div>
