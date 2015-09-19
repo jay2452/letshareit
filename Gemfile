@@ -14,6 +14,7 @@ group :development, :test do
   gem 'web-console'
   gem 'spring'
   gem 'sqlite3'
+  gem 'sunspot_solr'
 end
 
 group :production do
@@ -26,3 +27,5 @@ gem 'rolify'
 gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'paperclip'
+gem 'sunspot_rails'
+gem 'progress_bar'

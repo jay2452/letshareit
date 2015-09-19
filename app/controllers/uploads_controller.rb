@@ -5,6 +5,10 @@ class UploadsController < ApplicationController
   # GET /uploads.json
   def index
     @uploads = Upload.all.order(created_at: :desc)
+    @query = Upload.search do
+      fulltext params[:search]
+    end
+    @uploads = @query.results
   end
 
   # GET /uploads/1
