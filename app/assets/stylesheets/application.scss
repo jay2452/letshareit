@@ -54,8 +54,13 @@
     padding: 1em 2em;
 }
 
+.signup_page_main {
+  background-color: #FAAC58;
+  margin-top: -1.5%;
+  min-height: 95vh;
+}
 
-.signup_page{
+.signup_page_right{
   
   height: 85vh;
 }
@@ -64,4 +69,27 @@
   height: 85vh;
   background-image: url("share3");
 
+}
+
+/* unvisited link */
+a:link {
+    /*color: #FF0000;*/
+}
+
+/* visited link */
+a:visited {
+  /*color: #00FF00;*/
+}
+
+/* mouse over link */
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+    background: none;
+}
+
+/* selected link */
+a:active {
+    /*color: #0000FF;*/
 }

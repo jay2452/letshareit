@@ -6,10 +6,6 @@
     transition: width 2s, height 2s;
 }
 
-.first_year .panel-body p{
-    color: #000;
-}
-
 
 .cse{
 	background-color: white;
@@ -91,7 +87,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    max-height: 50vh;
+    height: 50vh;
     overflow-y: scroll; 
 }
 
@@ -116,8 +112,12 @@
     background-color: #EBCCEB;
     min-height: 78vh;
 }
-
+/*
 .show_page_panel{
     margin-left: 18%;
     width: 60%;
+}
+*/
+.panel.panel-default.link-container{
+    background: rgba(255,255,255,0.7);
 }

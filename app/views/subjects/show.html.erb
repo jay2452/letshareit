@@ -18,40 +18,26 @@
   <div class="subject_show_page">
     <div class="container-fluid">
       <br>
-      <div class="panel panel-default show_page_panel">
-        <div class="panel panel-body">
-          <% @uploads.each do |upload| %>
-              <h4>
+      <div class="col-md-2">
+        <!--  -->
+      </div>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <% @uploads.each do |upload| %>
+              <h3>
                 <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                 <small>
                   uploaded by <%= upload.user.name %> &nbsp; 
                   <small><%= time_ago_in_words(upload.created_at) %> ago</small>
                 </small>
-              </h4>
-          <% end %>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
-          <h2>dvfvrr</h2>
+              </h3>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="col-md-2">
+       <!--  -->
       </div>
     </div>
   </div>
