@@ -1,46 +1,5 @@
-<p id="notice"><%= notice %></p>
-<!-- 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-
-<p>
-  <strong>Code:</strong>
-  <%= @subject.code %>
-</p>
-
-<p>
-  <strong>Branch:</strong>
-  <%= @subject.branch.name %>
-</p>
-
-<h3> Recent Uploads </h3>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Uploaded By</th>
-      <th>Uploaded Time</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @uploads.each do |upload| %>
-      <tr>
-        <td><%= upload.topic %></td>
-        <td><%= upload.user.name %></td>
-        <td><%= time_ago_in_words(upload.created_at) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Back', subjects_path %> -->
-
 <div>
+  <p id="notice"><%= notice %></p>
   <div class="subject_show_page_nav">
     <div class="col-md-4" align="center">
       <b>Subject :</b> <%= @subject.name %>
@@ -58,9 +17,17 @@
   <div class="subject_show_page">
     <div class="container">
       <br>
-      <div>
-        <div class="panel panel-default">
-          dcnldsc
+      <div class="panel panel-default show_page_panel">
+        <div class="panel panel-body">
+          <% @uploads.each do |upload| %>
+              <h3>
+                <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                <small>
+                  uploaded by <%= upload.user.name %> &nbsp; 
+                  <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                </small>
+              </h3>
+          <% end %>
         </div>
       </div>
     </div>

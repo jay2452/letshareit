@@ -5,29 +5,33 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron first_year">
-        <div class="panel panel-default" style="opacity:0.5;">
-          <b><%= Branch.first.name %></b>
-          <p style="padding-left:5%;">
+        <div class="panel panel-default" style="opacity:0.7;">
+        <div class="panel-heading"><b><%= Branch.first.name %></b></div>
+        <div class="panel-body">
+          <p>
             <% Branch.first.subjects.each do |subject| %>
               <%= link_to subject.name, subject_path(subject) %><br>
             <% end -%>
           </p>
+        </div>
         </div>
       </div>
     </div>
     <!-- cse panel -->
     <div class="col-md-6">
       <div class="jumbotron cse">
-        <div class="panel panel-default" style="opacity:0.5;">
-          <b><%= Branch.second.name %>/ <%= Branch.third.name %></b>
-          <p style="padding-left:5%;">
-            <% Branch.second.subjects.each do |subject| %>
-              <%= link_to subject.name, subject_path(subject) %><br>
-            <% end -%>
-            <% Branch.third.subjects.each do |subject| %>
-              <%= link_to subject.name, subject_path(subject) %><br>
-            <% end -%>
-          </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.second.name %>/ <%= Branch.third.name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.second.subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+              <% Branch.third.subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -36,13 +40,15 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron civil">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.fourth.name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.fourth.subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.fourth.name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.fourth.subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+            </div>
         </div>
       </div>
     </div>
@@ -51,26 +57,30 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron mechanical">
-        <div class="panel panel-default mech_panel" style="opacity:0.5;">
-        <b><%= Branch.fifth.name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.fifth.subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default mech_panel" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.fifth.name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.fifth.subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="jumbotron ee">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.find(6).name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.find(6).subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.find(6).name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.find(6).subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -79,26 +89,30 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron etc">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.find(7).name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.find(7).subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.find(7).name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.find(7).subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="jumbotron eee">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.find(8).name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.find(8).subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.find(8).name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.find(8).subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -107,13 +121,15 @@
   <section>
     <div class="col-md-6">
       <div class="jumbotron ei">
-        <div class="panel panel-default" style="opacity:0.5;">
-        <b><%= Branch.find(9).name %></b>
-        <p style="padding-left:5%;">
-          <% Branch.find(9).subjects.each do |subject| %>
-            <%= link_to subject.name, subject_path(subject) %><br>
-          <% end -%>
-        </p>
+        <div class="panel panel-default" style="opacity:0.7;">
+          <div class="panel-heading"><b><%= Branch.find(9).name %></b></div>
+          <div class="panel-body">
+            <p>
+              <% Branch.find(9).subjects.each do |subject| %>
+                <%= link_to subject.name, subject_path(subject) %><br>
+              <% end -%>
+            </p>
+          </div>
         </div>
       </div>
     </div>

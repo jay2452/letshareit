@@ -1,8 +1,11 @@
 .first_year{
 	background-image: url("first_year");
 	height: 50vh;
-    overflow-y: scroll; 
+    overflow-y: scroll;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 2s;
 }
+
 
 .cse{
 	background-color: white;
@@ -98,4 +101,9 @@
 .subject_show_page{
     background-color: #EBCCEB;
     height: 100vh;
+}
+
+.show_page_panel{
+    margin-left: 18%;
+    width: 60%;
 }
