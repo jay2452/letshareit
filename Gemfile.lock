@@ -78,6 +78,10 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-infinite-pages (0.2.0)
+      coffee-script
+      jquery-rails
+      railties (>= 3.1)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -86,9 +90,6 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
-    kaminari (0.16.3)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     libv8 (3.16.14.11)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -213,9 +214,9 @@ DEPENDENCIES
   coffee-rails
   devise
   jbuilder
+  jquery-infinite-pages
   jquery-rails
   jquery-turbolinks
-  kaminari
   paperclip
   pg
   progress_bar

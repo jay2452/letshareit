@@ -1,3 +1,4 @@
+<% provide(:title, "welcome") %>
 <div style="margin-top:-1.8%;">
 	<div class="clearfix"></div>
 	<div class="main_home_page_1">
@@ -14,7 +15,10 @@
 				<div class="col-sm-10 not_signed_middle">
 					<div class="not_signed_in_panel" style="margin-top:28%;">
 						<div class="panel panel-default">
-							<div class="panel-heading" style="padding-left:10%;">Recent Uploads</div>
+							<div class="panel-heading" style="padding-left:10%;">
+								Recent Uploads
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "more", uploads_path %>
+							</div>
 							<div class="panel-body" style="padding-left:10%;">
 								<% Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
 									<h5>
@@ -62,10 +66,10 @@
 					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
 					<%= form_for (@upload) do |f| %>
-						Topic: <%= f.text_field :topic %><br>
-						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, include_blank: false %><br>
+						<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
+						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
 						<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
-						<%= f.submit "upload" %>
+						<%= f.submit "upload", class: "btn btn-default" %>
 					<% end -%>
 					<%= link_to "Subjects", subjects_path %> | 
 					<%= link_to "Uploads", uploads_path %>
@@ -75,9 +79,14 @@
 					<h3 align="center">Recent uploads</h3>
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<% recent_uploads.each do |upload| %> <%# defined in application helper %>
+							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
 							<%# current_user.recent_feeds %>
-								<%= link_to upload, '#' %><br>
+								<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+								&nbsp;&nbsp;
+								<small>
+									uploaded by - <%= upload.user.name %>
+									<br>
+								</small>
 							<% end -%>
 						</div>
 					</div>

@@ -14,7 +14,8 @@ class SubjectsController < ApplicationController
     @uploads = Upload.where("subject_id = ?", @subject.id).order(created_at: :desc)
 
     puts "----------------------------------------"
-    p @uploads
+    p @uploads.count
+    puts "=============================="
   end
 
   # GET /subjects/new

@@ -1,3 +1,4 @@
+<% provide(:title, "search results") %>
 <div class="container-fluid">
 	<div class="col-md-3">
 		<div class="panel panel-default">
@@ -38,7 +39,7 @@
        		</div>
 	       	<div class="panel-body">
 		        <% @subject_search_result.each do |subject| %>
-		          <%= subject.name %> | <%= subject.code %>
+		          <%= subject.name %> | <%= subject.code %><br>
 		        <% end %>
 	       	</div>
      	</div>	

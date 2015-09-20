@@ -34,4 +34,4 @@ gem 'progress_bar'
 
 
 gem 'betterlorem' # => generates random text 
-gem 'kaminari'
+gem 'jquery-infinite-pages'

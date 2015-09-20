@@ -1,3 +1,4 @@
+<% provide(:title, "#{@subject.name}") %>
 <div>
   <p id="notice"><%= notice %></p>
   <nav class="subject_show_page_nav navbar-fixed" data-spy="affix" data-offset-top="100">
@@ -22,19 +23,25 @@
         <!--  -->
       </div>
       <div class="col-md-8">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <% @uploads.each do |upload| %>
-              <h3>
-                <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-                <small>
-                  uploaded by <%= upload.user.name %> &nbsp; 
-                  <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-                </small>
-              </h3>
-            <% end %>
+        <% if @uploads.count != 0 %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <% @uploads.each do |upload| %>
+                <h3>
+                  <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                  <small>
+                    uploaded by <%= upload.user.name %> &nbsp; 
+                    <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                  </small>
+                </h3>
+              <% end %> <%# end of upload each%>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="jumbotron" align="center">
+            <h3><b>No uploads</b></h3>
+          </div>
+        <% end -%> <%# end of if tag %>
       </div>
       <div class="col-md-2">
        <!--  -->
