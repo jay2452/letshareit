@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'jquery-turbolinks'
 gem 'sdoc', group: :doc
+
+gem 'therubyracer'
 group :development, :test do
   gem 'byebug'
   gem 'web-console'
@@ -29,3 +31,7 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'sunspot_rails'
 gem 'progress_bar'
+
+
+gem 'betterlorem' # => generates random text 
+gem 'kaminari'

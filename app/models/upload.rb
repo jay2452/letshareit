@@ -11,4 +11,5 @@ class Upload < ActiveRecord::Base
 	searchable do
 		text :topic
 	end
+
 end
