@@ -1,0 +1,50 @@
+<% provide(:title, "search results") %>
+<div class="search-page">
+<br><br>
+<div class="container-fluid">
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Branch search result
+       		</div>
+	       	<div class="panel-body">
+		        <% @branch_search_result.each do |branch| %>
+		          <h5><%= branch.name %></h5>
+		        <% end %>
+	       	</div>
+     	</div>	
+	</div>
+
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Upload search result
+       		</div>
+	       	<div class="panel-body">
+		        <% @upload_search_result.each do |upload| %>
+		          	<h4>
+			            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+			            <small>
+			              uploaded by <%= upload.user.name %> &nbsp; 
+			              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+			            </small>
+		          	</h4>
+		        <% end %>
+	       	</div>
+     	</div>		
+	</div>
+
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Subject search Result
+       		</div>
+	       	<div class="panel-body">
+		        <% @subject_search_result.each do |subject| %>
+		          <h5><%= link_to subject.name, subject_path(subject) %> | <%= subject.code %><br></h5>
+		        <% end %>
+	       	</div>
+     	</div>	
+	</div>
+</div>
+</div>

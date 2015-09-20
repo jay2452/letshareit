@@ -1,22 +1,36 @@
-<div style="margin-top:-2%;">
+<% provide(:title, "welcome") %>
+<div style="margin-top:-1.8%;">
 	<div class="clearfix"></div>
-	<div class="main_home_page_1">
-		<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
+	<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
+		<div class="main_home_page_1">
 			<div class="main_home_page">
-				<div class="col-md-2">
+				<div class="col-sm-2">
 					<div style="margin-top:10%;">
 						<h4><%= link_to "About", '#about_us' %></h4>
 						<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
 						<h4><%= link_to "Subjects", subjects_path %></h4>
 						<h4><%= link_to "Contact Us", '#contact' %></h4>
 					</div>
-				</div>
-
-			
-				<div class="col-md-10 not_signed_middle">
-					<div class="panel not_signed_in_panel" style="margin-top:30%;">
-						<div class="panel-heading">Recent Uploads</div>
-						<div class="panel-body">Panel Content</div>
+				</div>			
+				<div class="col-sm-10 not_signed_middle">
+					<div class="not_signed_in_panel" style="margin-top:28%;">
+						<div class="panel panel-default link-container">
+							<div class="panel-heading" style="padding-left:10%;">
+								Recent Uploads
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "more", uploads_path %>
+							</div>
+							<div class="panel-body" style="padding-left:10%;">
+								<% Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
+									<h5>
+						        <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+						        <small>
+						        	uploaded by <%= link_to upload.user.name, '#' %> &nbsp; 
+						        	<%= time_ago_in_words(upload.created_at) %> ago
+						        </small>
+						      </h5>
+								<% end -%>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -36,30 +50,45 @@
 			</div>
 
 			<div class="main_contact_page">
+				<hr>
 				<a name="contact"></a>
-				<b><h3 align="center">Contact Us</h3></b>
-				<a href="#top">goto Top ^</a>
+				<!-- <a href="#top">goto Top ^</a> -->
+				<%= link_to "Team", team_path %>
 			</div>
 	</div>
 	<div class="margin-top:-2%;">
 		<% else # if user is signed in %>
 
-
 			<div>
 				<div class="col-md-6">
 					<br>
 					<h4>Lets Upload your document</h4>
-					<input id="input-id" type="file" class="file" data-preview-file-type="text" >
+					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
-
-					<%= link_to "Subjects", subjects_path %>
+					<%= form_for (@upload) do |f| %>
+						<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
+						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
+						<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
+						<%= f.submit "upload", class: "btn btn-default" %>
+					<% end -%>
+					<%= link_to "Subjects", subjects_path %> | 
 					<%= link_to "Uploads", uploads_path %>
 				</div>
 
 				<div class="col-md-6">
 					<h3 align="center">Recent uploads</h3>
 					<div class="panel panel-default">
-						<div class="panel-body">Panel Content</div>
+						<div class="panel-body">
+							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
+							<%# current_user.recent_feeds %>
+								<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+								&nbsp;&nbsp;
+								<small>
+									uploaded by - <%= upload.user.name %>
+									<br>
+								</small>
+							<% end -%>
+						</div>
 					</div>
 				</div>
 			</div>	

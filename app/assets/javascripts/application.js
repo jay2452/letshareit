@@ -13,7 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.turbolinks
+//= require jquery.infinite-pages
 //= require_tree .
 
 $(document).ready(function(){
@@ -32,3 +33,11 @@ $("#input-id").fileinput();
 
 // with plugin options
 $("#input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
+
+// for jquery.turbolinks
+$(document).on('page:fetch', function() {
+  $(".loading-indicator").show();
+});
+$(document).on('page:change', function() {
+  $(".loading-indicator").hide();
+});

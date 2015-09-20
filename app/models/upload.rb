@@ -7,4 +7,9 @@ class Upload < ActiveRecord::Base
   validates_attachment_content_type :file, content_type: %w(image/jpeg image/jpg application/pdf 
   															application/msword 
   																application/vnd.openxmlformats-officedocument.wordprocessingml.document)
+
+	searchable do
+		text :topic
+	end
+
 end

@@ -1,5 +1,6 @@
-.main_home_page_1 {
+.main_home_page_1 , .subject_index_page{
 	background-color: #FAAC58;
+	/*background: white;*/
 }
 
 .main_home_page {
@@ -8,7 +9,7 @@
 }
 
 .main_about_page {
-	height: 100vh;
+	height: 70vh;
 	margin-top: -1.5%;
 	background-image: url("share2.jpeg");
 	background-repeat: no-repeat;
@@ -20,15 +21,19 @@
 	height: 73vh;
 }
 .main_contact_page{
-	height: 20vh;
+	height: 7vh;
+	text-align: right;
+	padding-right: 10px;
 }
 
 .not_signed_middle {
 	background-image: url("share1.jpg");
+	background-size: cover;
 	background-attachment: fixed;
 }
 
 .not_signed_in_panel {
-	opacity: 0.5;
+	opacity: 0.8;
     filter: alpha(opacity=60); /* For IE8 and earlier */
+    height: 40vh;
 }

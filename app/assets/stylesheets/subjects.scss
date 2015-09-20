@@ -1,3 +1,123 @@
-// Place all the styles related to the Subjects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.first_year{
+	background-image: url("first_year");
+	height: 50vh;
+    overflow-y: scroll;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 2s;
+}
+
+
+.cse{
+	background-color: white;
+	background-image: url("cse1");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.ee{
+ 	 background-color: white;
+	background-image: url("ee");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.ei{
+    background-color: white;
+	background-image: url("ei1");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.etc{
+	background-color: white;
+	background-image: url("tele1");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    max-height: 50vh;
+    overflow-y: scroll; 
+}	
+
+.eee{
+	background-color: white;
+	background-image: url("eee");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.civil{
+	background-color: white;
+	background-image: url("civil");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.mechanical{
+	background-color: white;
+	background-image: url("mech1");
+	/*opacity: 0.7;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50vh;
+    overflow-y: scroll; 
+}
+
+.subject_show_page_nav{
+    background-color: #FAAC58;
+    height: 15vh;
+    margin-top: -1.5%;
+    padding-top: 1.5em;
+}
+
+.affix {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.affix + .subject_show_page {
+    /*padding-top: 70px;*/
+}
+
+.subject_show_page{
+    background-color: #EBCCEB;
+    min-height: 78vh;
+}
+/*
+.show_page_panel{
+    margin-left: 18%;
+    width: 60%;
+}
+*/
+.panel.panel-default.link-container{
+    background: rgba(255,255,255,0.7);
+}
