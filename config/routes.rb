@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get 'profile/' => 'profile#show', as: 'profile' 
 
+  get '/team' => 'home_pages#team', as: 'team'
+  get '/search' => 'home_pages#search', as: 'search'
+
   resources :user_preferences
   resources :uploads
   resources :subjects

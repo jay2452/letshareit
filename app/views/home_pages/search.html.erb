@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<div class="col-md-3">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Branch search result
+       		</div>
+	       	<div class="panel-body">
+		        <% @branch_search_result.each do |branch| %>
+		          <h4><%= branch.name %></h4>
+		        <% end %>
+	       	</div>
+     	</div>	
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Upload search result
+       		</div>
+	       	<div class="panel-body">
+		        <% @upload_search_result.each do |upload| %>
+		          	<h3>
+			            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+			            <small>
+			              uploaded by <%= upload.user.name %> &nbsp; 
+			              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+			            </small>
+		          	</h3>
+		        <% end %>
+	       	</div>
+     	</div>		
+	</div>
+
+	<div class="col-md-3">
+		<div class="panel panel-default">
+       		<div class="panel-heading">
+         		Subject search Result
+       		</div>
+	       	<div class="panel-body">
+		        <% @subject_search_result.each do |subject| %>
+		          <%= subject.name %> | <%= subject.code %>
+		        <% end %>
+	       	</div>
+     	</div>	
+	</div>
+</div>
