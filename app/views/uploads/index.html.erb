@@ -8,19 +8,19 @@
    </div>
    <div class="col-md-8">
     <% if @uploads.count != 0 %>
-      <div class="panel panel-default">
+      <div class="panel panel-default uploads_section">
         <div class="panel-heading">
           list of all Uploads
         </div>
         <div class="panel-body" id="uploads">
           <% @uploads.each do |upload| %>
-            <h3>
+            <h4>
               <%= link_to upload.topic, upload.file.url , target: "_blank" %>
               <small>
                 uploaded by <%= upload.user.name %> &nbsp; 
                 <small><%= time_ago_in_words(upload.created_at) %> ago</small>
               </small>
-            </h3>
+            </h4>
           <% end %>
         </div>
       </div>

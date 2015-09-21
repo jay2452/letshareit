@@ -1,28 +1,37 @@
 <% provide(:title, "Profile - #{@user.name}") %>
-<div class="container">
-	<%# @user defined in profile controller  %>
-	<div>
-		<div class="col-md-4">
-			<%= gravatar_for_large @user %><br><br>
-			<%= @user.name %> <br>
-			<%= @user.email %> <br>
-			<%= link_to "change your subject preferences", user_preferences_path %>
-		</div>
-		<div class="col-md-8">
-			<div class="well">
-				<h4>Your preferences : <h4><br>
-				<% @user.subjects.each do |subject| %>
-					<%= link_to subject.name, subject_path(subject) %><br>
-				<% end -%>
+<div class="profile_page">
+	<br>
+	<div class="container">
+		<%# @user defined in profile controller  %>
+		<div>
+			<div class="col-md-4">
+				<div class="panel panel-default image-container">
+					<div class="panel-body" align="center">
+						<%= gravatar_for_large @user %><br><br>
+						<%= @user.name %> <br>
+						<%= @user.email %> <br>
+						<%= link_to "change your subject preferences", user_preferences_path %>
+					</div>
+				</div>
 			</div>
+			<div class="col-md-8">
+				<div class="panel panel-default preference-container">
+					<div class="panel-body">
+						<h4>Your preferences : <h4><br>
+						<% @user.subjects.each do |subject| %>
+							<%= link_to subject.name, subject_path(subject) %><br>
+						<% end -%>
+					</div>
+				</div>
 
-			<div class="well">
-				<h4>Uploads by me : </h4>
-				<% @uploads.each do |upload| %>
-					<%= link_to upload.topic, upload.file.url %> &nbsp;&nbsp;&nbsp;
-					<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-				<% end -%>
+				<div class="well">
+					<h4>Uploads by me : </h4>
+					<% @uploads.each do |upload| %>
+						<%= link_to upload.topic, upload.file.url %> &nbsp;&nbsp;&nbsp;
+						<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+					<% end -%>
+				</div>
 			</div>
-		</div>
-	</div>	
+		</div>	
+	</div>
 </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/team' => 'home_pages#team', as: 'team'
   get '/search' => 'home_pages#search', as: 'search'
 
+
   resources :user_preferences
   resources :uploads
   resources :subjects
