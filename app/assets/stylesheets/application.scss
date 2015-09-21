@@ -17,6 +17,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-color: #FAAC58;
+}
 
 #notice_wrapper {
 	position: absolute;
@@ -62,12 +65,11 @@
 
 .signup_page_right{
   
-  height: 85vh;
+  min-height: 85vh;
 }
 
 .signup_left {
   height: 85vh;
-  background-image: url("share3");
 
 }
 
@@ -98,4 +100,18 @@ a:active {
   background-color: #FAAC58;
   margin-top: -2%;
   min-height: 90vh;
+}
+
+.edit_user_page{
+  background-color: #FAAC58;
+  margin-top: -2%;
+}
+
+.panel.edit-container{
+
+  background: rgba(255,255,255,0.5);
+}
+
+nav.navbar.navbar.nav_color{
+  background: #81BEF7;
 }

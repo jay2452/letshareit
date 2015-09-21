@@ -22,7 +22,7 @@
 }
 .main_contact_page{
 	height: 7vh;
-	text-align: right;
+	text-align: center;
 	padding-right: 10px;
 }
 
@@ -36,4 +36,16 @@
 	opacity: 0.8;
     filter: alpha(opacity=60); /* For IE8 and earlier */
     height: 40vh;
+}
+
+.signed_in_main_page{
+	background-color: #FAAC58;
+	height: 90vh;
+}
+.panel.uploads_section {
+	background: rgba(255,255,255,0.5);
+}
+
+.panel.panel-default.search-results{
+	background: rgba(255,255,255,0.6);
 }

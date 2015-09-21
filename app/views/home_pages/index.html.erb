@@ -1,6 +1,5 @@
 <% provide(:title, "welcome") %>
 <div style="margin-top:-1.8%;">
-	<div class="clearfix"></div>
 	<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
 		<div class="main_home_page_1">
 			<div class="main_home_page">
@@ -53,45 +52,47 @@
 				<hr>
 				<a name="contact"></a>
 				<!-- <a href="#top">goto Top ^</a> -->
-				<%= link_to "Team", team_path %>
+				<h4><%= link_to "Team", team_path %></h4>
 			</div>
 	</div>
-	<div class="margin-top:-2%;">
-		<% else # if user is signed in %>
-
-			<div>
-				<div class="col-md-6">
-					<br>
-					<h4>Lets Upload your document</h4>
-					<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
-					<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
-					<%= form_for (@upload) do |f| %>
-						<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
-						<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
-						<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
-						<%= f.submit "upload", class: "btn btn-default" %>
-					<% end -%>
-					<%= link_to "Subjects", subjects_path %> | 
-					<%= link_to "Uploads", uploads_path %>
-				</div>
-
-				<div class="col-md-6">
-					<h3 align="center">Recent uploads</h3>
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
-							<%# current_user.recent_feeds %>
-								<%= link_to upload.topic, upload.file.url, target: "_blank" %>
-								&nbsp;&nbsp;
-								<small>
-									uploaded by - <%= upload.user.name %>
-									<br>
-								</small>
-							<% end -%>
-						</div>
+	<% else # if user is signed in %>
+		<div class="signed_in_main_page">
+	
+			<div class="col-md-6">
+				<br>
+				<div class="panel uploads_section">
+					<div class="panel-body">
+						<h4>Lets Upload your document</h4>
+						<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
+						<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
+						<%= form_for (@upload) do |f| %>
+							<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
+							<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
+							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
+							<%= f.submit "upload", class: "btn btn-default" %>
+						<% end -%>
+						<%= link_to "Subjects", subjects_path %> | 
+						<%= link_to "Uploads", uploads_path %>
 					</div>
 				</div>
-			</div>	
-		<% end -%>
-	</div>
+			</div>
+
+			<div class="col-md-6">
+				<h3 align="center">Recent uploads</h3>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
+						<%# current_user.recent_feeds %>
+							<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+							&nbsp;&nbsp;
+							<small>
+								uploaded by - <%= upload.user.name %>
+								<br>
+							</small>
+						<% end -%>
+					</div>
+				</div>
+			</div>
+		</div>	
+	<% end -%>
 </div>
