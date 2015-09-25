@@ -17,4 +17,4 @@
 /tmp
 #ignore all uploads
 /public/system/uploads
-/solr/development
+/solr
