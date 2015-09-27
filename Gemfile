@@ -31,7 +31,5 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'sunspot_rails'
 gem 'progress_bar'
+gem 'will_paginate'
 
-
-gem 'betterlorem' # => generates random text 
-gem 'jquery-infinite-pages'

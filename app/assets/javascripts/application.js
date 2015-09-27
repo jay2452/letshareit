@@ -14,7 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require jquery.infinite-pages
 //= require_tree .
 
 $(document).ready(function(){
