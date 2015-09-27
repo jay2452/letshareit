@@ -1,12 +1,15 @@
-<nav class="navbar navbar nav_color">
+<nav class="navbar navbar navbar-inverse nax_bar_panel">
   <div class="container-fluid">
-    <div class="navbar-header" style="margin-left:15%;">
-        <a class="navbar-brand" href="<%= root_path %>" style="margin-top:-5%;"><%= image_tag("logo.png", size: "180x60") %></a>
+    <div class="navbar-header" style="padding-left:5%;">
+        <a class="navbar-brand" href="<%= root_path %>"><span>
+          <%= image_tag("letshareit.png", height: "110vh;") %>
+          <%= image_tag("letshareit1.png", height: "50vh;") %></span>
+        </a>
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-left">
-          <div class="input-group" style="margin-top:6%;">
+          <div class="input-group" style="padding-top:6%;">
             <%= form_tag search_path ,{class: "form-inline", role: "form", method: :get} do %>
               <div class="form-group">
                 <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Files" %>  
