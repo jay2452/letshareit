@@ -18,3 +18,5 @@
 #ignore all uploads
 /public/system/uploads
 /solr
+/solr/*
+/solr/pids/development/*
