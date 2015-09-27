@@ -8,22 +8,32 @@
    </div>
    <div class="col-md-8">
     <% if @uploads.count != 0 %>
-      <div class="panel panel-default uploads_section">
+
+      <div id="uploads">
+        <h1>Uploads</h1>
+          <%= render @uploads %>
+      </div>
+      
+      <%= will_paginate @uploads %>
+
+
+<!--      <div class="panel panel-default uploads_section">
         <div class="panel-heading">
           list of all Uploads
         </div>
         <div class="panel-body" id="uploads">
-          <% @uploads.each do |upload| %>
+          <#% @uploads.each do |upload| %>
             <h4>
-              <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+              <#%= link_to upload.topic, upload.file.url , target: "_blank" %>
               <small>
-                uploaded by <%= upload.user.name %> &nbsp; 
-                <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+              .name %> &nbsp; 
+                <small><#%= time_ago_in_words(upload.created_at) %> ago</small>
               </small>
             </h4>
-          <% end %>
+          <#% end %>
         </div>
       </div>
+-->
     <% else %>
       <div class="jumbotron" align="center">
         <h3><b>No Uploads</b></h3>
@@ -35,3 +45,4 @@
    </div>
 </div>
 </div>
+

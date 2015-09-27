@@ -1,0 +1,2 @@
+$('#uploads').append('<%= escape_javascript render(@uploads) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@uploads) %>');
