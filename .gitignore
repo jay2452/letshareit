@@ -20,3 +20,5 @@
 /solr
 /solr/*
 /solr/pids/development/*
+/solr/development/data/index/*
+/solr/development/data/tlog/*
