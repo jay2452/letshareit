@@ -18,7 +18,10 @@
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 .main_how_upload_page{
-	height: 73vh;
+	height: 73vh; 
+	text-shadow: 2px 2px #99ff99;
+	text-decoration: underline ;
+	font: italic bold 15px ;
 }
 .main_contact_page{
 	height: 7vh;
@@ -48,4 +51,9 @@
 
 .panel.panel-default.search-results{
 	background: rgba(255,255,255,0.6);
+}
+
+
+.panel.panel-default.panel_recent_uploads_loggedin{
+	background: rgba(184,184,230,0.6);
 }

@@ -57,6 +57,9 @@
 	</div>
 	<% else # if user is signed in %>
 		<div class="signed_in_main_page">
+			<div class="col-md-3">
+				
+			</div>
 	
 			<div class="col-md-6">
 				<br>
@@ -75,23 +78,28 @@
 						<%= link_to "Uploads", uploads_path %>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-md-6">
-				<h3 align="center">Recent uploads</h3>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
-						<%# current_user.recent_feeds %>
-							<%= link_to upload.topic, upload.file.url, target: "_blank" %>
-							&nbsp;&nbsp;
-							<small>
-								uploaded by - <%= upload.user.name %>
-								<br>
-							</small>
-						<% end -%>
+				<div>
+					<h3 align="center" style="text-transform:capitalize;">Recent uploads</h3>
+					<div class="panel panel-default panel_recent_uploads_loggedin">
+						<div class="panel-body">
+							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
+							<%# current_user.recent_feeds %>
+							<h4>
+								<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+								&nbsp;&nbsp;
+								<small>
+									<i>Uploaded By - <%= upload.user.name %></i>
+									<br>
+								</small>
+							</h4>
+							<% end -%>
+						</div>
 					</div>
 				</div>
+			</div>
+
+			<div class="col-md-3">
+				
 			</div>
 		</div>	
 	<% end -%>

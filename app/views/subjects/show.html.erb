@@ -1,18 +1,20 @@
 <% provide(:title, "#{@subject.name}") %>
 <div>
   <p id="notice"><%= notice %></p>
-  <nav class="subject_show_page_nav navbar-fixed" data-spy="affix" data-offset-top="100">
+  <nav class="subject_show_page_nav navbar" data-spy="affix" data-offset-top="130">
     <br>
-    <div class="col-md-4" align="center">
-      <font size="4"> <b>Subject :</b> <%= @subject.name %> </font>
-    </div>
+    <div>
+      <div class="col-md-4" align="center">
+        <font size="4"> <b>Subject :</b> <%= @subject.name %> </font>
+      </div>
 
-    <div class="col-md-4" align="center">
-      <font size="4"><b>Code : </b><%= @subject.code %></font>
-    </div>
+      <div class="col-md-4" align="center">
+        <font size="4"><b>Code : </b><%= @subject.code %></font>
+      </div>
 
-    <div class="col-md-4" align="center">
-      <font size="4"><b>Branch : </b><%= @subject.branch.name %></font>
+      <div class="col-md-4" align="center">
+        <font size="4"><b>Branch : </b><%= @subject.branch.name %></font>
+      </div>
     </div>
   </nav>
   <!-- <hr style="margin-top: -0.1%; color:black;"> -->
@@ -38,11 +40,27 @@
             </div>
           </div>
         <% else %>
-          <div class="jumbotron" align="center">
+          <!-- <div class="jumbotron" align="center">
             <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+            <h3><b>No uploads</b></h3>
+          </div> -->
+          <div class="panel panel-default">
+            <div class="panel-body well">
+              <h3><b>No uploads</b></h3>
+            </div>
           </div>
         <% end -%> <%# end of if tag %>
-        
       </div>
       <div class="col-md-2">
        <!--  -->

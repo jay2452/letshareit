@@ -35,3 +35,4 @@ gem 'progress_bar'
 
 gem 'betterlorem' # => generates random text 
 gem 'jquery-infinite-pages'
+gem "font-awesome-rails"

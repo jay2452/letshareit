@@ -1,9 +1,9 @@
 <nav class="navbar navbar navbar-inverse nax_bar_panel">
   <div class="container-fluid">
-    <div class="navbar-header" style="padding-left:5%;">
+    <div class="navbar-header logo_page" style="padding-left:5%;margin-top:-1.8%;position:relative;">
         <a class="navbar-brand" href="<%= root_path %>"><span>
-          <%= image_tag("letshareit.png", height: "110vh;") %>
-          <%= image_tag("letshareit1.png", height: "50vh;") %></span>
+          <%= image_tag("letshareit.png", height: "160vh;") %>
+          <%= image_tag("letshareit1.png", height: "80vh;") %></span>
         </a>
     </div>
     <div>
@@ -30,8 +30,8 @@
               </ul>
             </li>
           <% else %>
-            <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span><b> Sign Up</b></a></li>
+            <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> <b>Login</b></a></li>
           <% end -%>
       </ul>
 
