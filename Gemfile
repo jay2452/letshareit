@@ -33,3 +33,10 @@ gem 'sunspot_rails'
 gem 'progress_bar'
 gem 'will_paginate'
 
+<<<<<<< HEAD
+=======
+
+gem 'betterlorem' # => generates random text 
+gem 'jquery-infinite-pages'
+gem "font-awesome-rails"
+>>>>>>> 5067fd6132582765dbc421ed957b0577e501a977

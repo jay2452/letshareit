@@ -9,6 +9,9 @@
 					<div class="panel-body" align="center">
 						<%= gravatar_for_large @user %><br><br>
 						<%= @user.name %> <br>
+						<p align="center">
+							<%= @user.about_me %>
+						</p>
 						<%= @user.email %> <br>
 						<%= link_to "change your subject preferences", user_preferences_path %>
 					</div>

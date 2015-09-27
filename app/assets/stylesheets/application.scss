@@ -16,6 +16,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   background-color: #FAAC58;
@@ -23,7 +24,7 @@ body {
 
 #notice_wrapper {
 	position: absolute;
-  	top: 0;
+  	top: 9;
   	width: 100%;
   	z-index: 999;
   	background: rgba(135, 216, 211, 0.85);
@@ -50,8 +51,9 @@ body {
 }
 
 .login_form {
-    margin: 10% 30% ;
-    background-image: url("background.jpg");
+    /*margin: 10% 30% ;*/
+    /*background-image: url("background.jpg");*/
+    background-color: #194F83;
     border-radius: 30px;
     height: 110%;
     padding: 1em 2em;
@@ -64,13 +66,11 @@ body {
 }
 
 .signup_page_right{
-  
-  min-height: 85vh;
+  min-height: 65vh;
 }
 
 .signup_left {
-  height: 85vh;
-
+  height: 80vh;
 }
 
 /* unvisited link */
@@ -108,10 +108,13 @@ a:active {
 }
 
 .panel.edit-container{
-
   background: rgba(255,255,255,0.5);
 }
 
 .nax_bar_panel{
   height: 22vh;
+}
+
+.forgot_password_new{
+  /*text-align: center;*/
 }
