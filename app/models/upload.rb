@@ -15,9 +15,9 @@ class Upload < ActiveRecord::Base
                                 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
                                 text/plain)
 
-	searchable do
-		text :topic, boost: 2
-    text :file_file_name
-	end
+	# searchable do
+	# 	text :topic, boost: 2
+ #    text :file_file_name
+	# end
 
 end

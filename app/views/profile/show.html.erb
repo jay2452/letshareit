@@ -8,11 +8,12 @@
 				<div class="panel panel-default image-container">
 					<div class="panel-body" align="center">
 						<%= gravatar_for_large @user %><br><br>
-						<%= @user.name %> <br>
+						<b><%= @user.name %> </b><br>
+						<%= @user.branch.name %> <br>
+						<%= @user.email %> <br>
 						<p align="center">
 							<%= @user.about_me %>
 						</p>
-						<%= @user.email %> <br>
 						<%= link_to "change your subject preferences", user_preferences_path %>
 					</div>
 				</div>
@@ -30,7 +31,7 @@
 				<div class="well">
 					<h4>Uploads by me : </h4>
 					<% @uploads.each do |upload| %>
-						<%= link_to upload.topic, upload.file.url %> &nbsp;&nbsp;&nbsp;
+						<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
 						<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
 					<% end -%>
 				</div>
