@@ -30,7 +30,7 @@ gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'paperclip'
 # gem 'sunspot_rails'
-gem 'progress_bar'
+#gem 'progress_bar'
 gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'rails_admin'
