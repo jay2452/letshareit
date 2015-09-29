@@ -13,7 +13,9 @@
   
   <div class="field"=>
     <%= f.label :subject_id %><br>
-    <%= f.select :subject_id, all_subjects.all.collect { |s| [ s.name, s.id ]}, include_blank: true, multiple: true %>
+    <%# f.select :subject_id, all_subjects.all.collect { |s| [ s.name, s.id ]}, include_blank: true, multiple: true %>
+
+    <%= f.select(:subject_id, all_subjects.all.collect {|p| [ p.name, p.id ] }, {}, { multiple: true, class: "chosen-select form-control" } )%>
   </div>
   <div class="actions">
     <%= f.submit %>

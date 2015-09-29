@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require normalize
+ *= require chosen
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";

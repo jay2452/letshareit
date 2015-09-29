@@ -35,3 +35,5 @@ gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'rails_admin'
 gem 'ransack'
+gem 'chosen-rails'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
