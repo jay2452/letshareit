@@ -33,3 +33,4 @@ gem 'sunspot_rails'
 gem 'progress_bar'
 gem 'will_paginate'
 gem "font-awesome-rails"
+gem 'vinova_sunspot_autocomplete'
