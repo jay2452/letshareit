@@ -9,20 +9,14 @@ class HomePagesController < ApplicationController
   end
 
   def search
-  	@query_one = Upload.search do
-      fulltext params[:search]
-    end
-    @upload_search_result = @query_one.results
+  	@query_one = Upload.search(params[:q])
+    @upload_search_result = @query_one.result
 
-    @query_two = Branch.search do
-      fulltext params[:search]
-    end
-    @branch_search_result = @query_two.results
+    @query_two = Branch.search(params[:q])
+    @branch_search_result = @query_two.result
 
-    @query_three = Subject.search do
-      fulltext params[:search]
-    end
-    @subject_search_result = @query_three.results
+    @query_three = Subject.search(params[:q])
+    @subject_search_result = @query_three.result
     
   end
 end

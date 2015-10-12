@@ -10,6 +10,27 @@ class Ability
     #   else
     #     can :read, :all
     #   end
+
+        if user.has_role? :admin
+            can :manage, :all
+        else
+            can :update, Upload do |upload|
+                upload.user == user
+            end
+
+            can :destroy, Upload do |upload|
+                upload.user == user
+            end
+
+            can :update, UserPreference do |user_preference|
+                user_preference.user == user
+            end
+
+            can :destroy, UserPreference do |user_preference|
+                user_preference.user == user
+            end
+            can :read, :all
+        end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

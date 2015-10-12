@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'profile/' => 'profile#show', as: 'profile' 
 
   get '/team' => 'home_pages#team', as: 'team'

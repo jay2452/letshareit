@@ -1,3 +1,16 @@
-<div class="upload_infinite_scroll">
-  <h2><%= upload.topic %></h2>
+<div class="panel panel-default uploads_section upload_infinite_scroll">
+	<div class="panel-heading">
+	  list of all Uploads
+	</div>
+	<div class="panel-body" id="uploads">
+	  <% @uploads.each do |upload| %>
+	    <h4>
+	      <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+	      <small>
+	      <%= upload.user.name %> &nbsp; 
+	        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+	      </small>
+	    </h4>
+	  <% end %>
+	</div>
 </div>

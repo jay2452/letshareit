@@ -10,8 +10,7 @@
     <% if @uploads.count != 0 %>
 
       <div id="uploads">
-        <h1>Uploads</h1>
-          <%= render @uploads %>
+          <%= render partial: '/uploads/upload' %>
       </div>
       
       <%= will_paginate @uploads %>
