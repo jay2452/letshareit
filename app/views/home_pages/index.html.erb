@@ -70,7 +70,7 @@
 						<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
 						<%= form_for (@upload) do |f| %>
 							<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
-							<%= f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
+							<%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
 							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
 							<%= f.submit "upload", class: "btn btn-default" %>
 						<% end -%>

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+# First Year
 Subject.create(name: "Mathematics-1",              code: "MA-1001", branch_id: 1)
 Subject.create(name: "Physics-1",                  code: "PH-1001", branch_id: 1)
 Subject.create(name: "Chemistry-1",                code: "CH-1001", branch_id: 1)
@@ -18,34 +18,57 @@ Subject.create(name: "Programming In C",           code: "CS-1001", branch_id: 1
 Subject.create(name: "Basic Electronics",          code: "EC-1001", branch_id: 1)
 Subject.create(name: "Professional Communication", code: "HS-1001", branch_id: 1)
 
+# Computer Science & Engineering
 Subject.create(name: "Discrete Mathematics", 				   code: "MA-2003", branch_id: 2)
 Subject.create(name: "Data Structures and Algorithms", 		   code: "CS-2001", branch_id: 2)
+Subject.create(name: "Object Oriented Programming", 	       code: "IT-2001", branch_id: 2)
 Subject.create(name: "Mathematics-3",						   code: "MA-2001", branch_id: 2)
 Subject.create(name: "Digital Electronic Circuits", 		   code: "EC-2009", branch_id: 2)
 Subject.create(name: "Environmental Science", 				   code: "CH-2001", branch_id: 2)
 Subject.create(name: "Database Management Systems", 		   code: "CS-2004", branch_id: 2)
 Subject.create(name: "Operating Systems", 					   code: "CS-2002", branch_id: 2)
+Subject.create(name: "Programming Tools and Techniques",       code: "IT-2002", branch_id: 2)
 Subject.create(name: "Principle of Digital Communication", 	   code: "EC-2004", branch_id: 2)
 Subject.create(name: "Mathematics-4", 						   code: "MA-2002", branch_id: 2)
 Subject.create(name: "Design and Analysis of Algorithms", 	   code: "CS-3001", branch_id: 2)
+Subject.create(name: "Software Engineering", 			       code: "IT-3003", branch_id: 2)
+Subject.create(name: "Computer Networks", 				       code: "IT-3001", branch_id: 2)
 Subject.create(name: "Formal Languages and Automata Theory",   code: "CS-3003", branch_id: 2)
-Subject.create(name: "Computer Organization and Organization", code: "CS-3005", branch_id: 2)
+Subject.create(name: "Computer Organization and Architecture", code: "CS-3005", branch_id: 2)
 Subject.create(name: "Compiler Design", 					   code: "CS-3002", branch_id: 2)
+Subject.create(name: "Object Oriented System Design", 	       code: "IT-3004", branch_id: 2)
 Subject.create(name: "High Performance Computer Architecture", code: "CS-3006", branch_id: 2)
 Subject.create(name: "Computer Graphics", 					   code: "CS-3004", branch_id: 2)
 Subject.create(name: "Artificial Intelligence", 			   code: "CS-4001", branch_id: 2)
+Subject.create(name: "Data Analytics", 					       code: "IT-3002", branch_id: 2)
+
+# Information Technology
+Subject.create(name: "Discrete Mathematics", 				   code: "MA-2003", branch_id: 3)
+Subject.create(name: "Data Structures and Algorithms", 		   code: "CS-2001", branch_id: 3)
+Subject.create(name: "Object Oriented Programming", 	       code: "IT-2001", branch_id: 3)
+Subject.create(name: "Mathematics-3",						   code: "MA-2001", branch_id: 3)
+Subject.create(name: "Digital Electronic Circuits", 		   code: "EC-2009", branch_id: 3)
+Subject.create(name: "Environmental Science", 				   code: "CH-2001", branch_id: 3)
+Subject.create(name: "Database Management Systems", 		   code: "CS-2004", branch_id: 3)
+Subject.create(name: "Operating Systems", 					   code: "CS-2002", branch_id: 3)
+Subject.create(name: "Programming Tools and Techniques",       code: "IT-2002", branch_id: 3)
+Subject.create(name: "Principle of Digital Communication", 	   code: "EC-2004", branch_id: 3)
+Subject.create(name: "Mathematics-4", 						   code: "MA-2002", branch_id: 3)
+Subject.create(name: "Design and Analysis of Algorithms", 	   code: "CS-3001", branch_id: 3)
+Subject.create(name: "Software Engineering", 			       code: "IT-3003", branch_id: 3)
+Subject.create(name: "Computer Networks", 				       code: "IT-3001", branch_id: 3)
+Subject.create(name: "Formal Languages and Automata Theory",   code: "CS-3003", branch_id: 3)
+Subject.create(name: "Computer Organization and Architecture", code: "CS-3005", branch_id: 3)
+Subject.create(name: "Compiler Design", 					   code: "CS-3002", branch_id: 3)
+Subject.create(name: "Object Oriented System Design", 	       code: "IT-3004", branch_id: 3)
+Subject.create(name: "Data Analytics", 					       code: "IT-3002", branch_id: 3)
+Subject.create(name: "Mobile computing", 				       code: "IT-3006", branch_id: 3)
+Subject.create(name: "Data Mining", 					       code: "IT-4003", branch_id: 3)
+Subject.create(name: "Enterprise Resource Planning", 	       code: "IT-4001", branch_id: 3)
 
 
-Subject.create(name: "Object Oriented Programming", 	 code: "IT-2001", branch_id: 3)
-Subject.create(name: "Programming Tools and Techniques", code: "IT-2002", branch_id: 3)
-Subject.create(name: "Software Engineering", 			 code: "IT-3003", branch_id: 3)
-Subject.create(name: "Computer Networks", 				 code: "IT-3001", branch_id: 3)
-Subject.create(name: "Object Oriented System Design", 	 code: "IT-3004", branch_id: 3)
-Subject.create(name: "Data Analytics", 					 code: "IT-3002", branch_id: 3)
-Subject.create(name: "Mobile computing", 				 code: "IT-3006", branch_id: 3)
-Subject.create(name: "Data Mining", 					 code: "IT-4003", branch_id: 3)
-Subject.create(name: "Enterprise Resource Planning", 	 code: "IT-4001", branch_id: 3)
 
+# Civil Engineering
 Subject.create(name: "Mathematics-3", 			                        code: "MA-2001", branch_id: 4)
 Subject.create(name: "Fluid Mechanics-1", 			                    code: "CE-2001", branch_id: 4)
 Subject.create(name: "Solid Mechanics-1", 			                    code: "CE-2003", branch_id: 4)
@@ -70,7 +93,7 @@ Subject.create(name: "Environmental Engineering-2",                     code: "C
 Subject.create(name: "Construction Planning & Management",              code: "CE-3012", branch_id: 4)
 Subject.create(name: "Transportation Engineering-2",                    code: "CE-4001", branch_id: 4)
 
-
+# Mechanical Engineering
 Subject.create(name: "Engineering Thermodynamics",                                code: "ME-2001", branch_id: 5)
 Subject.create(name: "Fluid Mechanics",                                           code: "ME-2003", branch_id: 5)
 Subject.create(name: "Mechanics of Solids",                                       code: "ME-2005", branch_id: 5)
@@ -98,6 +121,7 @@ Subject.create(name: "Power Plant Engineering",                                 
 Subject.create(name: "Industrial Automation",                                     code: "ME-4002", branch_id: 5)
 
 
+# Electrical Engineering
 Subject.create(name: "Mathematics-3",                                code: "MA-2001", branch_id: 6)
 Subject.create(name: "Electrical Machines-1",                        code: "EE-2001", branch_id: 6)
 Subject.create(name: "Network Analysis",                             code: "EE-2003", branch_id: 6)
@@ -123,6 +147,7 @@ Subject.create(name: "Renewable Energy Systems",                     code: "EE-4
 Subject.create(name: "Industrial Automation And Control",            code: "EL-4001", branch_id: 6)
 
 
+# Electronics & Telecommunication Engineering
 Subject.create(name: "Mathematics-3",                               code: "MA-2001", branch_id: 7)
 Subject.create(name: "Analog Electronic Circuits-1",                code: "EC-2001", branch_id: 7)
 Subject.create(name: "Signals & Systems",                           code: "EC-2003", branch_id: 7)
@@ -148,6 +173,7 @@ Subject.create(name: "Wireless & Mobile Communication Engineering", code: "EC-40
 Subject.create(name: "Computer Organization And Operating Systems", code: "CS-4003", branch_id: 7)
 
 
+# Electronics & Electrical Engineering
 Subject.create(name: "Mathematics-3",                              code: "MA-2001", branch_id: 8)
 Subject.create(name: "Analog Electronic",                          code: "EC-2007", branch_id: 8)
 Subject.create(name: "Network Analysis",                           code: "EE-2003", branch_id: 8)
@@ -173,6 +199,8 @@ Subject.create(name: "Industrial Automation And Control",          code: "EL-400
 Subject.create(name: "Data Communication And Networking",          code: "EC-3006", branch_id: 8)
 
 
+
+# Electronics & Instrumentation Engineering
 Subject.create(name: "Mathematics-3",                        code: "MA-2001", branch_id: 9)
 Subject.create(name: "Signals And Systems",                  code: "EC-2003", branch_id: 9)
 Subject.create(name: "Analog Electronics",                   code: "EC-2007", branch_id: 9)
@@ -197,6 +225,7 @@ Subject.create(name: "Power Electronics",                    code: "EE-3005", br
 Subject.create(name: "VLSI Design",                          code: "EC-3004", branch_id: 9)
 Subject.create(name: "Analytical Instrumentation",           code: "EI-4001", branch_id: 9)
 Subject.create(name: "Process Control-2",                    code: "EI-4003", branch_id: 9)
+
 
 
 Branch.create(name: "First Year")
