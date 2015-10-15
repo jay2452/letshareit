@@ -12,21 +12,21 @@
   </thead>
 
   <tbody>
-    <% @user_preferences.each do |user_preference| %>
+    <% #@user_preferences.each do |user_preference| %>
       <tr>
         <td><%= user_preference.user.name %></td>
         <td><%= user_preference.subject.name %></td>
-        <td><%= link_to 'Show', user_preference %></td>
-        <td><%= link_to 'Edit', edit_user_preference_path(user_preference) %></td>
-        <td><%= link_to 'Destroy', user_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= #link_to 'Show', user_preference %></td>
+        <td><%= #link_to 'Edit', edit_user_preference_path(user_preference) %></td>
+        <td><%= #link_to 'Destroy', user_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <% #end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New User preference', new_user_preference_path %>
+<%= #link_to 'New User preference', new_user_preference_path %>
  -->
 
 <div class="container">

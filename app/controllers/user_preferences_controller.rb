@@ -29,7 +29,7 @@ class UserPreferencesController < ApplicationController
 
     respond_to do |format|
       if @user_preference.save
-        format.html { redirect_to @user_preference, notice: 'User preference was successfully created.' }
+        format.html { redirect_to profile_path, notice: 'User preference was successfully created.' }
         format.json { render :show, status: :created, location: @user_preference }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class UserPreferencesController < ApplicationController
   def update
     respond_to do |format|
       if @user_preference.update(user_preference_params)
-        format.html { redirect_to @user_preference, notice: 'User preference was successfully updated.' }
+        format.html { redirect_to profile_path, notice: 'User preference was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_preference }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class UserPreferencesController < ApplicationController
   def destroy
     @user_preference.destroy
     respond_to do |format|
-      format.html { redirect_to user_preferences_url, notice: 'User preference was successfully destroyed.' }
+      format.html { redirect_to profile_path, notice: 'User preference was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

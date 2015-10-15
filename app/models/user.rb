@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
    has_many :subjects, :through => :user_preferences
 
    def feeds
-   		b = []
+   		#b = []
    		subject_ids = "SELECT subject_id from user_preferences where user_id = #{self.id}"
    		Upload.where("subject_id IN (#{subject_ids})")
    end

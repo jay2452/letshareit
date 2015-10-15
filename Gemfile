@@ -33,6 +33,7 @@ gem 'paperclip'
 #gem 'progress_bar'
 gem 'will_paginate'
 gem "font-awesome-rails"
+gem 'vinova_sunspot_autocomplete'
 gem 'rails_admin'
 gem 'ransack'
 gem 'chosen-rails'
