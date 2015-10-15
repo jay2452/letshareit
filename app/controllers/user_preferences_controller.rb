@@ -57,7 +57,7 @@ class UserPreferencesController < ApplicationController
   def destroy
     @user_preference.destroy
     respond_to do |format|
-      format.html { redirect_to user_preferences_url, notice: 'User preference was successfully destroyed.' }
+      format.html { redirect_to profile_path, notice: 'User preference was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
