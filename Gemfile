@@ -17,6 +17,7 @@ group :development, :test do
   gem 'spring'
   gem 'sqlite3'
   # gem 'sunspot_solr'
+  gem "rails-erd"
 end
 
 group :production do

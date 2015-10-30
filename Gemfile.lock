@@ -59,6 +59,7 @@ GEM
     builder (3.2.2)
     byebug (6.0.2)
     cancancan (1.13.1)
+    choice (0.2.0)
     chosen-rails (1.4.3)
       coffee-rails (>= 3.2)
       compass-rails (>= 2.0.4)
@@ -171,6 +172,11 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.4.4)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_12factor (0.0.3)
@@ -215,6 +221,7 @@ GEM
     rolify (4.1.1)
     rsolr (1.0.12)
       builder (>= 2.1.2)
+    ruby-graphviz (1.2.2)
     safe_yaml (1.0.4)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -287,6 +294,7 @@ DEPENDENCIES
   pg
   puma
   rails
+  rails-erd
   rails_12factor
   rails_admin
   ransack
