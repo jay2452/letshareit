@@ -274,6 +274,7 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.0.7)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
@@ -309,6 +310,7 @@ DEPENDENCIES
   vinova_sunspot_autocomplete
   web-console
   will_paginate
+  yard
 
 BUNDLED WITH
    1.10.6
