@@ -18,6 +18,7 @@ group :development, :test do
   gem 'sqlite3'
   # gem 'sunspot_solr'
   gem "rails-erd"
+  gem 'railroady'
   gem 'yard'
 end
 
