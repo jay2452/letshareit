@@ -6,6 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Subject.destroy_all
+Branch.destroy_all
+Role.destroy_all
+Upload.destroy_all
+UserPreference.destroy_all
+#UsersRole.destroy_all
+
+# Admin user
+User.create!(email: "admin@letshareit.in", password: "letshareit000$$admin", )
+user = User.first
+user.add_role :admin
+ability = Ability.new(user)
+
+
 # First Year
 Subject.create(name: "Mathematics-1",              code: "MA-1001", branch_id: 1)
 Subject.create(name: "Physics-1",                  code: "PH-1001", branch_id: 1)
