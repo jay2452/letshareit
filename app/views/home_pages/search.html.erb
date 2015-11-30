@@ -16,26 +16,25 @@
 	</div>
 
 	<div class="col-sm-8">
-		<div class="search-results">
-       		<div>
-         		Upload search result
-       		</div>
-       		<div class="flex-container">
-		       	<div>
-			        <% @upload_search_result.each do |upload| %>
-			        	<div class="flex-item">
-				          	<h4>
-					            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-					            <small>
-					              uploaded by <%= upload.user.name %> &nbsp; 
-					              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-					            </small>
-				          	</h4>
-			          	</div>
-			        <% end %>
-		       	</div>
-		    </div>
-     	</div>		
+   		<div>
+     		Upload search result
+   		</div>
+   		<div class="clearfix"></div>
+   		<div class="flex-container">
+	       	<div>
+		        <% @upload_search_result.each do |upload| %>
+		        	<div class="flex-item">
+			          	<h4>
+				            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+				            <small>
+				              uploaded by <%= upload.user.name %> &nbsp; 
+				              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+				            </small>
+			          	</h4>
+		          	</div>
+		        <% end %>
+	       	</div>
+	    </div>	
 	</div>
 
 	<div class="col-sm-2">
