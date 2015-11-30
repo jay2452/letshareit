@@ -41,4 +41,3 @@ gem 'rails_admin'
 gem 'ransack'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
-gem 'viewerjs-rails'
