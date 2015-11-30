@@ -26,10 +26,10 @@
       </div>
       <div class="col-md-8">
         <% if @uploads.count != 0 %>
-          <div class="flex-container" style="margin-left:10%;">
+          <div class="flex-container">
             <div style="width:50%;">
               <% @uploads.each do |upload| %>
-                <div class="flex-item">
+                <div class="flex-item" style="width:200%;">
                   <h4>
                     <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                     <small>
