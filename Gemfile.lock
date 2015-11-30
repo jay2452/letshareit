@@ -265,6 +265,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    viewerjs-rails (0.0.4)
     vinova_sunspot_autocomplete (1.0.1)
       sunspot_rails
     warden (1.2.3)
@@ -309,6 +310,7 @@ DEPENDENCIES
   therubyracer
   turbolinks
   uglifier
+  viewerjs-rails
   vinova_sunspot_autocomplete
   web-console
   will_paginate

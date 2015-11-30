@@ -26,16 +26,18 @@
       </div>
       <div class="col-md-8">
         <% if @uploads.count != 0 %>
-          <div class="panel panel-default">
-            <div class="panel-body">
+          <div class="flex-container" style="margin-left:10%;">
+            <div style="width:50%;">
               <% @uploads.each do |upload| %>
-                <h3>
-                  <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-                  <small>
-                    uploaded by <%= upload.user.name %> &nbsp; 
-                    <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-                  </small>
-                </h3>
+                <div class="flex-item">
+                  <h4>
+                    <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                    <small>
+                      uploaded by <%= upload.user.name %> &nbsp; 
+                      <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                    </small>
+                  </h4>
+                </div>  
               <% end %> <%# end of upload each%>
             </div>
           </div>
@@ -58,6 +60,7 @@
           <div class="panel panel-default">
             <div class="panel-body well">
               <h3><b>No uploads</b></h3>
+              <%= distance_of_time_in_words @subject.created_at, @subject.updated_at %>
             </div>
           </div>
         <% end -%> <%# end of if tag %>

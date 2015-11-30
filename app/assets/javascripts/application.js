@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require chosen-jquery
+//= require viewerjs_rails
 //= require_tree .
 
 

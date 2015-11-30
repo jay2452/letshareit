@@ -1,6 +1,10 @@
 .main_home_page_1 , .subject_index_page{
-	background-color: #FAAC58;
+	/*background-color: #FAAC58;*/
 	/*background: white;*/
+	background: #348F50; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 }
 
 .main_home_page {
@@ -42,10 +46,12 @@
 }
 
 .signed_in_main_page{
-	background-color: #FAAC58;
+	/*background-color: #FAAC58;*/
 	height: 90vh;
 }
 .panel.uploads_section {
+	margin-right: 12%;
+	margin-left: 12%;
 	background: rgba(255,255,255,0.5);
 }
 
@@ -55,5 +61,25 @@
 
 
 .panel.panel-default.panel_recent_uploads_loggedin{
-	background: rgba(184,184,230,0.6);
+	/*background: rgba(184,184,230,0.3);*/
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    min-width: 100%;
+    min-height: 100%;
+    /*background-color: lightgrey;*/
+}
+
+.flex-item {
+    background-color: lightgrey;
+    width: 128%;
+    min-height: 50px;
+    /*margin: 10px;*/
+    margin-left: 20%;
+    margin-bottom: 10px;
+    padding: 5px;
 }

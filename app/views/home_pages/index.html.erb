@@ -3,7 +3,7 @@
 	<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
 		<div class="main_home_page_1">
 			<div class="main_home_page">
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<div style="margin-top:10%;">
 						<h4><%= link_to "About", '#about_us' %></h4>
 						<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
@@ -11,7 +11,7 @@
 						<h4><%= link_to "Contact Us", '#contact' %></h4>
 					</div>
 				</div>			
-				<div class="col-sm-10 not_signed_middle">
+				<div class="col-md-10 not_signed_middle">
 					<div class="not_signed_in_panel" style="margin-top:28%;">
 						<div class="panel panel-default link-container">
 							<div class="panel-heading" style="padding-left:10%;">
@@ -57,46 +57,60 @@
 	</div>
 	<% else # if user is signed in %>
 		<div class="signed_in_main_page">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				
 			</div>
 	
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<br>
 				<div class="panel uploads_section">
 					<div class="panel-body">
-						<h4>Lets Upload your document</h4>
+						<h4>Upload files</h4>
 						<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 						<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
 						<%= form_for (@upload) do |f| %>
 							<%= f.text_field :topic, class: "form-control", placeholder: "Topic" %><br>
 							<%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
-							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br>
-							<%= f.submit "upload", class: "btn btn-default" %>
+							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br><!-- 
+							<%= f.submit "upload", class: "btn btn-default" %> -->
 						<% end -%>
 					</div>
 				</div>
 				<div>
-					<h3 align="center" style="text-transform:capitalize;">Recent uploads</h3>
-					<div class="panel panel-default panel_recent_uploads_loggedin">
-						<div class="panel-body">
+					<h3 align="center">Recent Uploads</h3>
+					<div class="flex-container panel_recent_uploads_loggedin">
+						<div>
 							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
 							<%# current_user.recent_feeds %>
-							<h4>
-								<%= link_to upload.topic, upload.file.url, target: "_blank" %>
-								&nbsp;&nbsp;
-								<small>
-									<i>Uploaded By - <%= upload.user.name %></i>
-									<br>
-								</small>
-							</h4>
+								<div class="flex-item">
+									<h4>
+										<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+										&nbsp;&nbsp;
+										<small>
+											<i>Uploaded By - <%= upload.user.name %></i>
+											<br>
+										</small>
+									</h4>
+								</div>
+							<% end -%>
+							<% current_user.branch_feed.each do |branch_uploads| %>
+								<div class="flex-item">
+									<h4>
+									<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
+									&nbsp;&nbsp;
+									<small>
+										<i>Uploaded By - <%= branch_uploads.user.name %></i>
+										<br>
+									</small>
+									</h4>
+								</div>
 							<% end -%>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-2">
 				
 			</div>
 		</div>	

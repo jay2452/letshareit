@@ -9,9 +9,19 @@ class User < ActiveRecord::Base
    has_many :user_preferences
    has_many :subjects, :through => :user_preferences
 
+   validates :name, presence: true, length: { minimum: 5 }
+   validates :branch_id, presence: true
+
    def feeds
    		#b = []
    		subject_ids = "SELECT subject_id from user_preferences where user_id = #{self.id}"
    		Upload.where("subject_id IN (#{subject_ids})")
    end
+
+   #  fetch upload of a particular branch
+   def branch_feed
+      subject_ids = "SELECT subject_id from subjects where branch_id = #{self.branch_id}"
+      Upload.where("subject_id IN (#{subject_ids})")
+   end
+
 end
