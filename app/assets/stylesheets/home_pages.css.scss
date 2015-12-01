@@ -42,7 +42,7 @@
 .not_signed_in_panel {
 	opacity: 0.8;
     filter: alpha(opacity=60); /* For IE8 and earlier 
-    height: 40vh;
+    height: 40vh;*/
 }
 
 .signed_in_main_page{
@@ -64,7 +64,7 @@
 	/*background: rgba(184,184,230,0.3);*/
 }
 
-.flex-container {
+.flex-container-search {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
@@ -74,9 +74,9 @@
     /*background-color: lightgrey;*/
 }
 
-.flex-item {
+.flex-item-search {
     background-color: lightgrey;
-    width: 180%;
+    width: 800px;
     min-height: 50px;
     /*margin: 10px;*/
     /*margin-left: 20%;*/

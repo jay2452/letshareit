@@ -16,14 +16,14 @@
 	</div>
 
 	<div class="col-sm-8">
-   		<div>
-     		Upload search result
+   		<div align="center">
+     		<b>Upload search result</b>
    		</div>
    		<div class="clearfix"></div>
-   		<div class="flex-container">
+   		<div class="flex-container-search">
 	       	<div>
 		        <% @upload_search_result.each do |upload| %>
-		        	<div class="flex-item">
+		        	<div class="flex-item-search">
 			          	<h4>
 				            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				            <small>
