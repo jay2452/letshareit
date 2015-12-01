@@ -77,14 +77,18 @@
 					</div>
 				</div>
 				<div>
-					<h3 align="center">Recent Uploads</h3>
-					<div class="flex-container panel_recent_uploads_loggedin">
+					<div align="center" style="font-family: 'IM Fell DW Pica'; color: white; font-size:2em;">
+					  <b>Recent Uploads</b>
+					</div>
+					<br>
+					<div class="flex-container-recent">
 						<div>
 							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
 							<%# current_user.recent_feeds %>
-								<div class="flex-item">
+								<div class="flex-item-recent">
+									<h5><%= upload.subject.name	 %></h5>
 									<h4>
-										<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+										&nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url, target: "_blank" %>
 										&nbsp;&nbsp;
 										<small>
 											<i>Uploaded By - <%= upload.user.name %></i>
@@ -94,15 +98,16 @@
 								</div>
 							<% end -%>
 							<% current_user.branch_feed.each do |branch_uploads| %>
-								<div class="flex-item">
-									<h4>
-									<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
+								<div class="flex-item-recent">
+									<h5><%= branch_uploads.subject.name	 %></h5>
+									<h5>
+									&nbsp;&nbsp;&nbsp;<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
 									&nbsp;&nbsp;
 									<small>
 										<i>Uploaded By - <%= branch_uploads.user.name %></i>
 										<br>
 									</small>
-									</h4>
+									</h5>
 								</div>
 							<% end -%>
 						</div>
