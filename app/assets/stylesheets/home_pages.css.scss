@@ -8,7 +8,7 @@
 }
 
 .main_home_page {
-	height: 100vh;
+	/*height: 100vh;*/
 	display: flex;
 }
 
@@ -76,10 +76,10 @@
 
 .flex-item-search {
     background-color: lightgrey;
-    width: 800px;
+    width: 700px;
     min-height: 50px;
     /*margin: 10px;*/
-    /*margin-left: 20%;*/
+    margin-left: 8%;
     margin-bottom: 10px;
     padding: 5px;
 }
