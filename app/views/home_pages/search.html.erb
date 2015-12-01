@@ -24,6 +24,7 @@
 	       	<div>
 		        <% @upload_search_result.each do |upload| %>
 		        	<div class="flex-item-search">
+		        		<h5><%= upload.subject.name	 %></h5>
 			          	<h4>
 				            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				            <small>

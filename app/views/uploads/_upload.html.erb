@@ -6,13 +6,14 @@
 	<div id="uploads">
 	  <% @uploads.each do |upload| %>
 		<div class="flex-item-uploads">
-		    <h4>
-		      <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+			<h5><%= upload.subject.name	 %></h5>
+		    <h5>
+		      &nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url , target: "_blank" %>
 		      <small>
-		      <%= upload.user.name %> &nbsp; 
+		      &nbsp;uploaded by: <%= upload.user.name %> &nbsp; 
 		        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
 		      </small>
-		    </h4>
+		    </h5>
 		</div>
 	  <% end %>
 	</div>
