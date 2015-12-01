@@ -8,5 +8,25 @@
 	/*
 	margin-right: -1%;
 	background: rgba(255,255,255,0.5);*/
-	margin-left: 10%;
+	/*margin-left: 10%;*/
+}
+
+.flex-container-uploads {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    min-width: 100%;
+    min-height: 100%;
+    /*background-color: lightgrey;*/
+}
+
+.flex-item-uploads {
+    background-color: lightgrey;
+    min-height: 50px;
+    /*margin: 10px;*/
+    /*margin-left: 20%;*/
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 800px;
 }

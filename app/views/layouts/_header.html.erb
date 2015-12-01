@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="navbar-header logo_page" style="padding-left:5%;margin-top:-1.8%;position:relative;">
         <a class="navbar-brand" href="<%= root_path %>"><span>
-          <%= image_tag("letshareit.png", height: "160vh;") %>
-          <%= image_tag("letshareit1.png", height: "80vh;") %></span>
+          <%= image_tag("letshareit.png", height: "160px;") %>
+          <%= image_tag("letshareit1.png", height: "80px;") %></span>
         </a>
     </div>
     <div>
@@ -36,7 +36,6 @@
                 <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
-            <div class="clearfix"></div>
             <div>
               <%= link_to "Subjects", subjects_path, class: "btn btn-default" %>&nbsp;&nbsp;
               <%= link_to "Uploads", uploads_path, class: "btn btn-default" %>
