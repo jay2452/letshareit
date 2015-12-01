@@ -121,3 +121,24 @@
 .panel.panel-default.link-container{
     background: rgba(255,255,255,0.7);
 }
+
+
+.flex-container-subject {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    min-width: 100%;
+    min-height: 100%;
+    /*background-color: lightgrey;*/
+}
+
+.flex-item-subject {
+    background-color: lightgrey;
+    width: 700px;
+    min-height: 50px;
+    /*margin: 10px;*/
+    margin-left: 8%;
+    margin-bottom: 10px;
+    padding: 5px;
+}

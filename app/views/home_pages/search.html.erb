@@ -26,7 +26,7 @@
 		        	<div class="flex-item-search">
 		        		<h5><%= upload.subject.name	 %></h5>
 			          	<h4>
-				            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+				            &nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				            <small>
 				              uploaded by <%= upload.user.name %> &nbsp; 
 				              <small><%= time_ago_in_words(upload.created_at) %> ago</small>

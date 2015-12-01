@@ -26,12 +26,13 @@
       </div>
       <div class="col-md-8">
         <% if @uploads.count != 0 %>
-          <div class="flex-container">
-            <div style="width:50%;">
+          <div class="flex-container-subject">
+            <div>
               <% @uploads.each do |upload| %>
-                <div class="flex-item" style="width:200%;">
+                <div class="flex-item-subject">
+                  <h5><%= upload.subject.name  %></h5>
                   <h4>
-                    <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                    &nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url , target: "_blank" %>
                     <small>
                       uploaded by <%= upload.user.name %> &nbsp; 
                       <small><%= time_ago_in_words(upload.created_at) %> ago</small>
