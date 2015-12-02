@@ -3,7 +3,7 @@
 	<% if !user_signed_in? %> <a name="top"></a> <%# user is not signed in %>
 		<div class="main_home_page_1">
 			<div class="main_home_page">
-				<div class="col-md-2">
+				<div class="col-md-6">
 					<!-- <div style="margin-top:10%;">
 						<h4><%= link_to "About", '#about_us' %></h4>
 						<h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
@@ -11,8 +11,8 @@
 						<h4><%= link_to "Contact Us", '#contact' %></h4>
 					</div> -->
 				</div>			
-				<div class="col-md-10 not_signed_middle">
-					<div class="not_signed_in_panel" style="margin-top:28%;">
+				<div class="col-md-6 not_signed_middle">
+					<div class="not_signed_in_panel">
 						<div class="panel panel-default link-container">
 							<div class="panel-heading" style="padding-left:10%;">
 								Recent Uploads
@@ -58,7 +58,7 @@
 	<% else # if user is signed in %>
 		<div class="signed_in_main_page">
 			<div class="col-md-2">
-				
+				<h3><%= link_to "paste link", new_link_path %></h3>
 			</div>
 	
 			<div class="col-md-8">
@@ -88,7 +88,12 @@
 								<div class="flex-item-recent">
 									<h5><%= upload.subject.name	 %></h5>
 									<h4>
-										&nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+										&nbsp;&nbsp;&nbsp;
+										<% if upload[:file_file_name] %>
+											<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+										<% elsif upload[:url] %>
+											<%= link_to upload[:topic], url_with_protocol(upload[:url]), target: "_blank" %>
+										<% end -%>
 										&nbsp;&nbsp;
 										<small>
 											<i>Uploaded By - <%= upload.user.name %></i>
@@ -101,7 +106,12 @@
 								<div class="flex-item-recent">
 									<h5><%= branch_uploads.subject.name	 %></h5>
 									<h5>
-									&nbsp;&nbsp;&nbsp;<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
+									&nbsp;&nbsp;&nbsp;
+									<% if branch_uploads[:file_file_name] %>
+										<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
+									<% elsif branch_uploads[:url] %>
+										<%= link_to branch_uploads[:topic], url_with_protocol(branch_uploads[:url]), target: "_blank" %>
+									<% end -%>
 									&nbsp;&nbsp;
 									<small>
 										<i>Uploaded By - <%= branch_uploads.user.name %></i>
@@ -121,3 +131,23 @@
 		</div>	
 	<% end -%>
 </div>
+
+			 
+<!-- 			 
+<div id="demo" style="background-color:black; margin-left:-2%;">
+  <div class="list-group" style="padding-left:2%;margin-right:2%;">
+    <a href="#" class="list-group-item active">Item 1</a>
+    <a href="#" class="list-group-item">Item 2</a>
+    <a href="#" class="list-group-item">Item 3</a>
+    <a href="#" class="list-group-item">Item 4</a>
+    <a href="#" class="list-group-item">Item 5</a>
+    ...
+  </div>
+</div> -->
+
+<script type="text/javascript">
+	$('#demo').BootSideMenu({
+		side:"left", // left or right
+		autoClose:true // auto close when page loads
+	});
+</script>

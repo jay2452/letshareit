@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
    belongs_to :branch
    has_many :user_preferences
    has_many :subjects, :through => :user_preferences
+   has_many :links
 
    validates :name, presence: true, length: { minimum: 5 }
    validates :branch_id, presence: true
@@ -15,13 +16,16 @@ class User < ActiveRecord::Base
    def feeds
    		#b = []
    		subject_ids = "SELECT subject_id from user_preferences where user_id = #{self.id}"
-   		Upload.where("subject_id IN (#{subject_ids})")
+   		uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      uploads.concat(links)
    end
 
    #  fetch upload of a particular branch
    def branch_feed
       subject_ids = "SELECT subject_id from subjects where branch_id = #{self.branch_id}"
-      Upload.where("subject_id IN (#{subject_ids})")
+      uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      uploads.concat(links)
    end
-
 end

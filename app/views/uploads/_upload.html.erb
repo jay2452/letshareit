@@ -16,5 +16,19 @@
 		    </h5>
 		</div>
 	  <% end %>
+
+	  <% @links.each do |link| %>
+	  	<div class="flex-item-uploads">
+	  		<h5><%= link.subject.name %></h5>
+	  		<h5>
+	  			&nbsp;&nbsp;&nbsp;
+	  			<%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %>
+	  			<small>
+		      		&nbsp;uploaded by: <%= link.user.name %> &nbsp; 
+		        <small><%= time_ago_in_words(link.created_at) %> ago</small>
+		      </small>
+	  		</h5>
+	  	</div>
+	  <% end -%>
 	</div>
 </div>

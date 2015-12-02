@@ -1,0 +1,7 @@
+<h1>Listing Links</h1>
+
+<div class="container-fluid">
+	<% @links.each do |link| %>
+		<%= link.topic %> | url: <%= link.url %> <br>
+	<% end -%>
+</div>
