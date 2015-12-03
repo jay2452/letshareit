@@ -6,7 +6,7 @@
 	<div id="uploads">
 	  <% @uploads.each do |upload| %>
 		<div class="flex-item-uploads">
-			<h5><%= upload.subject.name	 %></h5>
+			<h5><%= link_to upload.subject.name, subject_path(upload.subject) %></h5>
 		    <h5>
 		      &nbsp;&nbsp;&nbsp;<%= link_to upload.topic, upload.file.url , target: "_blank" %>
 		      <small>
@@ -19,7 +19,7 @@
 
 	  <% @links.each do |link| %>
 	  	<div class="flex-item-uploads">
-	  		<h5><%= link.subject.name %></h5>
+	  		<h5><%= link_to link.subject.name, subject_path(link.subject) %></h5>
 	  		<h5>
 	  			&nbsp;&nbsp;&nbsp;
 	  			<%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %>
