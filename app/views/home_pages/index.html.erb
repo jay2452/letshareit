@@ -58,11 +58,12 @@
 	<% else # if user is signed in %>
 		<div class="signed_in_main_page">
 			<div class="col-md-2">
-				<h3><%= link_to "paste link", '#', class: "btn btn-info btn-lg", "data-target": :"#myModal", "data-toggle": :"modal" %></h3>
+				<!-- <h3><%# link_to "paste link", '#', class: "btn btn-info btn-lg", "data-target": :"#myModal", "data-toggle": :"modal" %></h3> -->
 				<!-- Trigger the modal with a button -->
-				<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-					Open Modal
-				</button> -->
+				<br>
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+					<h5>Paste Link</h5>
+				</button>
 			</div>
 	
 			<div class="col-md-8">
