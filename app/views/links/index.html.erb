@@ -1,21 +1,34 @@
-<h1>Listing Links</h1>
-
+<% provide(:title, "all links") %>
 <div class="container-fluid">
-	<div class="flex-container-links">
-		<div>
-			<% @links.each do |link| %>
-			  	<div class="flex-item-links">
-			  		<h5><%= link_to link.subject.name, subject_path(link.subject) %></h5>
-			  		<h5>
-			  			&nbsp;&nbsp;&nbsp;
-			  			<%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %>
-			  			<small>
-				      		&nbsp;uploaded by: <%= link.user.name %> &nbsp; 
-				        <small><%= time_ago_in_words(link.created_at) %> ago</small>
-				      </small>
-			  		</h5>
-			  	</div>
-			<% end -%>
+
+	<div align="center" style="font-family: 'IM Fell DW Pica'; color: white; font-size:2em;">
+	  <b>List of all Links</b>
+	</div>
+
+	<div class="col-md-3">
+		
+	</div>
+
+	<div class="col-md-6">
+		<div class="flex-container-links">
+			<div>
+				<% @links.each do |link| %>
+				  	<div class="flex-item-links">
+				  		<h5><%= link_to link.subject.name, subject_path(link.subject) %></h5>
+				  		<h5>
+				  			&nbsp;&nbsp;&nbsp;
+				  			link: <%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %>
+				  			<small>
+					      		&nbsp;uploaded by: <%= link.user.name %> &nbsp; 
+					        <small><%= time_ago_in_words(link.created_at) %> ago</small>
+					      </small>
+				  		</h5>
+				  	</div>
+				<% end -%>
+			</div>
 		</div>
+	</div>
+	<div class="col-md-3">
+		
 	</div>
 </div>
