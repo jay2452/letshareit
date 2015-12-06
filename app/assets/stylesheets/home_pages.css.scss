@@ -67,8 +67,8 @@
 .flex-container-search {
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    -webkit-justify-content: center;
+    justify-content: center;
     min-width: 100%;
     min-height: 100%;
     /*background-color: lightgrey;*/
@@ -79,7 +79,6 @@
     width: 700px;
     min-height: 50px;
     /*margin: 10px;*/
-    margin-left: 8%;
     margin-bottom: 10px;
     padding: 5px;
 }
@@ -87,8 +86,8 @@
 .flex-container-recent {
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    -webkit-justify-content: center;
+    justify-content: center;
     min-width: 100%;
     min-height: 100%;
     /*background-color: lightgrey;*/
@@ -99,7 +98,7 @@
     width: 700px;
     min-height: 50px;
     /*margin: 10px;*/
-    margin-left: 9.5%;
+    /*margin-left: 9.5%;*/
     margin-bottom: 10px;
     padding: 5px;
 }

@@ -14,8 +14,8 @@
 .flex-container-uploads {
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    -webkit-justify-content: center;
+    justify-content: center;
     min-width: 100%;
     min-height: 100%;
     /*background-color: lightgrey;*/
@@ -24,8 +24,6 @@
 .flex-item-uploads {
     background-color: lightgrey;
     min-height: 50px;
-    /*margin: 10px;*/
-    margin-left: 8%;
     margin-bottom: 10px;
     padding: 5px;
     width: 700px;
