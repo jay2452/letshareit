@@ -74,7 +74,7 @@
 						<!-- <input id="input-id" type="file" class="file" data-preview-file-type="text" > -->
 						<!-- demo for input file using fileinput.min.css and fileinput.min.js-->
 						<%= form_for (@upload) do |f| %>
-							<%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false %><br>
+							<%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false, required: true %><br>
 							<%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
 							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br><!-- 
 							<%= f.submit "upload", class: "btn btn-default" %> -->
@@ -95,9 +95,9 @@
 									<h4>
 										&nbsp;&nbsp;&nbsp;
 										<% if upload[:file_file_name] %>
-											<%= link_to upload.topic, upload.file.url, target: "_blank" %>
+											file: <%= link_to upload.topic, upload.file.url, target: "_blank" %>
 										<% elsif upload[:url] %>
-											<%= link_to upload[:topic], url_with_protocol(upload[:url]), target: "_blank" %>
+											link: <%= link_to upload[:topic], url_with_protocol(upload[:url]), target: "_blank" %>
 										<% end -%>
 										&nbsp;&nbsp;
 										<small>
@@ -116,9 +116,9 @@
 									<h5>
 									&nbsp;&nbsp;&nbsp;
 									<% if branch_uploads[:file_file_name] %>
-										<%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
+										file: <%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
 									<% elsif branch_uploads[:url] %>
-										<%= link_to branch_uploads[:topic], url_with_protocol(branch_uploads[:url]), target: "_blank" %>
+										link: <%= link_to branch_uploads[:topic], url_with_protocol(branch_uploads[:url]), target: "_blank" %>
 									<% end -%>
 									&nbsp;&nbsp;
 									<small>
@@ -152,11 +152,11 @@
 		      </div>
 		      <div class="modal-body">
 		         <%= form_for (@link) do |f| %>
-						<%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false %><br>
+						<%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false, required: true %><br>
 						<%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
 						<%# f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %>
 						<div class="form-input">
-							<%= f.text_field :url, class: "form-control", placeholder: "eg. http://www.example.com" %>
+							<%= f.text_field :url, class: "form-control", placeholder: "eg. http://www.example.com", required: true, type: "url" %>
 						</div>
 						<br>
 						<div class="modal-footer">

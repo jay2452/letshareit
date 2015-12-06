@@ -14,10 +14,10 @@ Rails.application.routes.draw do
 
 
   resources :user_preferences
-  resources :uploads
-  resources :subjects
+  resources :uploads, except: [:new]
+  resources :subjects 
   devise_for :users, :controllers => { :registrations => "registrations"}
-  resources :links
+  resources :links, except: [:new]
  # get 'home_pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
