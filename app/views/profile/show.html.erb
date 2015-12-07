@@ -35,8 +35,10 @@
 						<% if current_user.user_preferences.any? %>
 							<% current_user.user_preferences.each do |uf| %>
 								<%= link_to uf.subject.name, subject_path(uf.subject_id) %>
-								<%= link_to 'Edit', edit_user_preference_path(uf) %>
-								<%= link_to 'Destroy', uf, method: :delete, data: { confirm: 'Are you sure?' } %>
+								<small>
+									<%= link_to 'Edit', edit_user_preference_path(uf) %>
+									<%= link_to 'Destroy', uf, method: :delete, data: { confirm: 'Are you sure?' } %>
+								</small>
 								<br><br>
 							<% end -%>
 							<%= link_to 'Add Subject', new_user_preference_path %>
