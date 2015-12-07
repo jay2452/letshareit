@@ -101,6 +101,9 @@
     /*margin-left: 9.5%;*/
     margin-bottom: 10px;
     padding: 5px;
+    &:hover {
+    	box-shadow: 5px 5px 5px lightblue;
+    }
 }
 
 

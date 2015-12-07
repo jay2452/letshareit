@@ -1,0 +1,5 @@
+<h5>
+	<%= link_to user_preference.subject.name, subject_path(user_preference.subject)  %>
+	<small><%= link_to 'Destroy', user_preference, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete-preference" %>
+	</small>
+</h5>
