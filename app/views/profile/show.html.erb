@@ -32,7 +32,7 @@
 				<div class="panel panel-default preference-container">
 					<div class="panel-body">
 						<h4>Your preferences : <h4>
-						<% if current_user.user_preferences.any? %>
+						
 							<div class="user-preference-render">
 								<%= render @user.user_preferences %>
 							</div>
@@ -40,9 +40,7 @@
 								<%= render '/user_preferences/form' %>
 							</div>
 							<%# link_to 'Add Subject', new_user_preference_path %>
-						<% else %>
-							<%= link_to 'Choose your preferred subject to see its recent uploads', new_user_preference_path %>
-						<% end -%>
+						
 					</div>
 				</div>
 
