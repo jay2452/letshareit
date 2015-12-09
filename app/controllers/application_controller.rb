@@ -11,6 +11,17 @@ class ApplicationController < ActionController::Base
   private
 
   def query_check
+
+    # search = params[:q]
+    # @upload_search_result = Upload.search(name_cont: search).result
+    # @branch_search_result = Branch.search(name_cont: search).result
+    # @link_search_result = Link.search(name_cont: search).result
+
+    # @results = @upload_search_result + @link_search_result
+
+    # puts "========================"
+    #   puts @results
+    # puts "========================"
   	
     @query_one = Upload.search(params[:q])
     @upload_search_result = @query_one.result
@@ -20,5 +31,8 @@ class ApplicationController < ActionController::Base
 
     @query_three = Subject.search(params[:q])
     @subject_search_result = @query_three.result
+
+    @query_four = Link.search(params[:q])
+    @link_search_result = @query_four.result
   end
 end

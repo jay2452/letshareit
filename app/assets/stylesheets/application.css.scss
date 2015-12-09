@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require normalize
+ *= require BootSideMenu
  *= require chosen
  */
 @import "bootstrap-sprockets";
@@ -20,7 +21,15 @@
 @import "font-awesome";
 
 body {
-  background-color: #FAAC58;
+  /*background-color: #FAAC58;*/
+  background: #136a8a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Roboto';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Courgette';
 }
 
 #notice_wrapper {
@@ -54,20 +63,24 @@ body {
 .login_form {
     /*margin: 10% 30% ;*/
     /*background-image: url("background.jpg");*/
-    background-color: #194F83;
-    border-radius: 30px;
+    /*background-color: #194F83;*/
+    border-radius: 10px;
     height: 110%;
     padding: 1em 2em;
+    margin-left: 25%;
+    margin-right: 25%;
+    background: rgba(255,255,255,0.5);
 }
 
 .signup_page_main {
-  background-color: #FAAC58;
+  /*background-color: #FAAC58;*/
   margin-top: -1.5%;
   min-height: 95vh;
 }
 
 .signup_page_right{
   min-height: 65vh;
+  background: rgba(255,255,255,0.5);
 }
 
 .signup_left {
@@ -98,9 +111,9 @@ a:active {
 }
 
 .search-page {
-  background-color: #FAAC58;
+  /*background-color: #FAAC58;*/
   margin-top: -2%;
-  min-height: 90vh;
+  /*min-height: 90vh;*/
 }
 
 .edit_user_page{
@@ -113,7 +126,7 @@ a:active {
 }
 
 .nax_bar_panel{
-  height: 22vh;
+  height: 150px;
 }
 
 .forgot_password_new{

@@ -16,22 +16,38 @@
 	</div>
 
 	<div class="col-sm-8">
-		<div class="panel panel-default search-results">
-       		<div class="panel-heading">
-         		Upload search result
-       		</div>
-	       	<div class="panel-body">
+   		<div align="center" style="font-family: 'IM Fell DW Pica'; color: white; font-size:2em;">
+     		<b>Upload search result</b>
+   		</div>
+   		<div class="clearfix"></div>
+   		<div class="flex-container-search">
+	       	<div>
 		        <% @upload_search_result.each do |upload| %>
-		          	<h4>
-			            <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-			            <small>
-			              uploaded by <%= upload.user.name %> &nbsp; 
-			              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-			            </small>
-		          	</h4>
+		        	<div class="flex-item-search">
+		        		<h5><%= link_to upload.subject.name, subject_path(upload.subject) %></h5>
+			          	<h4>
+				            &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+				            <small>
+				              uploaded by <%= upload.user.name %> &nbsp; 
+				              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+				            </small>
+			          	</h4>
+		          	</div>
+		        <% end %>
+		        <% @link_search_result.each do |link| %>
+		        	<div class="flex-item-search">
+		        		<h5><%= link_to link.subject.name, subject_path(link.subject) %></h5>
+			          	<h4>
+				            &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, '#' , target: "_blank" %>
+				            <small>
+				              linked by <%= link.user.name %> &nbsp; 
+				              <small><%= time_ago_in_words(link.created_at) %> ago</small>
+				            </small>
+			          	</h4>
+		          	</div>
 		        <% end %>
 	       	</div>
-     	</div>		
+	    </div>	
 	</div>
 
 	<div class="col-sm-2">

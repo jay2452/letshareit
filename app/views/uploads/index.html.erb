@@ -1,47 +1,27 @@
 <% provide(:title, "all uploads") %>
-<div class="upload_index_page">
-<br>
-<div class="container">
-  <p id="notice"><%= notice %></p>
-   <div class="col-md-2">
-     
-   </div>
-   <div class="col-md-8">
-    <% if @uploads.count != 0 %>
+<div class="upload_index_page container-fluid">
+  <br>
+  
+ <p id="notice"><%= notice %></p>
+  <div class="col-md-2">
+    
+  </div>
+  <div class="col-md-8">
+      <% if @uploads.count != 0 %>
 
-      <div id="uploads">
-          <%= render partial: '/uploads/upload' %>
-      </div>
-      
-      <%= will_paginate @uploads %>
-
-
-<!--      <div class="panel panel-default uploads_section">
-        <div class="panel-heading">
-          list of all Uploads
+        <div id="uploads" class="flex-container-uploads">
+            <%= render partial: '/uploads/upload' %>
         </div>
-        <div class="panel-body" id="uploads">
-          <#% @uploads.each do |upload| %>
-            <h4>
-              <#%= link_to upload.topic, upload.file.url , target: "_blank" %>
-              <small>
-              .name %> &nbsp; 
-                <small><#%= time_ago_in_words(upload.created_at) %> ago</small>
-              </small>
-            </h4>
-          <#% end %>
+        
+        <%= will_paginate @uploads %>
+      <% else %>
+        <div class="jumbotron" align="center">
+          <h3><b>No Uploads</b></h3>
         </div>
-      </div>
--->
-    <% else %>
-      <div class="jumbotron" align="center">
-        <h3><b>No Uploads</b></h3>
-      </div>
-    <% end -%>
-   </div>
-   <div class="col-md-2">
-     
-   </div>
-</div>
+      <% end -%>
+  </div>
+  <div class="col-md-2">
+  </div>
+  
 </div>
 

@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :delete]
 
   # GET /subjects
   # GET /subjects.json
@@ -12,10 +13,11 @@ class SubjectsController < ApplicationController
   # GET /subjects/1.json
   def show
     @uploads = Upload.where("subject_id = ?", @subject.id).order(created_at: :desc)
+    @links = Link.where("subject_id = ?", @subject.id).order(created_at: :desc)
 
-    puts "----------------------------------------"
-    p @uploads.count
-    puts "=============================="
+    # puts "----------------------------------------"
+    # p @uploads.count
+    # puts "=============================="
   end
 
   # GET /subjects/new

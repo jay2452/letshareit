@@ -5,8 +5,8 @@ class UploadsController < ApplicationController
   # GET /uploads.json
   def index
     #@uploads = Upload.all.order(created_at: :desc)
-    @uploads = Upload.paginate(:page => params[:page], :per_page => 20)
-    
+    @uploads = Upload.paginate(:page => params[:page], :per_page => 20).order(created_at: :desc)
+    @links = Link.all.order(created_at: :desc)
   end
 
   # GET /uploads/1

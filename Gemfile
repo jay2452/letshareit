@@ -36,8 +36,10 @@ gem 'paperclip'
 #gem 'progress_bar'
 gem 'will_paginate'
 gem "font-awesome-rails"
-gem 'vinova_sunspot_autocomplete'
+# gem 'vinova_sunspot_autocomplete'
 gem 'rails_admin'
 gem 'ransack'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'google-webfonts-rails'
+gem 'aws-sdk', '< 2.0'

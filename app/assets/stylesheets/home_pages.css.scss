@@ -1,0 +1,127 @@
+.main_home_page_1 , .subject_index_page{
+	/*background-color: #FAAC58;*/
+	/*background: white;*/
+	/*background: #348F50; /* fallback for old browsers */
+	/*background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
+	/*background: linear-gradient(to left, #348F50 , #56B4D3);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+.main_home_page {
+	height: 77.8vh;
+	display: flex;
+	background-image: url("share1.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.main_about_page {
+	height: 70vh;
+	margin-top: -1.5%;
+	background-image: url("share2.jpeg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.78;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.main_how_upload_page{
+	height: 73vh; 
+	text-shadow: 2px 2px #99ff99;
+	text-decoration: underline ;
+	font: italic bold 15px ;
+}
+.main_contact_page{
+	height: 7vh;
+	text-align: center;
+	padding-right: 10px;
+}
+
+.not_signed_middle {
+	
+}
+
+.not_signed_in_panel {
+	/*opacity: 0.8;
+    filter: alpha(opacity=60); /* For IE8 and earlier 
+    height: 40vh;*/
+    margin-top: 2%;
+    height: 50vh;
+}
+
+.signed_in_main_page{
+	/*background-color: #FAAC58;*/
+	height: 90vh;
+}
+.panel.uploads_section {
+	margin-right: 12%;
+	margin-left: 12%;
+	background: rgba(255,255,255,0.5);
+}
+
+.search-results{
+	/*background: rgba(255,255,255,0.6);*/
+}
+
+
+
+.flex-container-search {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    /*background-color: lightgrey;*/
+}
+
+.flex-item-search {
+    background-color: lightgrey;
+    width: 700px;
+    min-height: 50px;
+    /*margin: 10px;*/
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.flex-container-recent {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    /*background-color: lightgrey;*/
+}
+
+.flex-item-recent {
+    background-color: lightgrey;
+    width: 700px;
+    min-height: 50px;
+    /*margin: 10px;*/
+    /*margin-left: 9.5%;*/
+    margin-bottom: 10px;
+    padding: 5px;
+    &:hover {
+    	box-shadow: 5px 5px 5px lightblue;
+    }
+}
+
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
