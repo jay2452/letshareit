@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
    #  fetch upload of a particular branch
    def branch_feed
+    puts self.branch_id
       subject_ids = "SELECT subject_id from subjects where branch_id = #{self.branch_id}"
       uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
       links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
