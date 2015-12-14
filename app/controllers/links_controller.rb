@@ -35,7 +35,7 @@ class LinksController < ApplicationController
 
   def destroy
   	@link.destroy
-  	redirect_to links_url, notice: 'Link was successfully destroyed.'
+  	redirect_to profile_path, notice: 'Link was successfully destroyed.'
   end
 
   private

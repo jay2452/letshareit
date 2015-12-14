@@ -3,7 +3,7 @@
 	<br>
 	<div class="container">
 		<%# @user defined in profile controller  %>
-		<div>
+		<div class="row">
 			<div class="col-md-4">
 				<div class="panel panel-default image-container">
 					<div class="panel-body" align="center">
@@ -19,11 +19,28 @@
 
 				<div>
 					<div class="well">
-						<h4>Links by me : </h4>
-						<% @links.each do |link| %>
-							<%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %> &nbsp;&nbsp;&nbsp;
-							<small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-						<% end -%>
+						<h4 class="text-center">Links by me : </h4>
+
+						<% if @unapprovedLinks.empty? %>
+							<h4>No pending approvals. </h4>
+						<% else %>
+							<h4>Unapproved Links</h4>
+							<% @unapprovedLinks.each do |link| %>
+								<%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+								<small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+							<% end -%>
+						<% end %>
+
+						
+						<% if @approvedLinks.empty? %>
+							<h4>No links from your side. <strong>contribute.</strong> </h4>
+						<% else %>
+							<h4>Approved Links</h4>
+							<% @approvedLinks.each do |link| %>
+								<%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+								<small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+							<% end -%>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -45,11 +62,29 @@
 				</div>
 
 				<div class="well">
-					<h4>Uploads by me : </h4>
-					<% @uploads.each do |upload| %>
-						<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
-						<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-					<% end -%>
+					<h3 class="text-center">Uploads by me : </h3>
+
+					<% if @unapprovedUploads.empty? %>
+						<h4>No pending approvals. </h4>
+					<% else %>
+						<h4>Unapproved Uploads</h4>
+						<% @unapprovedUploads.each do |upload| %>
+							<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+							<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+						<% end -%>
+					<% end %>
+
+					
+					<% if @approvedUploads.empty? %>
+						<h4>No uploads from your side. <strong>contribute.</strong> </h4>
+					<% else %>
+						<h4>Approved Uploads</h4>
+						<% @approvedUploads.each do |upload| %>
+							<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+							<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+						<% end -%>
+					<% end %>
+
 				</div>
 			</div>
 		</div>	

@@ -51,10 +51,74 @@
 			<div class="main_contact_page">
 				<hr>
 				<a name="contact"></a>
-				<a href="#top">goto Top ^</a> 
+				<a href="#top">goto Top ^</a> l
 				<h4><%# link_to "Team", team_path %></h4>
 			</div> -->
 	</div>
+	<% elsif current_user.has_role? :admin %>
+	<h3>Hello Admin</h3>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<% if @unapprovedUploads.empty? %>
+					<h3>No Pending Upload Approvals</h3>
+				<% else %>
+					<%= form_tag({controller: "home_pages", action: "upload_approval"}, method: "get") do %>
+						<% @unapprovedUploads.each do |u| %>
+							<br><hr>
+							<%= u.topic %>
+							<%= check_box_tag(:"#{u.id}") %>
+						<% end %>
+						<br><hr>
+	  				<%= submit_tag("Approve") %>
+					<% end %>
+				<% end %>
+			</div>
+
+			<div class="col-sm-6">
+				<% if @unapprovedLinks.empty? %>
+					<h3>No Pending Link Approvals</h3>
+				<% else %>
+					<%= form_tag({controller: "home_pages", action: "link_approval"}, method: "get") do %>
+						<% @unapprovedLinks.each do |u| %>
+							<br><hr>
+							<%= u.topic %>
+							<%= check_box_tag(:"#{u.id}") %>
+						<% end %>
+						<br><hr>
+	  				<%= submit_tag("Approve") %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<% else # if user is signed in %>
 		<div class="signed_in_main_page">
 			<div class="col-md-2">
@@ -77,7 +141,8 @@
 							<%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false, required: true, minlength: 5 %>
 							<br>
 							<%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
-							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %><br><!-- 
+							<%= f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %>
+							<br><!-- 
 							<%= f.submit "upload", class: "btn btn-default" %> -->
 						<% end -%>
 					</div>
@@ -89,8 +154,7 @@
 					<br>
 					<div class="flex-container-recent">
 						<div>
-							<% current_user.feeds.each do |upload| %> <%# defined in application helper %>
-							<%# current_user.recent_feeds %>
+							<% current_user.feeds.each do |upload| %>
 								<div class="flex-item-recent">
 									<h5><%= link_to upload.subject.name, subject_path(upload.subject) %></h5>
 									<h5>
@@ -108,27 +172,6 @@
 											</i>
 											<br>
 										</small>
-									</h5>
-								</div>
-							<% end -%>
-							<% current_user.branch_feed.each do |branch_uploads| %>
-								<div class="flex-item-recent">
-									<h5><%= link_to branch_uploads.subject.name, subject_path(branch_uploads.subject) %></h5>
-									<h5>
-									&nbsp;&nbsp;&nbsp;
-									<% if branch_uploads[:file_file_name] %>
-										file: <%= link_to branch_uploads.topic, branch_uploads.file.url, target: "_blank" %>
-									<% elsif branch_uploads[:url] %>
-										link: <%= link_to branch_uploads[:topic], url_with_protocol(branch_uploads[:url]), target: "_blank" %>
-									<% end -%>
-									&nbsp;&nbsp;
-									<small>
-										<i>
-											Uploaded By - <%= branch_uploads.user.name %> -
-											<%= time_ago_in_words(branch_uploads.created_at) %> ago
-										</i>
-										<br>
-									</small>
 									</h5>
 								</div>
 							<% end -%>

@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # get 'links/show'
 
-
+  get 'home_pages/upload_approval'
+  get 'home_pages/link_approval'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'profile/' => 'profile#show', as: 'profile' 
 
