@@ -57,7 +57,7 @@ class UploadsController < ApplicationController
   def destroy
     @upload.destroy
     respond_to do |format|
-      format.html { redirect_to uploads_url, notice: 'Upload was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Upload was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
