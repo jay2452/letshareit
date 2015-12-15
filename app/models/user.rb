@@ -14,18 +14,13 @@ class User < ActiveRecord::Base
    validates :branch_id, presence: true
 
    def feeds
-   		#b = []
-   		subject_ids = "SELECT subject_id from user_preferences where user_id = #{self.id}"
-   		uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
-      links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
-      uploads.concat(links)
-   end
-
-   #  fetch upload of a particular branch
-   def branch_feed
-      subject_ids = "SELECT id from subjects where branch_id = #{self.branch_id}"
-      uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
-      links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+   		#subject_ids = "SELECT subject_id from user_preferences where user_id = #{self.id}"
+   		#uploads = Upload.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      #links = Link.where("subject_id IN (#{subject_ids})").order(created_at: :desc)
+      #uploads.concat(links)
+      up = UserPreference.where("user_id = ?", self.id)
+      uploads = Upload.where("subject_id IN (?) AND approved = ?", up.map(&:subject_id), true)
+      links = Link.where("subject_id IN (?) AND approved = ?", up.map(&:subject_id), true)
       uploads.concat(links)
    end
 end

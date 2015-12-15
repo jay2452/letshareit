@@ -26,6 +26,10 @@
     <%= f.file_field :file %>
   </div>
 
+  <div>
+    <%= f.hidden_field :approved, :value => false %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

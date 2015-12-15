@@ -2,8 +2,13 @@ class ProfileController < ApplicationController
 	before_action :authenticate_user!
   def show
   	@user = current_user
-  	@uploads = Upload.where(user_id: current_user.id).order(created_at: :desc)
-  	@links = Link.where(user_id: current_user.id).order(created_at: :desc)
+
+  	@unapprovedUploads = Upload.where("user_id = ? AND approved = ?", current_user.id, false).order(created_at: :desc)
+  	@approvedUploads = Upload.where("user_id = ? AND approved = ?", current_user.id, true).order(created_at: :desc)
+
+  	@unapprovedLinks = Link.where("user_id = ? AND approved = ?", current_user.id, false).order(created_at: :desc)
+  	@approvedLinks = Link.where("user_id = ? AND approved = ?", current_user.id, true).order(created_at: :desc)
+
   	@user_preference = UserPreference.new
   end
 end

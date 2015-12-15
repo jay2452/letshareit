@@ -26,6 +26,12 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.json
   def create
+    puts "*******************************"
+    puts ""
+    p params
+    puts ""
+    puts "*******************************"
+    
     @upload = current_user.uploads.build(upload_params)
     respond_to do |format|
       if @upload.save
@@ -70,6 +76,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params.require(:upload).permit(:topic, :user_id, :subject_id, :file)
+      params.require(:upload).permit(:topic, :user_id, :subject_id, :file, :approved)
     end
 end
