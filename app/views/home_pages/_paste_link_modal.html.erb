@@ -1,0 +1,32 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Paste Link</h4>
+      </div>
+      <div class="modal-body">
+         <%= form_for (@link) do |f| %>
+        <%= f.text_field :topic, class: "form-control", placeholder: "Topic", include_blank: false, required: true, minlength: 5 %><br>
+        <%= f.select :subject_id, user_upload_preferences.collect { |s| [s.name, s.id] }, {include_blank: false}, { class: "form-control"} %><br>
+        <%# f.file_field :file, id: "input-id", class: "file", :"data-preview-file-type" => "text" %>
+        <div class="form-input">
+          <%= f.text_field :url, class: "form-control", placeholder: "eg. http://www.example.com", required: true, type: "url" %>
+        </div>
+        <br>
+        <div class="modal-footer">
+          <%= f.submit "paste", class: "btn btn-default" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      <% end -%>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>

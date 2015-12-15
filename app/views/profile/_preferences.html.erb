@@ -1,0 +1,13 @@
+<div class="panel panel-default preference-container">
+  <div class="panel-body">
+    <h4>Your preferences : <h4>
+
+      <div class="user-preference-render table-responsive">
+        <%= render @user.user_preferences %>
+      </div>
+      <div class="user-preference-selector">
+        <%= render '/user_preferences/form' %>
+      </div>
+      <%# link_to 'Add Subject', new_user_preference_path %>
+  </div>
+</div>

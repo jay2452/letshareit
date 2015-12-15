@@ -20,6 +20,7 @@ group :development, :test do
   gem "rails-erd"
   gem 'railroady'
   gem 'yard'
+  gem 'awesome_print'
 end
 
 group :production do

@@ -1,0 +1,37 @@
+<h3>Hello Admin</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <% if @unapprovedUploads.empty? %>
+        <h3>No Pending Upload Approvals</h3>
+      <% else %>
+        <%= form_tag({controller: "home_pages", action: "upload_approval"}, method: "get") do %>
+          <% @unapprovedUploads.each do |u| %>
+            <br><hr>
+            <%= u.topic %>
+            <%= check_box_tag(:"#{u.id}") %>
+          <% end %>
+          <br><hr>
+          <%= submit_tag("Approve") %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-6">
+      <% if @unapprovedLinks.empty? %>
+        <h3>No Pending Link Approvals</h3>
+      <% else %>
+        <%= form_tag({controller: "home_pages", action: "link_approval"}, method: "get") do %>
+          <% @unapprovedLinks.each do |u| %>
+            <br><hr>
+            <%= u.topic %>
+            <%= check_box_tag(:"#{u.id}") %>
+          <% end %>
+          <br><hr>
+          <%= submit_tag("Approve") %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="well">
+  <h3 class="text-center">Uploads by me : </h3>
+
+  <% if @unapprovedUploads.empty? %>
+    <h4>No pending approvals. </h4>
+  <% else %>
+    <h4>Unapproved Uploads</h4>
+    <% @unapprovedUploads.each do |upload| %>
+      <%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+      <small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+    <% end -%>
+  <% end %>
+
+
+  <% if @approvedUploads.empty? %>
+    <h4>No uploads from your side. <strong>contribute.</strong> </h4>
+  <% else %>
+    <h4>Approved Uploads</h4>
+    <% @approvedUploads.each do |upload| %>
+      <%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
+      <small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
+    <% end -%>
+  <% end %>
+
+</div>

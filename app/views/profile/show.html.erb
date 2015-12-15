@@ -9,7 +9,7 @@
 					<div class="panel-body" align="center">
 						<%= gravatar_for_large @user %><br><br>
 						<b><%= @user.name %> </b><br>
-						<%= @user.branch.name %> <br>
+						<!-- <%# @user.branch.name %> <br> -->
 						<%= @user.email %> <br>
 						<p align="center">
 							<%= @user.about_me %>
@@ -18,75 +18,14 @@
 				</div>
 
 				<div>
-					<div class="well">
-						<h4 class="text-center">Links by me : </h4>
-
-						<% if @unapprovedLinks.empty? %>
-							<h4>No pending approvals. </h4>
-						<% else %>
-							<h4>Unapproved Links</h4>
-							<% @unapprovedLinks.each do |link| %>
-								<%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
-								<small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-							<% end -%>
-						<% end %>
-
-						
-						<% if @approvedLinks.empty? %>
-							<h4>No links from your side. <strong>contribute.</strong> </h4>
-						<% else %>
-							<h4>Approved Links</h4>
-							<% @approvedLinks.each do |link| %>
-								<%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
-								<small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-							<% end -%>
-						<% end %>
-					</div>
+					<%= render 'profile/my_links' %>
 				</div>
 			</div>
-			
+
 			<div class="col-md-8">
-				<div class="panel panel-default preference-container">
-					<div class="panel-body">
-						<h4>Your preferences : <h4>
-						
-							<div class="user-preference-render table-responsive">
-								<%= render @user.user_preferences %>
-							</div>
-							<div class="user-preference-selector">
-								<%= render '/user_preferences/form' %>
-							</div>
-							<%# link_to 'Add Subject', new_user_preference_path %>
-						
-					</div>
-				</div>
-
-				<div class="well">
-					<h3 class="text-center">Uploads by me : </h3>
-
-					<% if @unapprovedUploads.empty? %>
-						<h4>No pending approvals. </h4>
-					<% else %>
-						<h4>Unapproved Uploads</h4>
-						<% @unapprovedUploads.each do |upload| %>
-							<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
-							<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-						<% end -%>
-					<% end %>
-
-					
-					<% if @approvedUploads.empty? %>
-						<h4>No uploads from your side. <strong>contribute.</strong> </h4>
-					<% else %>
-						<h4>Approved Uploads</h4>
-						<% @approvedUploads.each do |upload| %>
-							<%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
-							<small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
-						<% end -%>
-					<% end %>
-
-				</div>
+				<%= render 'profile/preferences' %> <%# page to add/remove user preferences %>
+				<%= render 'profile/my_uploads' %>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>

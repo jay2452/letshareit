@@ -1,0 +1,22 @@
+<div class="signed_in_main_page">
+  <div class="col-md-2">
+    <!-- <h3><%# link_to "paste link", '#', class: "btn btn-info btn-lg", "data-target": :"#myModal", "data-toggle": :"modal" %></h3> -->
+    <!-- Trigger the modal with a button -->
+    <br>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+      <h5>Paste Link</h5>
+    </button>
+  </div>
+
+  <div class="col-md-8">
+    <br>
+    <%= render 'home_pages/upload_form' %>
+      <!-- Recent uploads -->
+    <%= render 'home_pages/recent_uploads' %>
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+  <%= render 'home_pages/paste_link_modal' %>
+</div>
