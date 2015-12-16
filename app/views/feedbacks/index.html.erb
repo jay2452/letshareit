@@ -1,2 +1,8 @@
-<h1>Feedbacks#index</h1>
-<p>Find me in app/views/feedbacks/index.html.erb</p>
+<div class="container">
+  <% @feedbacks.each do |feedback| %>
+    <%= feedback.user_name %> |
+    <%= feedback.email %> |
+    <%= feedback.content %> | 
+    <br>
+  <% end %>
+</div>

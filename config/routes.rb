@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # post 'team', => 'feedbacks#create'
   # get 'links/index'
-  resources :feedbacks
+  resources :feedbacks, except: [:new, :edit, :destroy, :update]
   # get 'links/show'
 
   get 'home_pages/upload_approval'
