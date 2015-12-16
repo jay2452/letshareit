@@ -8,7 +8,7 @@ class HomePagesController < ApplicationController
   end
 
   def team
-  	
+  	@feedback = Feedback.new
   end
 
   def upload_approval
@@ -46,7 +46,6 @@ class HomePagesController < ApplicationController
 
     @query_three = Subject.search(params[:q])
     @subject_search_result = @query_three.result
-    
+
   end
 end
- 

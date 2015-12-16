@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  
 
+
+  # get 'feedbacks/index'
+
+  # post 'team', => 'feedbacks#create'
   # get 'links/index'
-
+  resources :feedbacks
   # get 'links/show'
 
   get 'home_pages/upload_approval'
   get 'home_pages/link_approval'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'profile/' => 'profile#show', as: 'profile' 
+  get 'profile/' => 'profile#show', as: 'profile'
 
   get '/team' => 'home_pages#team', as: 'team'
   get '/search' => 'home_pages#search', as: 'search'
@@ -16,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :user_preferences
   resources :uploads, except: [:new]
-  resources :subjects 
+  resources :subjects
   devise_for :users, :controllers => { :registrations => "registrations"}
   resources :links, except: [:new]
  # get 'home_pages/index'

@@ -31,7 +31,7 @@ class UploadsController < ApplicationController
     p params
     puts ""
     puts "*******************************"
-    
+
     @upload = current_user.uploads.build(upload_params)
     respond_to do |format|
       if @upload.save

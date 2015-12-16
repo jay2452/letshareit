@@ -23,7 +23,9 @@
 			</div>
 
 			<div class="col-md-8">
-				<%= render 'profile/preferences' %> <%# page to add/remove user preferences %>
+				<% if !current_user.has_role? :admin %>
+					<%= render 'profile/preferences' %> <%# page to add/remove user preferences %>
+				<% end %>
 				<%= render 'profile/my_uploads' %>
 			</div>
 		</div>
