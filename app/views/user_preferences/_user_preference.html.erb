@@ -1,7 +1,7 @@
 <table class="table table-condensed">
 	<tbody>
 		<tr>
-			<td><%= link_to user_preference.subject.name, subject_path(user_preference.subject)  %></td>
+			<td><%= link_to user_preference.subject.name, subject_show_path(name: user_preference.subject.branch.name, subject_name: user_preference.subject.name)  %></td>
 			<td align="right"><%= link_to 'remove', user_preference, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete-preference" %>
 			</td>
 		</tr>
