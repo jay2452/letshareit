@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
 
+
+  get 'branches/:name', to: 'branches#show', as: 'branch_name'
+  # resources 'branches'
+  get 'branches/:name/subjects/:subject_name', to: 'subjects#show', as: 'subject_show'
+  resources :branches
+
+  #   member do
+  #     resources :subjects
+  #   end
+  # end
   # get 'feedbacks/index'
 
   # post 'team', => 'feedbacks#create'
