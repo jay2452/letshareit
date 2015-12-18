@@ -14,7 +14,7 @@
 			<div>
 				<% @links.each do |link| %>
 				  	<div class="flex-item-links">
-				  		<h5><%= link_to link.subject.name, subject_show_path(name: link.subject.branch.name, subject_name: link.subject.name) %></h5>
+				  		<h5><%= link_to link.subject.name, [link.subject.branch, link.subject] %></h5>
 				  		<h5>
 				  			&nbsp;&nbsp;&nbsp;
 				  			link: <%= link_to link[:topic], url_with_protocol(link[:url]), target: "_blank" %>

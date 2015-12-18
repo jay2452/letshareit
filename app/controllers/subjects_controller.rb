@@ -12,7 +12,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
-    @subject = Subject.find_by(:name => params[:subject_name])
+    @subject = Subject.friendly.find(params[:id])#find_by(:name => params[:subject_name])
     @uploads = Upload.where("subject_id = ?", @subject.id).order(created_at: :desc)
     @links = Link.where("subject_id = ?", @subject.id).order(created_at: :desc)
 

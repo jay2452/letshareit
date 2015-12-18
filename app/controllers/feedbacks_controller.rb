@@ -10,8 +10,12 @@ class FeedbacksController < ApplicationController
       @feedback.email = current_user.email
     end
 
-    @feedback.save
-    redirect_to :back
+    if @feedback.save
+      redirect_to :back , notice: "successfully submitted !!"
+    else
+      redirect_to :back
+    end
+
   end
 
   private

@@ -1,10 +1,10 @@
 <% provide(:title, "all uploads") %>
 <div class="upload_index_page container-fluid">
   <br>
-  
+
  <p id="notice"><%= notice %></p>
   <div class="col-md-2">
-    
+
   </div>
   <div class="col-md-8">
       <% if @uploads.count != 0 %>
@@ -12,7 +12,7 @@
         <div id="uploads" class="flex-container-uploads">
             <%= render partial: '/uploads/upload' %>
         </div>
-        
+
         <%= will_paginate @uploads %>
       <% else %>
         <div class="jumbotron" align="center">
@@ -22,6 +22,5 @@
   </div>
   <div class="col-md-2">
   </div>
-  
-</div>
 
+</div>

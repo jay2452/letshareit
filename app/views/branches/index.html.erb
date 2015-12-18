@@ -1,4 +1,5 @@
+<% provide(:title, "Branches") %>
 <% @branches.each do |branch| %>
-  <%= link_to branch.name, branch_name_path(branch.name) %>
+  <%= link_to branch.name, branch_path(branch) %>
   <br>
 <% end %>

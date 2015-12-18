@@ -7,7 +7,7 @@
     <div>
       <% current_user.feeds.each do |upload| %>
         <div class="flex-item-recent">
-          <h5><%= link_to upload.subject.name, subject_show_path(name: upload.subject.branch.name, subject_name: upload.subject.name) %></h5>
+          <h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
           <h5>
             &nbsp;&nbsp;&nbsp;
             <% if upload[:file_file_name] %>
