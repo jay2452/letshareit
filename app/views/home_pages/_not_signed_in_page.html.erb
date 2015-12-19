@@ -1,31 +1,265 @@
+
+<div class="container-fluid landing text-center">
+  <h1>Get your notes<br>Share it in community</h1><br>
+  <span><a href="#" class="btn btn-lg explore">Explore</a></span>
+</div>
+
+<div class="container-fluid bg-theme-color text-center branch">
+   <br><br><br>
+  <div class="row">
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch"><h3><%= Branch.find(1).name %></h3></div>
+    </div>
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(2).name %></h3></div>
+    </div>
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(3).name %></h3></div>
+    </div>
+  </div>
+  <br>
+  <div class="clearfix"></div>
+
+  <div class="row">
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(4).name %></h3></div>
+    </div>
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(5).name %></h3></div>
+    </div>
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(6).name %></h3></div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(7).name %></h3></div>
+    </div>
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(8).name %></h3></div>
+    </div>
+
+    <div class="col-md-4 flex-container-branch">
+      <div class="flex-item-branch "><h3><%= Branch.find(9).name %></h3></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid recent-uploads">
+  <h4>Recent files uploaded</h4>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#first-year"><%= Branch.find(1).name %></a></li>
+    <li><a data-toggle="tab" href="#cse">CSE</a></li>
+    <li><a data-toggle="tab" href="#it">IT</a></li>
+    <li><a data-toggle="tab" href="#ce">Civil</a></li>
+    <li><a data-toggle="tab" href="#me">ME</a></li>
+    <li><a data-toggle="tab" href="#ee">EE</a></li>
+    <li><a data-toggle="tab" href="#etc">ETC</a></li>
+    <li><a data-toggle="tab" href="#eee">EEE</a></li>
+    <li><a data-toggle="tab" href="#ei">EI</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="first-year" class="tab-pane fade in active">
+      <h3 align="center"><%= Branch.find(1).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(1)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">links</h4>
+        <% recent_links(Branch.find(1)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="cse" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(2).name %></h3>
+      <div class="col-md-6">
+      <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(2)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(2)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="it" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(3).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(3)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(3)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="ce" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(4).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(4)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(4)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="me" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(5).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(5)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(5)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="ee" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(6).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(6)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(6)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="etc" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(7).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(7)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(7)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+
+    <div id="eee" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(8).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(8)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(8)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>
+      </div>
+    </div>
+
+    <div id="ei" class="tab-pane fade">
+      <h3 align="center"><%= Branch.find(9).name %></h3>
+      <div class="col-md-6">
+        <h4 align="center">Uploads</h4>
+        <% recent_uploads(Branch.find(9)).each do |upload| %><%# defined in home pages helper %>
+          <%= link_to upload.topic, '#' %><br>
+        <% end -%>
+      </div>
+      <div class="col-md-6">
+        <h4 align="center">Links</h4>
+        <% recent_links(Branch.find(9)).each do |link| %><%# defined in home pages helper %>
+          <%= link_to link.topic, '#' %><br>
+        <% end -%>    
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--
+
 <div class="main_home_page_1">
   <div class="main_home_page">
     <div class="col-md-6">
+      
+
+
       <!-- <div style="margin-top:10%;">
-        <h4><%= link_to "About", '#about_us' %></h4>
-        <h4><%= link_to "How to Upload", '#how_to_upload' %></h4>
-        <h4><%= link_to "Subjects", subjects_path %></h4>
-        <h4><%= link_to "Contact Us", '#contact' %></h4>
-      </div> -->
+        <h4><%# link_to "About", '#about_us' %></h4>
+        <h4><%# link_to "How to Upload", '#how_to_upload' %></h4>
+        <h4><%# link_to "Subjects", subjects_path %></h4>
+        <h4><%# link_to "Contact Us", '#contact' %></h4>
+      </div>
+
+
+
+
+
     </div>
     <div class="col-md-6 not_signed_middle">
       <div class="not_signed_in_panel">
         <div class="panel panel-default link-container">
           <div class="panel-heading" style="padding-left:10%;">
             Recent Uploads
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "more", uploads_path %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%# link_to "more", uploads_path %>
           </div>
           <div class="panel-body" style="padding-left:10%;">
-            <% Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
+            <%# Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
               <h5>
-                <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                <%# link_to upload.topic, upload.file.url , target: "_blank" %>
                 <small>
-                  <!-- uploaded by <%= link_to upload.user.name, '#' %> &nbsp;
-                  <%= time_ago_in_words(upload.created_at) %> ago -->
-                  (<%= upload.subject.branch.name %>)
+                  
+
+
+                  <!-- uploaded by <%# link_to upload.user.name, '#' %> &nbsp;
+                  <%# time_ago_in_words(upload.created_at) %> ago
+
+
+
+                  (<%# upload.subject.branch.name %>)
                 </small>
               </h5>
-            <% end -%>
+            <%# end -%>
           </div>
         </div>
       </div>
@@ -33,7 +267,9 @@
   </div>
 
 
-			<!-- <div class="main_about_page" style="background-color: white;">
+		
+
+    	<!-- <div class="main_about_page" style="background-color: white;">
 				<a name="about_us"></a>
 				<b><h3 align="center">ABOUT</h3></b>
 				<a href="#top">goto Top ^</a>
@@ -43,7 +279,7 @@
 				<a name="how_to_upload"></a>
 				<b><h3 align="center">How to Upload</h3></b>
 				<a href="#top">goto Top ^</a>
-				<p align="right"> <%= image_tag "share4.png", size: "160" %></p>
+				<p align="right"> <%# image_tag "share4.png", size: "160" %></p>
 			</div>
 
 			<div class="main_contact_page">
@@ -51,5 +287,13 @@
 				<a name="contact"></a>
 				<a href="#top">goto Top ^</a> l
 				<h4><%# link_to "Team", team_path %></h4>
-			</div> -->
+			</div>
+
+
+
+
+
+
 </div>
+
+-->

@@ -20,14 +20,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
-html, body {
-  /*background-color: #FAAC58;*/
-  background: #136a8a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Roboto';
-}
 
+/*
+html, body {
+  /*background-color: #FAAC58;
+  background: #136a8a; /* fallback for old browsers 
+  background: -webkit-linear-gradient(to left, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6
+  background: linear-gradient(to left, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+  font-family: 'Roboto';
+  padding-top: 100px;
+}
+*/
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Courgette';
 }
@@ -59,11 +62,11 @@ h1, h2, h3, h4, h5, h6 {
    		letter-spacing: 1px;
   	}
 }
-
+/*
 .login_form {
-    /*margin: 10% 30% ;*/
-    /*background-image: url("background.jpg");*/
-    /*background-color: #194F83;*/
+    /*margin: 10% 30% ;
+    /*background-image: url("background.jpg");
+    /*background-color: #194F83;
     border-radius: 10px;
     height: 110%;
     padding: 1em 2em;
@@ -73,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .signup_page_main {
-  /*background-color: #FAAC58;*/
+  /*background-color: #FAAC58;
   margin-top: -1.5%;
   min-height: 95vh;
 }
@@ -87,17 +90,17 @@ h1, h2, h3, h4, h5, h6 {
   height: 80vh;
 }
 
-/* unvisited link */
+/* unvisited link 
 a:link {
-    /*color: #FF0000;*/
+    /*color: #FF0000;
 }
 
-/* visited link */
+/* visited link 
 a:visited {
-  /*color: #00FF00;*/
+  /*color: #00FF00;
 }
 
-/* mouse over link */
+/* mouse over link 
 
 a:hover {
     color: blue;
@@ -105,15 +108,15 @@ a:hover {
     background: none;
 }
 
-/* selected link */
+/* selected link 
 a:active {
-    /*color: #0000FF;*/
+    /*color: #0000FF;
 }
 
 .search-page {
-  /*background-color: #FAAC58;*/
+  /*background-color: #FAAC58;
   margin-top: -2%;
-  /*min-height: 90vh;*/
+  /*min-height: 90vh;
 }
 
 .edit_user_page{
@@ -130,5 +133,48 @@ a:active {
 }
 
 .forgot_password_new{
-  /*text-align: center;*/
+  /*text-align: center;
+}
+*/
+
+
+.navbar {
+  border: none;
+  border-radius: 0;
+  background-color: rgba(132, 169, 26, 0.41);
+  margin-bottom: 0px;
+}
+
+.navbar-right li {
+  padding-top: 15px;
+  margin-left: 10px;
+}
+
+.navbar li a {
+  color: #000 !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #f4511e !important;
+}
+
+
+.brand-image {
+  height: 100px;
+  width: 100px;
+}
+
+.logo {
+  margin-left: 50px;
+  &:hover {
+    background-color: rgba(0,0,0,0.0);
+  }
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
+
+.bg-theme-color {
+  background-color: rgba(132, 169, 26, 0.41);
 }
