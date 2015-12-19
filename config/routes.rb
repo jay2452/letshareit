@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
 
 
+
+  # get 'branches/:name', to: 'branches#show', as: 'branch_name'
+  # resources 'branches'
+  # get 'branches/:name/subjects/:subject_name', to: 'subjects#show', as: 'subject_show'
+
+  resources :branches do
+      resources :subjects
+  end
+
+  resources :subjects, only: [:index]
+
+  #resources :subjects
   # get 'feedbacks/index'
 
   # post 'team', => 'feedbacks#create'
   # get 'links/index'
-  resources :feedbacks
+  resources :feedbacks, except: [:new, :edit, :destroy, :update]
   # get 'links/show'
 
   get 'home_pages/upload_approval'
@@ -19,7 +31,6 @@ Rails.application.routes.draw do
 
   resources :user_preferences
   resources :uploads, except: [:new]
-  resources :subjects
   devise_for :users, :controllers => { :registrations => "registrations"}
   resources :links, except: [:new]
  # get 'home_pages/index'

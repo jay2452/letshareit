@@ -9,15 +9,15 @@
   <div class="row">
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch"><h3><%= Branch.find(1).name %></h3></div>
+      <div class="flex-item-branch"><h3><%=  link_to Branch.find(1).name, branch_path(Branch.find(1)) %></h3></div>
     </div>
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(2).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(2).name, branch_path(Branch.find(2)) %></h3></div>
     </div>
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(3).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(3).name, branch_path(Branch.find(3)) %></h3></div>
     </div>
   </div>
   <br>
@@ -26,13 +26,13 @@
   <div class="row">
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(4).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(4).name, branch_path(Branch.find(4)) %></h3></div>
     </div>
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(5).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(5).name, branch_path(Branch.find(5)) %></h3></div>
     </div>
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(6).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(6).name, branch_path(Branch.find(6)) %></h3></div>
     </div>
   </div>
 
@@ -40,15 +40,15 @@
   <br>
   <div class="row">
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(7).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(7).name, branch_path(Branch.find(7)) %></h3></div>
     </div>
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(8).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(8).name, branch_path(Branch.find(8)) %></h3></div>
     </div>
 
     <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%= Branch.find(9).name %></h3></div>
+      <div class="flex-item-branch "><h3><%=  link_to Branch.find(9).name, branch_path(Branch.find(9)) %></h3></div>
     </div>
   </div>
 
@@ -216,84 +216,3 @@
   </div>
 
 </div>
-<!--
-
-<div class="main_home_page_1">
-  <div class="main_home_page">
-    <div class="col-md-6">
-      
-
-
-      <!-- <div style="margin-top:10%;">
-        <h4><%# link_to "About", '#about_us' %></h4>
-        <h4><%# link_to "How to Upload", '#how_to_upload' %></h4>
-        <h4><%# link_to "Subjects", subjects_path %></h4>
-        <h4><%# link_to "Contact Us", '#contact' %></h4>
-      </div>
-
-
-
-
-
-    </div>
-    <div class="col-md-6 not_signed_middle">
-      <div class="not_signed_in_panel">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading" style="padding-left:10%;">
-            Recent Uploads
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%# link_to "more", uploads_path %>
-          </div>
-          <div class="panel-body" style="padding-left:10%;">
-            <%# Upload.all.order(created_at: :desc).limit(7).each do |upload| %>
-              <h5>
-                <%# link_to upload.topic, upload.file.url , target: "_blank" %>
-                <small>
-                  
-
-
-                  <!-- uploaded by <%# link_to upload.user.name, '#' %> &nbsp;
-                  <%# time_ago_in_words(upload.created_at) %> ago
-
-
-
-                  (<%# upload.subject.branch.name %>)
-                </small>
-              </h5>
-            <%# end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-		
-
-    	<!-- <div class="main_about_page" style="background-color: white;">
-				<a name="about_us"></a>
-				<b><h3 align="center">ABOUT</h3></b>
-				<a href="#top">goto Top ^</a>
-			</div>
-
-			<div class="main_how_upload_page">
-				<a name="how_to_upload"></a>
-				<b><h3 align="center">How to Upload</h3></b>
-				<a href="#top">goto Top ^</a>
-				<p align="right"> <%# image_tag "share4.png", size: "160" %></p>
-			</div>
-
-			<div class="main_contact_page">
-				<hr>
-				<a name="contact"></a>
-				<a href="#top">goto Top ^</a> l
-				<h4><%# link_to "Team", team_path %></h4>
-			</div>
-
-
-
-
-
-
-</div>
-
--->

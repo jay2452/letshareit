@@ -1,25 +1,32 @@
-<% if current_user %>
-  <% user_name = current_user.name %>
-  <% user_email = current_user.email %>
-<% end %>
+<div class="container-fluid">
+  <%= form_for @feedback, html: {class: "form-horizontal", role: "form"} do |f| %>
+    <% if @feedback.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
 
-<%= form_for @feedback, html: {class: "form", role: "form"} do |f| %>
-
-  <div class="form-group">
-    <%= f.label :user_name %>
-    <%= f.text_field :user_name, { value: "#{user_name}" } %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <%= f.submit "Submit", class: "btn btn-default" %>
-
-<% end %>
+        <ul>
+        <% @feedback.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if !current_user %>
+      <div class="form-group col-xs-3">
+        <%= f.text_field :user_name, class: "form-control", placeholder: "Name" %>
+      </div>
+      <div class="clearfix"> </div>
+      <div class="form-group col-xs-3">
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+      <div class="clearfix"> </div>
+    <% end %>
+    <div class="form-group col-xs-3">
+      <%= f.text_area :content, class: "form-control", placeholder: "give some feedback" %>
+    </div>
+    <div class="clearfix"> </div>
+    <div>
+      <%= f.submit "Submit", class: "btn btn-default btn-sm" %>
+    </div>
+  <% end %>
+</div>

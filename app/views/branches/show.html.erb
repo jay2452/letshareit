@@ -1,0 +1,6 @@
+<% provide(:title, "#{@branch.name}") %>
+<h3><%= @branch.name %><br></h3>
+<% @subjects.each do |subject| %>
+  <%= link_to subject.name, [@branch, subject] %>
+  <br>
+<% end %>

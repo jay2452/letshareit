@@ -24,11 +24,11 @@
 	       	<div>
 		        <% @upload_search_result.each do |upload| %>
 		        	<div class="flex-item-search">
-		        		<h5><%= link_to upload.subject.name, subject_path(upload.subject) %></h5>
+		        		<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
 			          	<h4>
 				            &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				            <small>
-				              uploaded by <%= upload.user.name %> &nbsp; 
+				              uploaded by <%= upload.user.name %> &nbsp;
 				              <small><%= time_ago_in_words(upload.created_at) %> ago</small>
 				            </small>
 			          	</h4>
@@ -36,18 +36,18 @@
 		        <% end %>
 		        <% @link_search_result.each do |link| %>
 		        	<div class="flex-item-search">
-		        		<h5><%= link_to link.subject.name, subject_path(link.subject) %></h5>
+		        		<h5><%= link_to link.subject.name, [link.subject.branch, link.subject] %></h5>
 			          	<h4>
 				            &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, '#' , target: "_blank" %>
 				            <small>
-				              linked by <%= link.user.name %> &nbsp; 
+				              linked by <%= link.user.name %> &nbsp;
 				              <small><%= time_ago_in_words(link.created_at) %> ago</small>
 				            </small>
 			          	</h4>
 		          	</div>
 		        <% end %>
 	       	</div>
-	    </div>	
+	    </div>
 	</div>
 
 	<div class="col-sm-2">
@@ -60,7 +60,7 @@
 		          <h5><%#= link_to subject.name, subject_path(subject) %> | <%#= subject.code %><br></h5>
 		        <%# end %>
 	       	</div>
-     	</div> -->	
+     	</div> -->
 	</div>
 </div>
 </div>

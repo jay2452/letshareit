@@ -10,7 +10,7 @@
         <div class="panel-heading"><b><%= Branch.first.name %></b></div>
         <div class="panel-body">
             <% Branch.first.subjects.each do |subject| %>
-              <h4><%= link_to subject.name, subject_path(subject) %><h4>
+              <h4><%= link_to subject.name, [subject.branch, subject] %><h4>
             <% end -%>
         </div>
         </div>
@@ -23,10 +23,10 @@
           <div class="panel-heading"><b><%= Branch.second.name %>/ <%= Branch.third.name %></b></div>
           <div class="panel-body">
               <% Branch.second.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
               <% Branch.third.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <div class="panel-heading"><b><%= Branch.fourth.name %></b></div>
           <div class="panel-body">
               <% Branch.fourth.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
             </div>
         </div>
@@ -56,7 +56,7 @@
           <div class="panel-heading"><b><%= Branch.fifth.name %></b></div>
           <div class="panel-body">
               <% Branch.fifth.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
           </div>
         </div>
@@ -70,7 +70,7 @@
           <div class="panel-body">
             <p>
               <% Branch.find(6).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
             </p>
           </div>
@@ -86,7 +86,7 @@
           <div class="panel-heading"><b><%= Branch.find(7).name %></b></div>
           <div class="panel-body">
               <% Branch.find(7).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %><br></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %><br></h4>
               <% end -%>
           </div>
         </div>
@@ -100,7 +100,7 @@
           <div class="panel-body">
             <p>
               <% Branch.find(8).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
             </p>
           </div>
@@ -116,14 +116,14 @@
           <div class="panel-heading"><b><%= Branch.find(9).name %></b></div>
           <div class="panel-body">
               <% Branch.find(9).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, subject_path(subject) %></h4>
+                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
               <% end -%>
           </div>
         </div>
       </div>
     </div>
   </section>
-    
+
 </div>
 
 </div>

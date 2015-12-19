@@ -1,4 +1,7 @@
 class Subject < ActiveRecord::Base
+	include FriendlyId
+	friendly_id :name, use: :slugged
+
 	has_many :uploads
 	has_many :links
 	belongs_to :branch

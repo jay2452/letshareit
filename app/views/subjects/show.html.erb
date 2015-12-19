@@ -34,11 +34,11 @@
                   <h4>
                     &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                     <small>
-                      uploaded by <%= upload.user.name %> &nbsp; 
+                      uploaded by <%= upload.user.name %> &nbsp;
                       <small><%= time_ago_in_words(upload.created_at) %> ago</small>
                     </small>
                   </h4>
-                </div>  
+                </div>
               <% end %> <%# end of upload each%>
               <% @links.each do |link| %>
                 <div class="flex-item-subject">
@@ -46,7 +46,7 @@
                   <h4>
                     &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, '#' , target: "_blank" %>
                     <small>
-                      linked by <%= link.user.name %> &nbsp; 
+                      linked by <%= link.user.name %> &nbsp;
                       <small><%= time_ago_in_words(link.created_at) %> ago</small>
                     </small>
                   </h4>
