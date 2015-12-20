@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+	impressionist :unique => [:controller_name, :action_name, :session_hash]
 	before_action :authenticate_user!
   def show
   	@user = current_user

@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  impressionist :unique => [:controller_name, :action_name, :session_hash]
   def index
     @feedbacks = Feedback.all
   end

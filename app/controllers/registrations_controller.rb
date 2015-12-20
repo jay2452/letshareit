@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-
+impressionist :unique => [:controller_name, :action_name, :session_hash]
   protected
 
   def after_update_path_for(resource)

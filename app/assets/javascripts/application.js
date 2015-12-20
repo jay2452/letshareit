@@ -16,8 +16,17 @@
 //= require jquery.turbolinks
 //= require chosen-jquery
 //= require BootSideMenu
+//= require jquery.pjax
+//= require turbolinks
 //= require_tree .
 
+$(function() {
+  $(document).pjax('.subject-link-pjax li a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
+});
+
+$(document).on('pjax:timeout', function() {
+    return false;
+});
 
 $(document).ready(function() {
   if ($('.pagination').length) {
@@ -39,8 +48,8 @@ $(document).ready(function(){
 			$(this).remove();
 		})
 	}, 3000);
-	
-	$('[data-toggle="tooltip"]').tooltip(); 	
+
+	$('[data-toggle="tooltip"]').tooltip();
 
 });
 

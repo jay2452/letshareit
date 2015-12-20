@@ -1,4 +1,5 @@
 class UserPreferencesController < ApplicationController
+  impressionist :unique => [:controller_name, :action_name, :session_hash]
   before_action :authenticate_user!
   before_action :set_user_preference, only: [:show, :edit, :update, :destroy]
 
