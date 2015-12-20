@@ -142,21 +142,21 @@ a:active {
 .navbar {
   border: none;
   border-radius: 0;
-  background-color: rgba(132, 169, 26, 0.41) !important;
+  background-color: rgba(212, 230, 159, 1) !important;
   margin-bottom: 0px;
   z-index: 1000;
 }
 
-.navbar-default {
+/*.navbar-default {
   background-color: rgba(132, 169, 26, 0.41) !important;
-}
+}*/
 
-.navbar-fixed-top {
+/*.navbar-fixed-top {
+  background-color: rgba(212, 230, 159, 1) !important;
+}*/
+/*.navbar.navbar-default.navbar-fixed-top {
   background-color: rgba(132, 169, 26, 0.41) !important;
-}
-.navbar.navbar-default.navbar-fixed-top {
-  background-color: rgba(132, 169, 26, 0.41) !important;
-}
+}*/
 
 .navbar-right li {
   padding-top: 15px;
