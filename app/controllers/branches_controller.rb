@@ -8,7 +8,7 @@ impressionist :unique => [:controller_name, :action_name, :session_hash]
     @branch = Branch.friendly.find(params[:id])#find_by(:name => params[:name])
 
     # @subjects = Subject.where("branch_id = ?", @branch.id)
-    @subjects = @branch.subjects
+    @subjects = @branch.subjects.order(id: :asc)
 
     respond_to do |format|
       format.html
