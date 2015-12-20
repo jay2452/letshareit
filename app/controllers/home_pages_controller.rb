@@ -1,4 +1,5 @@
 class HomePagesController < ApplicationController
+  impressionist :unique => [:controller_name, :action_name, :session_hash]
   def index
   	@subjects = Subject.all
   	@upload = Upload.new

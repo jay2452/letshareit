@@ -16,8 +16,12 @@
 //= require jquery.turbolinks
 //= require chosen-jquery
 //= require BootSideMenu
+//= require jquery.pjax
 //= require_tree .
 
+$(function() {
+  $(document).pjax('.subject-link-pjax li a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
+});
 
 $(document).ready(function() {
   if ($('.pagination').length) {
@@ -39,8 +43,8 @@ $(document).ready(function(){
 			$(this).remove();
 		})
 	}, 3000);
-	
-	$('[data-toggle="tooltip"]').tooltip(); 	
+
+	$('[data-toggle="tooltip"]').tooltip();
 
 });
 

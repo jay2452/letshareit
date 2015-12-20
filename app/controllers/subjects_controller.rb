@@ -1,6 +1,8 @@
 class SubjectsController < ApplicationController
+  impressionist :unique => [:controller_name, :action_name, :session_hash]
   before_action :set_subject, only: [ :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :edit, :update, :delete]
+  respond_to :html, :js
 
   # GET /subjects
   # GET /subjects.json
@@ -16,6 +18,7 @@ class SubjectsController < ApplicationController
     @uploads = Upload.where("subject_id = ?", @subject.id).order(created_at: :desc)
     @links = Link.where("subject_id = ?", @subject.id).order(created_at: :desc)
 
+    # render layout: false
     # puts "----------------------------------------"
     # p @uploads.count
     # puts "=============================="

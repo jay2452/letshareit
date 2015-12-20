@@ -8,9 +8,13 @@
                 <li class="sidebar-brand">
                     <a href="#"><h3><%= @branch.name %></h3></a>
                 </li>
-                <% @subjects.each do |subject| %>
-				  <li><%= link_to subject.name, [@branch, subject], remote: true %></li>
-				<% end %>
+                <div class="subject-link-pjax">
+                  <% @subjects.each do |subject| %>
+  				            <li>
+                        <%= link_to subject.name, [@branch, subject] %> <% @abc = subject.id %>
+                      </li>
+  				        <% end %>
+                </div>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -23,9 +27,9 @@
                         <!-- <h1>Simple Sidebar</h1>
                         <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
-                        <div class="render-show-page">
-                        	<%= render 'subjects/show_page' %>
-                        </div>                       
+                        <div data-pjax-container>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,4 +46,9 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    //
+    // function show_uploads(subject_id){
+    //   document.getElementById("render-subject-uploads").html("<%# escape_javascript render 'subjects/show_page' %>")
+    // }
+
     </script>
