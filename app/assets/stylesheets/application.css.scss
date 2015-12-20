@@ -142,8 +142,20 @@ a:active {
 .navbar {
   border: none;
   border-radius: 0;
-  background-color: rgba(132, 169, 26, 0.41);
+  background-color: rgba(132, 169, 26, 0.41) !important;
   margin-bottom: 0px;
+  z-index: 1000;
+}
+
+.navbar-default {
+  background-color: rgba(132, 169, 26, 0.41) !important;
+}
+
+.navbar-fixed-top {
+  background-color: rgba(132, 169, 26, 0.41) !important;
+}
+.navbar.navbar-default.navbar-fixed-top {
+  background-color: rgba(132, 169, 26, 0.41) !important;
 }
 
 .navbar-right li {
@@ -179,4 +191,5 @@ a:active {
 .bg-theme-color {
   background-color: rgba(132, 169, 26, 0.41);
 }
+
 
