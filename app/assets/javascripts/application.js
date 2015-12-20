@@ -24,6 +24,10 @@ $(function() {
   $(document).pjax('.subject-link-pjax li a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
 });
 
+$(document).on('pjax:timeout', function() {
+    return false;
+});
+
 $(document).ready(function() {
   if ($('.pagination').length) {
     $(window).scroll(function() {
