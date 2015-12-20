@@ -17,6 +17,7 @@
 //= require chosen-jquery
 //= require BootSideMenu
 //= require jquery.pjax
+//= require turbolinks
 //= require_tree .
 
 $(function() {
