@@ -27,16 +27,10 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.json
   def create
-    puts "*******************************"
-    puts ""
-    p params
-    puts ""
-    puts "*******************************"
-
     @upload = current_user.uploads.build(upload_params)
     respond_to do |format|
       if @upload.save
-        format.html { redirect_to root_path, notice: 'Upload was successfully created.' }
+        format.html { redirect_to root_path, notice: 'your file is waiting to be approved ...!' }
         format.json { render :show, status: :created, location: @upload }
       else
         format.html { render :new }

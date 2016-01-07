@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   resources :branches do
       resources :subjects
+
+      member do
+        get 'uploads'
+        get 'links'
+      end
   end
 
   resources :subjects, only: [:index]

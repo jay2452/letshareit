@@ -16,4 +16,20 @@ impressionist :unique => [:controller_name, :action_name, :session_hash]
     end
 
   end
+
+  def uploads
+    @branch = Branch.friendly.find(params[:id])
+    @uploads = Upload.where("subject_id IN (?)", get_subject_ids )
+  end
+
+  def links
+    @branch = Branch.friendly.find(params[:id])
+    @links = Link.where("subject_id IN (?)", get_subject_ids )
+  end
+
+
+  private
+    def get_subject_ids
+      Subject.where("branch_id = ?", @branch.id).select(:id).map(&:id)
+    end
 end

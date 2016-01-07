@@ -3,7 +3,7 @@
 		<tr>
 			<td><%= link_to user_preference.subject.name, [user_preference.subject.branch, user_preference.subject] %></td>
 			<td align="right">
-				<%= link_to 'remove', user_preference, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete-preference" %>
+				<%= link_to 'remove', user_preference, method: :delete, data: { confirm: 'Are you sure?', disable_with: "<i class = 'fa fa-spinner fa-spin'></i> deleting" }, remote: :true, class: "delete-preference" %>
 			</td>
 		</tr>
 	</tbody>

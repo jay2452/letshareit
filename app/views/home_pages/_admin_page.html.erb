@@ -1,6 +1,29 @@
 <h3>Hello Admin</h3>
 
 <div class="container">
+  <span>
+    <%= link_to "all uploads", uploads_path %> | <%= link_to "all links", links_path %> | <%= link_to "branches", branches_path %>
+    | <%= link_to "subjects", subjects_path %>
+    | <%= link_to "#{Branch.find(1).name} uploads" , uploads_branch_path(Branch.find(1))  %>
+    | <%= link_to "#{Branch.find(1).name} links" , links_branch_path(Branch.find(1))  %>
+    | <%= link_to "cse uploads", uploads_branch_path(Branch.find(2)) %>
+    | <%= link_to "cse links" , links_branch_path(Branch.find(2))  %>
+    | <%= link_to "#{Branch.find(3).name} uploads" , uploads_branch_path(Branch.find(3))  %>
+    | <%= link_to "#{Branch.find(3).name} links"   , links_branch_path(Branch.find(3))  %>
+    | <%= link_to "#{Branch.find(4).name} uploads" , uploads_branch_path(Branch.find(4))  %>
+    | <%= link_to "#{Branch.find(4).name} links"   , links_branch_path(Branch.find(4))  %>
+    | <%= link_to "#{Branch.find(5).name} uploads" , uploads_branch_path(Branch.find(5))  %>
+    | <%= link_to "#{Branch.find(5).name} links"   , links_branch_path(Branch.find(5))  %>
+    | <%= link_to "#{Branch.find(6).name} uploads" , uploads_branch_path(Branch.find(6))  %>
+    | <%= link_to "#{Branch.find(6).name} links"   , links_branch_path(Branch.find(6))  %>
+    | <%= link_to "#{Branch.find(7).name} uploads" , uploads_branch_path(Branch.find(7))  %>
+    | <%= link_to "#{Branch.find(7).name} links"   , links_branch_path(Branch.find(7))  %>
+    | <%= link_to "#{Branch.find(8).name} uploads" , uploads_branch_path(Branch.find(8))  %>
+    | <%= link_to "#{Branch.find(8).name} links"   , links_branch_path(Branch.find(8))  %>
+    | <%= link_to "#{Branch.find(9).name} uploads" , uploads_branch_path(Branch.find(9))  %>
+    | <%= link_to "#{Branch.find(9).name} links"   , links_branch_path(Branch.find(9))  %>
+
+  </span>
   <div class="row">
     <div class="col-sm-6">
       <% if @unapprovedUploads.empty? %>

@@ -12,6 +12,7 @@ Branch.destroy_all
 Role.destroy_all
 Upload.destroy_all
 UserPreference.destroy_all
+Impression.destroy_all
 #UsersRole.destroy_all
 
 # Admin user

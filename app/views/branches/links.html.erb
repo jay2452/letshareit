@@ -1,0 +1,40 @@
+<% provide(:title, "all links - #{@branch.name}") %>
+<div>
+  <div class="col-md-3">
+
+  </div>
+
+  <div class="col-md-6">
+    <div class="flex-container-links">
+      <div><br>
+        <% if @links.count != 0 %>
+          <h4 align="center">all links in <%= @branch.name %></h4>
+          <% @links.each do |link| %>
+            <div class="flex-item-links">
+              <h5><%= link_to link.subject.name, [link.subject.branch, link.subject] %></h5>
+				  		<h5>
+				  			&nbsp;&nbsp;&nbsp;
+				  			link: <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %>
+				  			<small>
+					      		&nbsp;uploaded by: <%= link.user.name %> &nbsp;
+					        <small><%= time_ago_in_words(link.created_at) %> ago</small>
+					      </small>
+				  		</h5>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="container-fluid">
+            <div class="jumbotron">
+              <h3>No Links</h3>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+  </div>
+
+</div>

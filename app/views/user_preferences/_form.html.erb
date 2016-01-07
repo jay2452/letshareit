@@ -14,7 +14,7 @@
     <%= f.label :subject_id %><br>
     <%# f.select :subject_id, all_subjects.all.collect { |s| [ s.name, s.id ]}, include_blank: true, multiple: true %>
 
-    <%= f.select(:subject_id, all_subjects.all.collect {|p| [ p.name, p.id ] } )%> 
-    <%= f.submit "Add subject", class: 'btn btn-primary' %>
+    <%= f.select(:subject_id, all_subjects.all.collect {|p| [ p.name, p.id ] } )%>
+    <%= f.submit "Add subject", class: 'btn btn-primary', data: {disable_with: "<i class = 'fa fa-spinner fa-spin'></i> adding.."} %>
   </div>
 <% end %>

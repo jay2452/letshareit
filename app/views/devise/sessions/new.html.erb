@@ -5,7 +5,7 @@
     <div class="login_form panel">
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
-      
+
       <div class="form-group" style="padding-top: 15px; margin-top: 2%;">
         <div style="margin-bottom: 25px;" class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></i></span>
@@ -29,12 +29,12 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in", class: 'btn btn-primary' %>
+        <%= f.button "Sign in", class: 'btn btn-primary', data: { disable_with: "<i class = 'fa fa-spinner fa-spin'></i> Signing in.." } %>
       </div>
     <br>
     <% end %>
 
     <%= render "devise/shared/links" %>
-    </div>  
+    </div>
   </div>
 </div>
