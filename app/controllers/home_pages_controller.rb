@@ -41,6 +41,13 @@ class HomePagesController < ApplicationController
   def search
   	@query_one = Upload.search(params[:q])
     @upload_search_result = @query_one.result
+    puts "======================================="
+    if params[:q][:topic_cont].strip.length == 0
+      p params[:q][:topic_cont]
+    end
+    puts "======================================="
+
+    @query_length_check = params[:q][:topic_cont].strip.length # => for only blank search i.e enter only a single white space in search bar
 
     @query_two = Branch.search(params[:q])
     @branch_search_result = @query_two.result
