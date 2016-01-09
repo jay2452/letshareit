@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="col-sm-8">
-		<% if @query_length_check == 0 # => in home_pages_controller %>
+		<% if @query_length_check == 0 || @upload_search_result.blank? # => in application_controller  %>
 			<div class="jumbotron">
 				<h3 align="center">NO search found</h3>
 			</div>
@@ -39,7 +39,7 @@
 									</h4>
 								</div>
 						<% end %>
-						<% @link_search_result.each do |link| %>
+						<!-- <% @link_search_result.each do |link| %>
 							<div class="flex-item-search">
 								<h5><%= link_to link.subject.name, [link.subject.branch, link.subject] %></h5>
 									<h4>
@@ -50,7 +50,7 @@
 										</small>
 									</h4>
 								</div>
-						<% end %>
+						<% end %> -->
 					</div>
 			</div>
 		<% end %>

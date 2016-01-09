@@ -61,8 +61,10 @@ $("#input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
 
 // for jquery.turbolinks
 $(document).on('page:fetch', function() {
-  $(".loading-indicator").show();
+  // $(".loading-indicator").show();
+  $(".spinner-load").fadeIn();
 });
 $(document).on('page:change', function() {
-  $(".loading-indicator").hide();
+  // $(".loading-indicator").hide();
+  $(".spinner-load").hide();
 });

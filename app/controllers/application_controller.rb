@@ -22,7 +22,9 @@ class ApplicationController < ActionController::Base
     # puts "========================"
     #   puts @results
     # puts "========================"
-  	
+
+    @query_length_check = params[:q][:topic_cont].strip.length if params[:q] # => for only blank search i.e enter only a single white space in search bar
+
     @query_one = Upload.search(params[:q])
     @upload_search_result = @query_one.result
 
