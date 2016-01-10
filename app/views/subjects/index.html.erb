@@ -1,129 +1,60 @@
-<% provide(:title, "Subjects") %>
-<div class="subject_index_page" style="margin-top:-2%;">
-  <br>
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  <section>
-    <div class="col-md-6">
-      <div class="jumbotron first_year">
-        <div class="panel panel-default link-container">
-        <div class="panel-heading"><b><%= Branch.first.name %></b></div>
-        <div class="panel-body">
-            <% Branch.first.subjects.each do |subject| %>
-              <h4><%= link_to subject.name, [subject.branch, subject] %><h4>
-            <% end -%>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!-- cse panel -->
-    <div class="col-md-6">
-      <div class="jumbotron cse">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.second.name %>/ <%= Branch.third.name %></b></div>
-          <div class="panel-body">
-              <% Branch.second.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-              <% Branch.third.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<% provide(:title, "#{@branch.name} - Subjects") %>
+<%# previous page moved to home_pages/all-subjects.html.erb %>
 
-  <section>
-    <div class="col-md-6">
-      <div class="jumbotron civil">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.fourth.name %></b></div>
-          <div class="panel-body">
-              <% Branch.fourth.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#"><h4><%= @branch.name %></h4></a>
+                </li>
+                <div id="show-subject">
+                  <% @subjects.each do |subject| %>
+  				            <li>
+                        <%= link_to subject.name, [@branch, subject], remote: true %>
+                      </li>
+  				        <% end %>
+                </div>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- <h1>Simple Sidebar</h1>
+                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
+
+                        <div id="render-subject" style="margin-top: 100px;">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="col-md-6">
-      <div class="jumbotron mechanical">
-        <div class="panel panel-default mech_panel link-container">
-          <div class="panel-heading"><b><%= Branch.fifth.name %></b></div>
-          <div class="panel-body">
-              <% Branch.fifth.subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="jumbotron ee">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.find(6).name %></b></div>
-          <div class="panel-body">
-            <p>
-              <% Branch.find(6).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="col-md-6">
-      <div class="jumbotron etc">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.find(7).name %></b></div>
-          <div class="panel-body">
-              <% Branch.find(7).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %><br></h4>
-              <% end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="jumbotron eee">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.find(8).name %></b></div>
-          <div class="panel-body">
-            <p>
-              <% Branch.find(8).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="col-md-6">
-      <div class="jumbotron ei">
-        <div class="panel panel-default link-container">
-          <div class="panel-heading"><b><%= Branch.find(9).name %></b></div>
-          <div class="panel-body">
-              <% Branch.find(9).subjects.each do |subject| %>
-                <h4><%= link_to subject.name, [subject.branch, subject] %></h4>
-              <% end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- /#page-content-wrapper -->
 
 </div>
+    <!-- /#wrapper -->
 
-</div>
+ <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    </script>
+    <script>
+    document.getElementById('navigation').className += " navbar-fixed-top"
+    //
+    // function show_uploads(subject_id){
+    //   document.getElementById("render-subject-uploads").html("<%# escape_javascript render 'subjects/show_page' %>")
+    // }
+
+    </script>

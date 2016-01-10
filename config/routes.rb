@@ -15,8 +15,7 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :subjects, only: [:index]
-
+  get '/all_subjects' => 'home_pages#all-subjects'
   #resources :subjects
   # get 'feedbacks/index'
 

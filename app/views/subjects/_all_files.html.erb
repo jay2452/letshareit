@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <h5 align = "center"><%= @subject.name %></h5>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#uploads-show">Uploads <small>(<%= @subject.uploads.count %>)</small></a></li>
+    <li><a data-toggle="tab" href="#links-show">Links <small>(<%= @subject.links.count %>)</small></a></li>
+  </ul>
+
+  <div class="tab-content">
+    <br>
+    <div id="uploads-show" class="tab-pane fade in active">
+
+      <% if @uploads.count != 0 %>
+        <div class="flex-container-subject">
+          <div>
+            <% @uploads.each do |upload| %>
+              <div class="flex-item-subject">
+                <h5><%= upload.subject.name  %></h5>
+                <h4>
+                  &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                  <small>
+                    uploaded by <%= upload.user.name %> &nbsp;
+                    <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                  </small>
+                </h4>
+              </div>
+            <% end %> <%# end of upload each%>
+          </div>
+        </div>
+
+      <% else %>
+
+        <div class="panel panel-default">
+          <div class="panel-body well" align="center">
+            <h3><b>No uploads</b></h3>
+          </div>
+        </div>
+
+      <% end %>
+
+
+    </div>
+    <div id="links-show" class="tab-pane fade">
+
+      <% if @links.count != 0 %>
+        <div class="flex-container-subject">
+          <div>
+            <% @links.each do |link| %>
+              <div class="flex-item-subject">
+                <h5><%= link.subject.name  %></h5>
+                <h4>
+                  &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
+                  <small>
+                    linked by <%= link.user.name %> &nbsp;
+                    <small><%= time_ago_in_words(link.created_at) %> ago</small>
+                  </small>
+                </h4>
+              </div>
+            <% end -%>
+          </div>
+        </div>
+
+      <% else %>
+
+        <div class="panel panel-default">
+          <div class="panel-body well" align="center">
+            <h3><b>No links</b></h3>
+          </div>
+        </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

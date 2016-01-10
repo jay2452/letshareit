@@ -7,8 +7,10 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    # @subjects = Subject.all
     @branches = Branch.all
+    @branch = Branch.friendly.find(params[:branch_id])
+    @subjects = @branch.subjects
   end
 
   # GET /subjects/1

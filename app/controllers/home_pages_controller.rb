@@ -57,4 +57,9 @@ class HomePagesController < ApplicationController
     @subject_search_result = @query_three.result
 
   end
+
+  def all_subjects
+
+  end
+
 end

@@ -1,5 +1,7 @@
+<% provide :title, "Forgot password" %>
 <div class="container-fluid forgot_password_new" align="center">
-	<%= image_tag("ss", size: "600x150") %>
+	<br>
+	<%= image_tag("ss.png", size: "400x100") %>
 	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
 	  <%= devise_error_messages! %>
 	  <br><br>
@@ -9,11 +11,10 @@
 
 	  <div class="form-field">
 	  	<br>
-	    <%= f.submit "Send me reset password instructions",class: "btn btn-primary" %>
+	    <%= f.submit "Send me reset password instructions",class: "btn btn-primary btn-sm" %>
 	  </div>
 	<% end %>
 	<br>
-	<%= render "devise/shared/links" %>
+	<%# render "devise/shared/links" %>
 
 </div>
-	

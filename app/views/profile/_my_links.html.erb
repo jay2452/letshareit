@@ -13,7 +13,7 @@
 
 
   <% if @approvedLinks.empty? %>
-    <h4>No links from your side. <strong>contribute.</strong> </h4>
+    <h4>No links from your side. <strong><%= link_to "contribute.", root_path %></strong> </h4>
   <% else %>
     <h4>Approved Links</h4>
     <% @approvedLinks.each do |link| %>

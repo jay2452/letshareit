@@ -13,7 +13,7 @@
 
 
   <% if @approvedUploads.empty? %>
-    <h4>No uploads from your side. <strong>contribute.</strong> </h4>
+    <h4>No uploads from your side. <strong><%= link_to "contribute.", root_path %></strong> </h4>
   <% else %>
     <h4>Approved Uploads</h4>
     <% @approvedUploads.each do |upload| %>
