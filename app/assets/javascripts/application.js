@@ -63,8 +63,15 @@ $("#input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
 $(document).on('page:fetch', function() {
   // $(".loading-indicator").show();
   $(".spinner-load").fadeIn();
+  // $(".sk-cube-grid").fadeIn();
 });
+
+$(document).on('page:update', function() {
+  $(".sk-cube-grid").fadeIn();
+});
+
 $(document).on('page:change', function() {
   // $(".loading-indicator").hide();
   $(".spinner-load").hide();
+  $(".sk-cube-grid").hide();
 });
