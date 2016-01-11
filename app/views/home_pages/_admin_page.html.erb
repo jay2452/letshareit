@@ -3,7 +3,7 @@
 <div class="container">
   <span>
     <%= link_to "all uploads", uploads_path %> | <%= link_to "all links", links_path %> | <%= link_to "branches", branches_path %>
-    | <%= link_to "subjects", subjects_path %>
+    | <%= link_to "subjects", all_subjects_path %>
     | <%= link_to "#{Branch.find(1).name} uploads" , uploads_branch_path(Branch.find(1))  %>
     | <%= link_to "#{Branch.find(1).name} links" , links_branch_path(Branch.find(1))  %>
     | <%= link_to "cse uploads", uploads_branch_path(Branch.find(2)) %>
