@@ -1,15 +1,12 @@
 <% provide(:title, "Sign Up") %>
 <div class="signup_page_main">
-  <br>
+  <br><br>
   <div class="container">
-    <div class="col-md-6 signup_left">
-      <!-- for image -->
-      <% image_tag("share3.jpg", height: "510px", width: "615px") %>
-    </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-5 signup_page_right panel panel-default">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 signup_page_middle panel panel-default">
       <div class="panel-body">
-        <h2>Sign up</h2>
+        <h2 class="text-center">Sign up</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: "form"}) do |f| %>
           <%= devise_error_messages! %>
@@ -50,5 +47,8 @@
         <%# render "devise/shared/links" %>
       </div>
     </div>
+
+    <div class="col-md-3"></div>
+
   </div>
 </div>

@@ -8,48 +8,81 @@
    <br><br><br>
   <div class="row">
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch"><h3><%=  link_to Branch.find(1).name, branch_subjects_path(Branch.find(1)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(1) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(2).name, branch_subjects_path(Branch.find(2)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(2) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(3).name, branch_subjects_path(Branch.find(3)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(3) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
+
   </div>
   <br>
   <div class="clearfix"></div>
 
   <div class="row">
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(4).name, branch_subjects_path(Branch.find(4)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(4) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(5).name, branch_subjects_path(Branch.find(5)) %></h3></div>
+
+    <div class="col-md-4">
+      <% @bid = Branch.find(5) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(6).name, branch_subjects_path(Branch.find(6)) %></h3></div>
+
+    <div class="col-md-4">
+      <% @bid = Branch.find(6) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
+
   </div>
 
   <div class="clearfix"></div>
   <br>
   <div class="row">
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(7).name, branch_subjects_path(Branch.find(7)) %></h3></div>
+
+    <div class="col-md-4">
+      <% @bid = Branch.find(7) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(8).name, branch_subjects_path(Branch.find(8)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(8) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
 
-    <div class="col-md-4 flex-container-branch">
-      <div class="flex-item-branch "><h3><%=  link_to Branch.find(9).name, branch_subjects_path(Branch.find(9)) %></h3></div>
+    <div class="col-md-4">
+      <% @bid = Branch.find(9) %>
+      <a href="<%= branch_subjects_path(@bid) %>" class="flex-container-branch">
+        <div class="flex-item-branch"><h3><%= @bid.name %></h3></div>
+      </a>
     </div>
+
   </div>
 
 </div>
