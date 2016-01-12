@@ -20,6 +20,9 @@
                   <small>
                     uploaded by <%= upload.user.name %> &nbsp;
                     <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                    <div align="right">
+        							<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+        						</div>
                   </small>
                 </h4>
               </div>
@@ -52,6 +55,9 @@
                   <small>
                     linked by <%= link.user.name %> &nbsp;
                     <small><%= time_ago_in_words(link.created_at) %> ago</small>
+                    <div align="right">
+        							<%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{link.id}", popup: true, align: 'right') %>
+        						</div>
                   </small>
                 </h4>
               </div>

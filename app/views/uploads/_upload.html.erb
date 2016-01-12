@@ -12,6 +12,9 @@
 		      <small>
 		      &nbsp;uploaded by: <%= upload.user.name %> &nbsp;
 		        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+						<div align="right">
+							<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+						</div>
 		      </small>
 		    </h5>
 		</div>
