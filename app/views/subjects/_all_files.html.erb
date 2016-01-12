@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h5 align = "center"><%= @subject.name %></h5>
+  <h5 align = "center" ; style="font-family:'Crimson Text';"><%= @subject.name %></h5>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#uploads-show">Uploads <small>(<%= @subject.uploads.count %>)</small></a></li>
     <li><a data-toggle="tab" href="#links-show">Links <small>(<%= @subject.links.count %>)</small></a></li>
@@ -14,7 +14,7 @@
           <div>
             <% @uploads.each do |upload| %>
               <div class="flex-item-subject">
-                <h5><%= upload.subject.name  %></h5>
+                <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %></h5>
                 <h4>
                   &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                   <small>
@@ -34,7 +34,7 @@
 
         <div class="panel panel-default">
           <div class="panel-body well" align="center">
-            <h3><b>No uploads</b></h3>
+            <h3 style="font-family : 'Kaushan Script' ;"><b>No uploads</b></h3>
           </div>
         </div>
 
@@ -49,7 +49,7 @@
           <div>
             <% @links.each do |link| %>
               <div class="flex-item-subject">
-                <h5><%= link.subject.name  %></h5>
+                <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %></h5>
                 <h4>
                   &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
                   <small>
@@ -69,7 +69,7 @@
 
         <div class="panel panel-default">
           <div class="panel-body well" align="center">
-            <h3><b>No links</b></h3>
+            <h3 style="font-family:'Crimson Text';"><b>No links</b></h3>
           </div>
         </div>
 
