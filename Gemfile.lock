@@ -248,6 +248,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    social-share-button (0.1.10)
+      coffee-rails
+      sass-rails
     spring (1.4.0)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -315,6 +318,7 @@ DEPENDENCIES
   rolify
   sass-rails
   sdoc
+  social-share-button
   spring
   sqlite3
   therubyracer

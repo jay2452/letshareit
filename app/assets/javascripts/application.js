@@ -16,6 +16,7 @@
 //= require jquery.turbolinks
 //= require chosen-jquery
 //= require BootSideMenu
+//= require social-share-button
 //= require jquery.pjax
 //= require turbolinks
 //= require_tree .
