@@ -20,6 +20,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "social-share-button";
 
 /*
 html, body {
@@ -41,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
   	width: 100%;
   	z-index: 999;
   	background: rgba(135, 216, 211, 0.85);
-
+    
   	.alert {
   		padding: 2.5rem 0;
   		text-align: center;
