@@ -10,7 +10,7 @@ class SubjectsController < ApplicationController
     # @subjects = Subject.all
     @branches = Branch.all
     @branch = Branch.friendly.find(params[:branch_id])
-    @subjects = @branch.subjects
+    @subjects = @branch.subjects.order(id: :asc)
   end
 
   # GET /subjects/1

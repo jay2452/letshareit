@@ -233,7 +233,7 @@
 }
 
 #cse {
-    background-image: url("ce.jpg");
+    background-image: url("cse-s.jpg");
     /*width: 100%;*/
     min-height: 70vh;
     background-size: cover;
@@ -246,6 +246,17 @@
 
 #first-year {
     background-image: url("me.jpg");
+    min-height: 70vh;
+    background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+#ee {
+    background-image: url("electrical-s.jpg");
     min-height: 70vh;
     background-size: cover;
   background-position: center;

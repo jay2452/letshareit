@@ -2,9 +2,9 @@
   <h3 class="text-center" style = "font-family: 'Kaushan Script'">Uploads by me : </h3>
 
   <% if @unapprovedUploads.empty? %>
-    <h4 style="font-family:'Marcellus SC';">No pending approvals. </h4>
+    <h4 style="font-family:'Crimson Text';">No pending approvals. </h4>
   <% else %>
-    <h4 style="font-family:'Marcellus SC';">Unapproved Uploads</h4>
+    <h4 style="font-family:'Crimson Text';">Unapproved Uploads</h4>
     <% @unapprovedUploads.each do |upload| %>
       <%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
       <small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
@@ -13,9 +13,9 @@
 
 
   <% if @approvedUploads.empty? %>
-    <h4 style="font-family:'Marcellus SC';">No uploads from your side. <strong><%= link_to "contribute.", root_path %></strong> </h4>
+    <h4 style="font-family:'Crimson Text';">No uploads from your side. <strong><%= link_to "contribute.", root_path %></strong> </h4>
   <% else %>
-    <h4 style="font-family:'Marcellus SC';">Approved Uploads</h4>
+    <h4 style="font-family:'Crimson Text';">Approved Uploads</h4>
     <% @approvedUploads.each do |upload| %>
       <%= link_to upload.topic, upload.file.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
       <small><%= link_to 'delete', upload, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>

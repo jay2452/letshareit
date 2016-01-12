@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   	width: 100%;
   	z-index: 999;
   	background: rgba(135, 216, 211, 0.85);
-    
+
   	.alert {
   		padding: 2.5rem 0;
   		text-align: center;
@@ -123,24 +123,30 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*
-.login_form {
-    /*margin: 10% 30% ;
-    /*background-image: url("background.jpg");
-    /*background-color: #194F83;
-    border-radius: 10px;
-    height: 110%;
-    padding: 1em 2em;
-    margin-left: 25%;
-    margin-right: 25%;
-    background: rgba(255,255,255,0.5);
+.signup_page_main {
+  background-image: url("sj3.jpg");
 }
 
-.signup_page_main {
-  /*background-color: #FAAC58;
-  margin-top: -1.5%;
-  min-height: 95vh;
+.signup_page_middle{
+  background-color: rgba(218, 215, 175, 1);
 }
+
+.login-page-a{
+  background-image: url("sj5.jpg");
+}
+
+.login_form {
+    // margin: 10% 30% ;
+    // background-image: url("background.jpg");
+    // background-color: #194F83;
+    // border-radius: 10px;
+    // height: 110%;
+    // padding: 1em 2em;
+    // margin-left: 25%;
+    // margin-right: 25%;
+    // background: rgba(255,255,255,0.5);
+}
+/*
 
 .signup_page_right{
   min-height: 65vh;
