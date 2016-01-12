@@ -21,7 +21,7 @@ class SubjectsController < ApplicationController
     @links = Link.where("subject_id = ?", @subject.id).order(created_at: :desc)
 
     @branch = @subject.branch
-    @subjects = @branch.subjects
+    @subjects = @branch.subjects.order(id: :asc)
 
     # render layout: false
     # puts "----------------------------------------"

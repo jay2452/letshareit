@@ -49,7 +49,7 @@
           <div>
             <% @links.each do |link| %>
               <div class="flex-item-subject">
-                <h5><%= link.subject.name  %></h5>
+                <h5><%= link.subject.name %></h5>
                 <h4>
                   &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
                   <small>
