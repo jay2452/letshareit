@@ -29,7 +29,7 @@
             <div class="col-md-1">
               <br>
               <% if upload[:file_file_name] %>
-                <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+                <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
               <% elsif upload[:url] %>
                 <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{upload.id}", popup: true, align: 'right') %>
               <% end %>
