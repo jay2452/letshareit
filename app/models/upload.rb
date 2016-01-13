@@ -8,7 +8,7 @@ class Upload < ActiveRecord::Base
   validates :user_id, presence: true
   validates :subject_id, presence: true
   validates_attachment :file, presence: true
-  validates_attachment_content_type :file, content_type: %w(image/jpeg image/jpg image/png image/gif application/pdf 
+  validates_attachment_content_type :file, content_type: %w(image/jpeg image/jpg image/png image/gif application/pdf
  															application/msword
                                application/mspowerpoint
                                application/vnd.ms-powerpoint
@@ -23,7 +23,6 @@ class Upload < ActiveRecord::Base
 	# 	text :topic, boost: 2
  #    text :file_file_name
 	# end
-
 
 
 end

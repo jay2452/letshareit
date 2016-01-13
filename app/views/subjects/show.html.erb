@@ -32,7 +32,7 @@
         <% if @uploads.count != 0 %>
           <div class="flex-container-subject">
             <div>
-              <% @uploads.each do |upload| %>
+              <% @subject.same_subject_uploads.each do |upload| %>
                 <div class="flex-item-subject">
                   <h5><%= upload.subject.name  %></h5>
                   <h4>
