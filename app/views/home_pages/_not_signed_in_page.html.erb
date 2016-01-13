@@ -88,7 +88,7 @@
 </div>
 
 <div class="container-fluid recent-uploads">
-  <h4>Recent files uploaded</h4>
+  <b> <h3 style="font-family : 'Playball';" align="center";>Recent files uploaded</h3></b>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#first-year"><%= Branch.find(1).name %></a></li>
     <li><a data-toggle="tab" href="#cse">CSE</a></li>
@@ -105,7 +105,7 @@
     <div id="first-year" class="tab-pane fade in active">
       <h3 align="center" style="color: white;"><%= Branch.find(1).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight'; color:white;" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(1)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
@@ -114,7 +114,7 @@
         </p>
       </div>
       <div class="col-md-6">
-        <h4 align="center">links</h4>
+        <h4 style="font-family :'Limelight'; color:white;" align="center" style="color: white " >links</h4>
         <% recent_links(Branch.find(1)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -122,15 +122,15 @@
     </div>
 
     <div id="cse" class="tab-pane fade">
-      <h3 align="center"><%= Branch.find(2).name %></h3>
+      <h3 align="center" style="color: white;"><%= Branch.find(2).name %></h3>
       <div class="col-md-6">
-      <h4 align="center">Uploads</h4>
+      <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(2)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(2)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -140,13 +140,13 @@
     <div id="it" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(3).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(3)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(3)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -156,13 +156,13 @@
     <div id="ce" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(4).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(4)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(4)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -172,13 +172,13 @@
     <div id="me" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(5).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(5)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(5)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -188,13 +188,13 @@
     <div id="ee" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(6).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(6)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(6)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -204,13 +204,13 @@
     <div id="etc" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(7).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(7)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(7)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -221,13 +221,13 @@
     <div id="eee" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(8).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(8)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(8)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
@@ -237,13 +237,13 @@
     <div id="ei" class="tab-pane fade">
       <h3 align="center"><%= Branch.find(9).name %></h3>
       <div class="col-md-6">
-        <h4 align="center">Uploads</h4>
+        <h4 style="font-family :'Limelight';" align="center">Uploads</h4>
         <% recent_uploads(Branch.find(9)).each do |upload| %><%# defined in home pages helper %>
           <%= link_to upload.topic, upload.file.url, target: "_blank" %><br>
         <% end -%>
       </div>
       <div class="col-md-6">
-        <h4 align="center">Links</h4>
+        <h4 style="font-family :'Limelight';" align="center">Links</h4>
         <% recent_links(Branch.find(9)).each do |link| %><%# defined in home pages helper %>
           <%= link_to link.topic, url_with_protocol(link.url), target: "_blank" %><br>
         <% end -%>
