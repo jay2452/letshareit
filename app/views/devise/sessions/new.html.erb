@@ -1,7 +1,6 @@
 <% provide(:title, "Sign In") %>
-<br>
-<div class="container">
-  <div class="">
+<div class="container-fluid login-page">
+  <div>
     <div class="login_form panel">
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>

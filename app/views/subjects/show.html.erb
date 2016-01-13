@@ -29,12 +29,12 @@
       <br>
       <div id="uploads-show" class="tab-pane fade in active">
 
-        <% if @uploads.count != 0 %>
+        <% if @subject.same_subject_uploads.count != 0 %>
           <div class="flex-container-subject">
             <div>
               <% @subject.same_subject_uploads.each do |upload| %>
                 <div class="flex-item-subject">
-                  <h5><%= upload.subject.name  %></h5>
+                  <h5><%= upload.subject.name %> <small>(<%= upload.subject.branch.name %>)</small></h5>
                   <h4>
                     &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                     <small>
@@ -61,12 +61,12 @@
       </div>
       <div id="links-show" class="tab-pane fade">
 
-        <% if @links.count != 0 %>
+        <% if @subject.same_subject_links.count != 0 %>
           <div class="flex-container-subject">
             <div>
-              <% @links.each do |link| %>
+              <% @subject.same_subject_links.each do |link| %>
                 <div class="flex-item-subject">
-                  <h5><%= link.subject.name  %></h5>
+                  <h5><%= link.subject.name  %> <small>(<%= link.subject.branch.name %>)</small></h5>
                   <h4>
                     &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
                     <small>

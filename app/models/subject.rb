@@ -33,4 +33,9 @@ class Subject < ActiveRecord::Base
 			return ups
 	  end
 
+		def same_subject_links
+			sids = "SELECT id from subjects where code = '#{self.code}'"
+			Link.where("subject_id IN (#{sids})")
+		end
+
 end
