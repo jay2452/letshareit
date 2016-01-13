@@ -6,17 +6,23 @@
 	<div id="uploads">
 	  <% @uploads.each do |upload| %>
 		<div class="flex-item-uploads">
-			<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-		    <h5>
-		      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-		      <small>
-		      &nbsp;uploaded by: <%= upload.user.name %> &nbsp;
-		        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-						<div align="right">
-							<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
-						</div>
-		      </small>
-		    </h5>
+			<div class="row">
+				<div class="col-md-11">
+					<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
+				    <h5>
+				      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+				      <small>
+				      &nbsp;uploaded by: <%= upload.user.name %> &nbsp;
+				        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+				      </small>
+				    </h5>
+				</div>
+				<div class="col-md-1">
+					<br>
+						<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+				</div>
+			</div>
+
 		</div>
 	  <% end %>
 	</div>
