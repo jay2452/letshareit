@@ -31,7 +31,7 @@
               <% if upload[:file_file_name] %>
                 <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
               <% elsif upload[:url] %>
-                <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{upload.id}", popup: true, align: 'right', desc: "The summary of page")) %>
+                <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
               <% end %>
             </div>
           </div>

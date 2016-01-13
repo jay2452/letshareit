@@ -1,5 +1,5 @@
 <div class="uploads_section upload_infinite_scroll">
-	<div align="center" style="font-family: 'IM Fell DW Pica'; color: white; font-size:2em;">
+	<div align="center" style="font-family: 'IM Fell DW Pica'; font-size:2em;">
 	  <b>List of all Uploads</b>
 	</div>
 	<br>
@@ -8,7 +8,7 @@
 		<div class="flex-item-uploads">
 			<div class="row">
 				<div class="col-md-11">
-					<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
+					<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %> <small>(<%= upload.subject.branch.name %>)</small> </h5>
 				    <h5>
 				      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				      <small>
@@ -19,7 +19,7 @@
 				</div>
 				<div class="col-md-1">
 					<br>
-						<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+						<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true) %>
 				</div>
 			</div>
 
