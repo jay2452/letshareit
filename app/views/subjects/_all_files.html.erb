@@ -15,7 +15,7 @@
             <% @uploads.each do |upload| %>
               <div class="flex-item-subject">
                 <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %></h5>
-                <h4>
+                <h4 style="font-family : 'Droid Serif';">
                   &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                   <small>
                     uploaded by <%= upload.user.name %> &nbsp;
@@ -50,7 +50,7 @@
             <% @links.each do |link| %>
               <div class="flex-item-subject">
                 <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %></h5>
-                <h4>
+                <h4 style="font-family : 'Droid Serif';">
                   &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
                   <small>
                     linked by <%= link.user.name %> &nbsp;

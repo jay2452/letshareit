@@ -6,7 +6,7 @@
 	<div id="uploads">
 	  <% @uploads.each do |upload| %>
 		<div class="flex-item-uploads">
-			<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
+			<h5 style="font-family : 'Droid Serif';"><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
 		    <h5>
 		      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 		      <small>
