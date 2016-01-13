@@ -10,7 +10,7 @@ class SubjectsController < ApplicationController
     # @subjects = Subject.all
     @branches = Branch.all
     @branch = Branch.friendly.find(params[:branch_id])
-    @subjects = @branch.subjects
+    @subjects = @branch.subjects.order(id: :asc)
   end
 
   # GET /subjects/1
@@ -21,7 +21,7 @@ class SubjectsController < ApplicationController
     @links = Link.where("subject_id = ?", @subject.id).order(created_at: :desc)
 
     @branch = @subject.branch
-    @subjects = @branch.subjects
+    @subjects = @branch.subjects.order(id: :asc)
 
     # render layout: false
     # puts "----------------------------------------"

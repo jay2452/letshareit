@@ -1,19 +1,20 @@
 <div class="container-fluid">
   <h5 align = "center" ; style="font-family:'Crimson Text';"><%= @subject.name %></h5>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#uploads-show">Uploads <small>(<%= @subject.uploads.count %>)</small></a></li>
-    <li><a data-toggle="tab" href="#links-show">Links <small>(<%= @subject.links.count %>)</small></a></li>
+    <li class="active"><a data-toggle="tab" href="#uploads-show">Uploads <small>(<%= @subject.same_subject_uploads.count %>)</small></a></li>
+    <li><a data-toggle="tab" href="#links-show">Links <small>(<%= @subject.same_subject_links.count %>)</small></a></li>
   </ul>
 
   <div class="tab-content">
     <br>
     <div id="uploads-show" class="tab-pane fade in active">
 
-      <% if @uploads.count != 0 %>
+      <% if @subject.same_subject_uploads.count != 0 %>
         <div class="flex-container-subject">
           <div>
-            <% @uploads.each do |upload| %>
+            <% @subject.same_subject_uploads.each do |upload| %>
               <div class="flex-item-subject">
+<<<<<<< HEAD
                 <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %></h5>
                 <h4 style="font-family : 'Droid Serif';">
                   &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
@@ -25,6 +26,25 @@
         						</div>
                   </small>
                 </h4>
+=======
+                <div class="row">
+                  <div class="col-md-11">
+                    <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %> <small>(<%= upload.subject.branch.name %>)</small></h5>
+                    <h4>
+                      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
+                      <small>
+                        uploaded by <%= upload.user.name %> &nbsp;
+                        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
+                      </small>
+                    </h4>
+                  </div>
+                  <div class="col-md-1">
+                    <br>
+                      <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
+                  </div>
+                </div>
+
+>>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
               </div>
             <% end %> <%# end of upload each%>
           </div>
@@ -44,11 +64,12 @@
     </div>
     <div id="links-show" class="tab-pane fade">
 
-      <% if @links.count != 0 %>
+      <% if @subject.same_subject_links.count != 0 %>
         <div class="flex-container-subject">
           <div>
-            <% @links.each do |link| %>
+            <% @subject.same_subject_links.each do |link| %>
               <div class="flex-item-subject">
+<<<<<<< HEAD
                 <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %></h5>
                 <h4 style="font-family : 'Droid Serif';">
                   &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
@@ -60,6 +81,25 @@
         						</div>
                   </small>
                 </h4>
+=======
+                <div class="row">
+                  <div class="col-md-11">
+                    <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %> <small>(<%= link.subject.branch.name %>)</small></h5>
+                    <h4>
+                      &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
+                      <small>
+                        linked by <%= link.user.name %> &nbsp;
+                        <small><%= time_ago_in_words(link.created_at) %> ago</small>
+                      </small>
+                    </h4>
+                  </div>
+                  <div class="col-md-1">
+                    <br>
+                      <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{link.id}", popup: true, align: 'right') %>
+                  </div>
+                </div>
+
+>>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
               </div>
             <% end -%>
           </div>

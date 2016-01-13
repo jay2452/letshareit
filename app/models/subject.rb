@@ -16,4 +16,26 @@ class Subject < ActiveRecord::Base
 	# 	text :name, boost: 5
 	# 	text :code
 	# end
+
+
+	  def same_subject_uploads
+	    #sids = Subject.where(code: self.code ).select(id).map(&:id)
+			sids = "SELECT id from subjects where code = '#{self.code}'"
+			# puts "-----------------------------"
+			# 	p Subject.where(sids)
+			# puts "-----------------------------"
+			ups = Upload.where("subject_id IN (#{sids})")
+
+			puts "-----------------------------"
+				p ups
+			puts "-----------------------------"
+
+			return ups
+	  end
+
+		def same_subject_links
+			sids = "SELECT id from subjects where code = '#{self.code}'"
+			Link.where("subject_id IN (#{sids})")
+		end
+
 end
