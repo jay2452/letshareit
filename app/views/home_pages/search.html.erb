@@ -18,7 +18,7 @@
 		<div class="col-sm-8">
 			<% if @query_length_check == 0 || @upload_search_result.blank? # => in application_controller  %>
 				<div class="jumbotron">
-					<h3 align="center">NO search found</h3>
+					<h3 style="font-family : 'Droid Serif';" align="center">Oops! Not Found</h3>
 				</div>
 			<% else # => search results found %>
 				<div align="center" style="font-family: 'IM Fell DW Pica'; font-size:2em;">
@@ -31,29 +31,6 @@
 					<li><a data-toggle="tab" href="#links">Links</a></li>
 				</ul>
 
-<<<<<<< HEAD
-	<div class="col-sm-8">
-		<% if @query_length_check == 0 || @upload_search_result.blank? # => in application_controller  %>
-			<div class="jumbotron">
-				<h3 style="font-family : 'Droid Serif';" align="center">Oops! Not Found</h3>
-			</div>
-		<% else %>
-			<div align="center" style="font-family: 'IM Fell DW Pica'; color: white; font-size:2em;">
-				<b>Upload search result</b>
-			</div>
-			<div class="clearfix"></div>
-			<div class="flex-container-search">
-					<div>
-						<% @upload_search_result.each do |upload| %>
-							<div class="flex-item-search">
-								<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-									<h4 style="font-family : 'Droid Serif';">
-										&nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-										<small>
-											uploaded by <%= upload.user.name %> &nbsp;
-											<small><%= time_ago_in_words(upload.created_at) %> ago</small>
-											<div align="right">
-=======
 				<div class="tab-content">
 					<div id="uploads" class="tab-pane fade in active">
 						<h3>Uploads</h3>
@@ -64,7 +41,7 @@
 										<div class="row">
 											<div class="col-md-11">
 												<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-													<h4>
+													<h4 style="font-family : 'Droid Serif';">
 														&nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 														<small>
 															uploaded by <%= upload.user.name %> &nbsp;
@@ -74,7 +51,6 @@
 											</div>
 											<div class="col-md-1">
 												<br>
->>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
 												<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
 											</div>
 										</div>

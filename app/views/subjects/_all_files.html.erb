@@ -14,23 +14,10 @@
           <div>
             <% @subject.same_subject_uploads.each do |upload| %>
               <div class="flex-item-subject">
-<<<<<<< HEAD
-                <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %></h5>
-                <h4 style="font-family : 'Droid Serif';">
-                  &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-                  <small>
-                    uploaded by <%= upload.user.name %> &nbsp;
-                    <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-                    <div align="right">
-        							<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
-        						</div>
-                  </small>
-                </h4>
-=======
                 <div class="row">
                   <div class="col-md-11">
                     <h5 style="font-family:'Crimson Text';"><%= upload.subject.name  %> <small>(<%= upload.subject.branch.name %>)</small></h5>
-                    <h4>
+                    <h4 style="font-family : 'Droid Serif';">
                       &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
                       <small>
                         uploaded by <%= upload.user.name %> &nbsp;
@@ -43,8 +30,6 @@
                       <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
                   </div>
                 </div>
-
->>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
               </div>
             <% end %> <%# end of upload each%>
           </div>
@@ -69,23 +54,10 @@
           <div>
             <% @subject.same_subject_links.each do |link| %>
               <div class="flex-item-subject">
-<<<<<<< HEAD
-                <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %></h5>
-                <h4 style="font-family : 'Droid Serif';">
-                  &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
-                  <small>
-                    linked by <%= link.user.name %> &nbsp;
-                    <small><%= time_ago_in_words(link.created_at) %> ago</small>
-                    <div align="right">
-        							<%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{link.id}", popup: true, align: 'right') %>
-        						</div>
-                  </small>
-                </h4>
-=======
                 <div class="row">
                   <div class="col-md-11">
                     <h5 style="font-family:'Crimson Text';"><%= link.subject.name  %> <small>(<%= link.subject.branch.name %>)</small></h5>
-                    <h4>
+                    <h4 style="font-family : 'Droid Serif';">
                       &nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, url_with_protocol(link.url) , target: "_blank" %>
                       <small>
                         linked by <%= link.user.name %> &nbsp;
@@ -98,8 +70,6 @@
                       <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{link.id}", popup: true, align: 'right') %>
                   </div>
                 </div>
-
->>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
               </div>
             <% end -%>
           </div>

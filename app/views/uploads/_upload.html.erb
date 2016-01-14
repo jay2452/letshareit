@@ -6,22 +6,9 @@
 	<div id="uploads">
 	  <% @uploads.each do |upload| %>
 		<div class="flex-item-uploads">
-<<<<<<< HEAD
-			<h5 style="font-family : 'Droid Serif';"><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-		    <h5>
-		      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-		      <small>
-		      &nbsp;uploaded by: <%= upload.user.name %> &nbsp;
-		        <small><%= time_ago_in_words(upload.created_at) %> ago</small>
-						<div align="right">
-							<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
-						</div>
-		      </small>
-		    </h5>
-=======
 			<div class="row">
 				<div class="col-md-11">
-					<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %> <small>(<%= upload.subject.branch.name %>)</small> </h5>
+					<h5  style="font-family : 'Droid Serif';"><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %> <small>(<%= upload.subject.branch.name %>)</small> </h5>
 				    <h5>
 				      &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
 				      <small>
@@ -35,8 +22,6 @@
 						<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true) %>
 				</div>
 			</div>
-
->>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
 		</div>
 	  <% end %>
 	</div>

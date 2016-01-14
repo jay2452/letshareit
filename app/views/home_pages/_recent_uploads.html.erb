@@ -7,25 +7,9 @@
     <div>
       <% current_user.feeds.each do |upload| %>
         <div class="flex-item-recent">
-<<<<<<< HEAD
-          <h5 style="font-family : 'Droid Serif';"><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-          <h5>
-            &nbsp;&nbsp;&nbsp;
-            <% if upload[:file_file_name] %>
-              file: <%= link_to upload.topic, upload.file.url, target: "_blank" %>
-            <% elsif upload[:url] %>
-              link: <%= link_to upload[:topic], url_with_protocol(upload[:url]), target: "_blank" %>
-            <% end -%>
-            &nbsp;&nbsp;
-            <small>
-              <i>
-                Uploaded By - <%= upload.user.name %> -
-                <%= time_ago_in_words(upload.created_at) %> ago
-              </i>
-=======
           <div class="row">
             <div class="col-md-11">
-              <h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
+              <h5 style="font-family : 'Droid Serif';" ><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
               <h5>
                 &nbsp;&nbsp;&nbsp;
                 <% if upload[:file_file_name] %>
@@ -43,7 +27,6 @@
               </h5>
             </div>
             <div class="col-md-1">
->>>>>>> dae3f4234ad53661e8ab96364a3b878f8593af99
               <br>
               <% if upload[:file_file_name] %>
                 <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
