@@ -1,10 +1,10 @@
 <div class="well">
-  <h2 class="text-center" style = "font-family: 'Kaushan Script'">Links by me : </h2>
+  <h2 class="text-center" style = "font-family: 'Playfair Display';">Links By Me : </h2>
 
   <% if @unapprovedLinks.empty? %>
-    <h3 style="font-family:'Cookie';"> No Pending Approvals </h3>
+    <h4 style="font-family:'Courgette';"> No Pending Approvals </h4>
   <% else %>
-    <h3 style="font-family:'Cookie';">Unapproved Links</h3>
+    <h4 style="font-family:'Courgette';">Unapproved Links</h4>
     <% @unapprovedLinks.each do |link| %>
       <%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
       <small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>
@@ -13,9 +13,9 @@
 
 
   <% if @approvedLinks.empty? %>
-    <h3 style="font-family:'Cookie';">No Links From Your Side. <strong><%= link_to "contribute.", root_path %></strong> </h3>
+    <h4 style="font-family:'Courgette';">No Links From Your Side. <strong><%= link_to "contribute.", root_path %></strong> </h4>
   <% else %>
-    <h3 style="font-family:'Cookie';"> Approved Links</h3>
+    <h4 style="font-family:'Courgette';"> Approved Links</h4>
     <% @approvedLinks.each do |link| %>
       <%= link_to link.topic, link.url, target: "_blank" %> &nbsp;&nbsp;&nbsp;
       <small><%= link_to 'delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></small><br>

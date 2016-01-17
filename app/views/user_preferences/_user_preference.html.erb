@@ -1,7 +1,8 @@
 <table class="table table-condensed">
 	<tbody>
 		<tr>
-			<td><%= link_to user_preference.subject.name, [user_preference.subject.branch, user_preference.subject] %></td>
+			<td> <h4 class="text-center" style = "font-family: 'Courgette'"<%= link_to user_preference.subject.name, [user_preference.subject.branch, user_preference.subject] %></td>
+			</h4>
 			<td align="right">
 				<%= link_to 'remove', user_preference, method: :delete, data: { confirm: 'Are you sure?', disable_with: "<i class = 'fa fa-spinner fa-spin'></i> deleting" }, remote: :true, class: "delete-preference" %>
 			</td>
