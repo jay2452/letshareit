@@ -19,9 +19,9 @@
   </nav> -->
 
   <div class="container-fluid">
-    <h5 align = "center"><%= @subject.name %></h5>
+    <h3 style = "font-family: 'Playfair Display';" > <%= @subject.name %> </h3>
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#uploads-show">Uploads <small>(<%= @subject.uploads.count %>)</small></a></li>
+      <li class="active"><a data-toggle="tab" href="#uploads-show"> Uploads <small>(<%= @subject.uploads.count %>)</small></a></li>
       <li><a data-toggle="tab" href="#links-show">Links <small>(<%= @subject.links.count %>)</small></a></li>
     </ul>
 
@@ -32,16 +32,17 @@
         <% if @subject.same_subject_uploads.count != 0 %>
           <div class="flex-container-subject">
             <div>
-              <% @subject.same_subject_uploads.each do |upload| %>
+             <h4 style = "font-family: 'Playfair Display';" >
+              <% @subject.same_subject_uploads.each do |upload| %> </h4>
                 <div class="flex-item-subject">
-                  <h5><%= upload.subject.name %> <small>(<%= upload.subject.branch.name %>)</small></h5>
-                  <h4>
+                  <h5 class="text-center" style = "font-family: 'Playfair Display';"><%= upload.subject.name %> <small>(<%= upload.subject.branch.name %>)</small></h5>
+                  <h6 style = "font-family: 'Playfair Display';">
                     &nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-                    <small>
+                    <small> 
                       uploaded by <%= upload.user.name %> &nbsp;
                       <small><%= time_ago_in_words(upload.created_at) %> ago</small>
                     </small>
-                  </h4>
+                  </h6>
                 </div>
               <% end %> <%# end of upload each%>
             </div>

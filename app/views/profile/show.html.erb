@@ -8,9 +8,11 @@
 				<div class="panel panel-default image-container">
 					<div class="panel-body" align="center">
 						<%= gravatar_for_large @user %><br><br>
-						<b><%= @user.name %> </b><br>
+						<b> <h4 style="font-family:'Courgette';"> <%= @user.name %> </b> </h4><br>
 						<!-- <%# @user.branch.name %> <br> -->
+						<h5 style="font-family:'Courgette';">
 						<%= @user.email %> <br>
+						</h5>
 						<p align="center">
 							<%= @user.about_me %>
 						</p>
