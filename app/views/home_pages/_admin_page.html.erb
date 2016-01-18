@@ -32,7 +32,7 @@
         <%= form_tag({controller: "home_pages", action: "upload_approval"}, method: "get") do %>
           <% @unapprovedUploads.each do |u| %>
             <br><hr>
-            <%= u.topic %>
+            <%= link_to u.topic, u.file.url, target: "_blank" %>
             <%= check_box_tag(:"#{u.id}") %>
           <% end %>
           <br><hr>
@@ -48,7 +48,7 @@
         <%= form_tag({controller: "home_pages", action: "link_approval"}, method: "get") do %>
           <% @unapprovedLinks.each do |u| %>
             <br><hr>
-            <%= u.topic %>
+            <%= link_to u.topic, url_with_protocol(u.url), target: "_blank" %>
             <%= check_box_tag(:"#{u.id}") %>
           <% end %>
           <br><hr>
