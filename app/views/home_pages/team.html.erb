@@ -1,55 +1,69 @@
 <% provide(:title, "Meet Our Team") %>
 <div class="container-fluid">
-	<div style="margin-top:7%;">
-		<div class="col-md-4 team_1">
-			<div align="center">
-				<%# image_tag("sakshi", size: "200x300") %>
+		<div class="row" style="margin-top:10%; height: 60vh;">
+			<div class="col-md-4 team_1">
+				<div align="center">
+					<%# image_tag("sakshi", size: "200x300") %>
+					<br>
+					<p align="center">
+						<h4>
+							<a href="#">Sakshi Jaiswal</a><br>
+							facebook: @sakshi.jaiswal.92<br>
+							Twitter: @sakshi132sj<br>
+						</h4>
+					</p>
+				</div>
 				<br>
-				<p align="center">
-					<h4>
-						<a href="#">Sakshi Jaiswal</a><br>
-						facebook: @sakshi.jaiswal.92<br>
-						Twitter: @sakshi132sj<br>
-					</h4>
-				</p>
+				<div class="clearfix"></div>
 			</div>
-			<br>
+
+			<div class="col-md-4 team_2">
+				<div align="center">
+					<%# image_tag("jayant", size: "200x300") %>
+					<br>
+					<p align="center">
+						<h4>
+							<a href="#">Jayant Kumar</a><br>
+							facebook: @jay2452<br>
+							Twitter: @k_jayant<br>
+						</h4>
+					</p>
+				</div>
+				<br>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="col-md-4 team_3">
+				<div align="center">
+					<%# image_tag("amritesh", size: "200x300") %>
+					<br>
+					<p align="center">
+						<h4>
+							<a href="#">Amritesh Chandan</a><br>
+							facebook: @amritesh.chandan<br>
+							<!-- Twitter: @k_jayant<br> -->
+						</h4>
+					</p>
+				</div>
+				<br>
+			</div>
 			<div class="clearfix"></div>
 		</div>
+</div>
 
-		<div class="col-md-4 team_2">
-			<div align="center">
-				<%# image_tag("jayant", size: "200x300") %>
-				<br>
-				<p align="center">
-					<h4>
-						<a href="#">Jayant Kumar</a><br>
-						facebook: @jay2452<br>
-						Twitter: @k_jayant<br>
-					</h4>
-				</p>
-			</div>
-			<br>
-			<div class="clearfix"></div>
-		</div>
-
-		<div class="col-md-4 team_3">
-			<div align="center">
-				<%# image_tag("amritesh", size: "200x300") %>
-				<br>
-				<p align="center">
-					<h4>
-						<a href="#">Amritesh Chandan</a><br>
-						facebook: @amritesh.chandan<br>
-						<!-- Twitter: @k_jayant<br> -->
-					</h4>
-				</p>
-			</div>
-			<br>
-		</div>
-		<div class="clearfix"></div>
+<div class="container-fluid">
+	<div class="nav navbar" align="center" id="feed_slide">
+		Feedback
 	</div>
-	<div class="feedback">
+	<div class="feedback" style="height: 78vh;">
 		<%= render 'home_pages/feedback' %>
 	</div>
 </div>
+
+<script type="text/javascript">
+  $("#feed_slide").hover(function () {
+    $('html, body').animate({
+      scrollTop: $("#feed_slide").offset().top
+    }, 500);
+  });
+</script>
