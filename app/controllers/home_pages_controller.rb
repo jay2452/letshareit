@@ -6,6 +6,7 @@ class HomePagesController < ApplicationController
     @unapprovedUploads = Upload.where("approved = ?", false)
     @unapprovedLinks = Link.where("approved = ?", false)
     @link = Link.new
+    @recent_feeds = current_user.feeds
   end
 
   def team

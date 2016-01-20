@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       #uploads.concat(links)
       up = UserPreference.where("user_id = ?", self.id)
       uploads = Upload.where("subject_id IN (?) AND approved = ?", up.map(&:subject_id), true)
-      links = Link.where("subject_id IN (?) AND approved = ?", up.map(&:subject_id), true)
-      uploads.concat(links)
+      #links = Link.where("subject_id IN (?) AND approved = ?", up.map(&:subject_id), true)
+      #uploads.concat(links)
    end
 end
