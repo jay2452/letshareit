@@ -4,39 +4,9 @@
   </div>
   <br>
   <div class="flex-container-recent">
-    <div>
-      <% current_user.feeds.each do |upload| %>
-        <div class="flex-item-recent">
-          <div class="row">
-            <div class="col-md-11">
-              <h5 style="font-family : 'Droid Serif';" ><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-              <h5>
-                &nbsp;&nbsp;&nbsp;
-                <% if upload[:file_file_name] %>
-                  file: <%= link_to upload.topic, upload.file.url, target: "_blank" %>
-                <% elsif upload[:url] %>
-                  link: <%= link_to upload[:topic], url_with_protocol(upload[:url]), target: "_blank" %>
-                <% end -%>
-                &nbsp;&nbsp;
-                <small>
-                  <i>
-                    Uploaded By - <%= upload.user.name %> -
-                    <%= time_ago_in_words(upload.created_at) %> ago
-                  </i>
-                </small>
-              </h5>
-            </div>
-            <div class="col-md-1">
-              <br>
-              <% if upload[:file_file_name] %>
-                <%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
-              <% elsif upload[:url] %>
-                <%= social_share_button_tag("link", :url => "http://www.letshareit.in/links/#{upload.id}", popup: true, align: 'right', desc: "The summary of page") %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end -%>
+    <div id="recent-endless">
+      <%= render '/home_pages/fetch_recent' %>
     </div>
   </div>
+  <%= will_paginate @fetch_recent %>
 </div>

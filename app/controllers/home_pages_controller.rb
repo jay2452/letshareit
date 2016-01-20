@@ -6,6 +6,8 @@ class HomePagesController < ApplicationController
     @unapprovedUploads = Upload.where("approved = ?", false)
     @unapprovedLinks = Link.where("approved = ?", false)
     @link = Link.new
+
+    @fetch_recent = current_user.feeds.paginate(:page => params[:page], :per_page => 20) if current_user
   end
 
   def team
