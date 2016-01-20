@@ -48,8 +48,7 @@ class HomePagesController < ApplicationController
       p @upload_search_result.blank?
     puts "======================================="
 
-
-
+    @upload_search_result = @query_one.result.paginate(:page => params[:page], :per_page => 20)
 
 
     @query_two = Branch.search(params[:q])
@@ -57,6 +56,9 @@ class HomePagesController < ApplicationController
 
     @query_three = Subject.search(params[:q])
     @subject_search_result = @query_three.result
+
+    @query_four = Link.search(params[:q])
+    @link_search_result = @query_four.result.paginate(:page => params[:page], :per_page => 20)
 
   end
 

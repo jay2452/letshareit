@@ -35,48 +35,20 @@
 					<div id="uploads" class="tab-pane fade in active">
 						<h3>Uploads</h3>
 						<div class="flex-container-search">
-							<div>
-								<% @upload_search_result.each do |upload| %>
-									<div class="flex-item-search">
-										<div class="row">
-											<div class="col-md-11">
-												<h5><%= link_to upload.subject.name, [upload.subject.branch, upload.subject] %></h5>
-													<h4 style="font-family : 'Droid Serif';">
-														&nbsp;&nbsp;&nbsp;file: <%= link_to upload.topic, upload.file.url , target: "_blank" %>
-														<small>
-															uploaded by <%= upload.user.name %> &nbsp;
-															<small><%= time_ago_in_words(upload.created_at) %> ago</small>
-														</small>
-													</h4>
-											</div>
-											<div class="col-md-1">
-												<br>
-												<%= social_share_button_tag("upload", :url => "http://www.letshareit.in/uploads/#{upload.id}", popup: true, align: 'right') %>
-											</div>
-										</div>
-									</div>
-								<% end %>
+							<div id="upload-search-endless">
+								<%= render 'home_pages/uploads_result' %>
 							</div>
 						</div>
+						<%= will_paginate @upload_search_result %>
 					</div>
 					<div id="links" class="tab-pane fade">
 						<h3>Links</h3>
 						<div class="flex-container-search">
-								<div>
-									<% @link_search_result.each do |link| %>
-										<div class="flex-item-search">
-											<h5><%= link_to link.subject.name, [link.subject.branch, link.subject] %></h5>
-												<h4>
-													&nbsp;&nbsp;&nbsp;link: <%= link_to link.topic, '#' , target: "_blank" %>
-													<small>
-														linked by <%= link.user.name %> &nbsp;
-														<small><%= time_ago_in_words(link.created_at) %> ago</small>
-													</small>
-												</h4>
-											</div>
-									<% end %>
-								</div>
+							<div id="link-search-endless">
+								<%= render 'home_pages/links_result' %>
+							</div>
 						</div>
+						<%= will_paginate @link_search_result, class: 'pagination-links' %>
 					</div>
 				</div>
 			<% end %>

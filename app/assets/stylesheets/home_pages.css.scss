@@ -50,7 +50,11 @@
 
 .signed_in_main_page{
 	/*background-color: #FAAC58;*/
-	height: 90vh;
+	// background-image: url("uploadPageq60.jpg");
+	// background-size: cover;
+	// // background-position: center;
+	// background-attachment: fixed;
+	// height: 100vh;
 }
 .panel.uploads_section {
 	margin-right: 12%;
@@ -233,7 +237,7 @@
 }
 
 #cse {
-    background-image: url("cse-s.jpg");
+    background-image: url("cseq40.jpg");
     /*width: 100%;*/
     min-height: 70vh;
     background-size: cover;
@@ -244,8 +248,20 @@
   margin-right: -1%;
 }
 
+#it {
+    background-image: url("itv2q40.jpg");
+    /*width: 100%;*/
+    min-height: 70vh;
+    background-size: cover;
+  // background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
 #first-year {
-    background-image: url("me.jpg");
+    background-image: url("fyq25.jpg");
     min-height: 70vh;
     background-size: cover;
   background-position: center;
@@ -256,7 +272,18 @@
 }
 
 #ee {
-    background-image: url("electrical-s.jpg");
+    background-image: url("eev2q40.jpg");
+    min-height: 70vh;
+    background-size: cover;
+  // background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+#eee {
+    background-image: url("electronicsq5.jpg");
     min-height: 70vh;
     background-size: cover;
   background-position: center;
@@ -265,6 +292,53 @@
   margin-left: -1%;
   margin-right: -1%;
 }
+
+#ce {
+    background-image: url("cev2q40.jpg");
+    min-height: 70vh;
+    background-size: cover;
+  // background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+#me {
+    background-image: url("meq25.jpg");
+    min-height: 70vh;
+    background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+
+#etc {
+    background-image: url("etcq40v3.jpg");
+    min-height: 70vh;
+    // background-size: cover;
+  // background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+
+#ei {
+    background-image: url("eiq30.jpg");
+    min-height: 70vh;
+    background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -1.41%;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
 
 
 // #feed_slide {
