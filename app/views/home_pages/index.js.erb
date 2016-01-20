@@ -1,0 +1,2 @@
+$('#recent-endless').append('<%= escape_javascript render "/home_pages/fetch_recent" %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@fetch_recent) %>');

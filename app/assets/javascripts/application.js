@@ -40,6 +40,17 @@ $(document).ready(function() {
     });
     return $(window).scroll();
   }
+
+  if ($('.pagination-links').length) {
+    $(window).scroll(function() {
+      var url = $('.pagination .next_page').attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Please Wait...");
+        return $.getScript(url);
+      }
+    });
+    return $(window).scroll();
+  }
 });
 
 

@@ -19,12 +19,12 @@ impressionist :unique => [:controller_name, :action_name, :session_hash]
 
   def uploads
     @branch = Branch.friendly.find(params[:id])
-    @uploads = Upload.where("subject_id IN (?)", get_subject_ids )
+    @uploads = Upload.where("subject_id IN (?)", get_subject_ids ).order(created_at: :desc)
   end
 
   def links
     @branch = Branch.friendly.find(params[:id])
-    @links = Link.where("subject_id IN (?)", get_subject_ids )
+    @links = Link.where("subject_id IN (?)", get_subject_ids ).order(created_at: :desc).order(created_at: :desc)
   end
 
 

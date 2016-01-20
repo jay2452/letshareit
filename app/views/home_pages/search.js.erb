@@ -1,0 +1,6 @@
+$('#upload-search-endless').append('<%= escape_javascript render "home_pages/uploads_result" %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@upload_search_result) %>');
+
+
+$('#link-search-endless').append('<%= escape_javascript render "home_pages/links_result" %>');
+$('.pagination-links').replaceWith('<%= escape_javascript will_paginate(@link_search_result) %>');

@@ -22,6 +22,7 @@ class SubjectsController < ApplicationController
 
     @branch = @subject.branch
     @subjects = @branch.subjects.order(id: :asc)
+    @subject_uploads = @subject.same_subject_uploads#.paginate(page: params[:page], per_page: 20)
 
     # render layout: false
     # puts "----------------------------------------"
