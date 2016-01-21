@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
 # => set the action mailer for recovery purpose and confirmable also
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -48,9 +48,9 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => "gmail.com",
-    :user_name => "jayant2452@gmail.com",
-    :password => "xxxxx",
-    :authentication => 'plain',
+    :user_name => "myexamplemailer@gmail.com",
+    :password => "strongpassword007",
+    :authentication => 'login',
     :enable_starttls_auto => true
   }
 end
