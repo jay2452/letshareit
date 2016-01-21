@@ -48,14 +48,23 @@
     height: 50vh;
 }
 
-.signed_in_main_page{
-	/*background-color: #FAAC58;*/
-	// background-image: url("uploadPageq60.jpg");
-	// background-size: cover;
-	// // background-position: center;
-	// background-attachment: fixed;
-	// height: 100vh;
+// .signed_in_main_page{
+// 	/*background-color: #FAAC58;*/
+// 	// background-image: url("uploadPageq60.jpg");
+// 	// background-size: cover;
+// 	// // background-position: center;
+// 	// background-attachment: fixed;
+// 	// height: 100vh;
+// }
+
+.upper-portion-signed-in {
+	background: #02AAB0; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #02AAB0 , #00CDAC); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #02AAB0 , #00CDAC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
+
+
 .panel.uploads_section {
 	margin-right: 12%;
 	margin-left: 12%;
