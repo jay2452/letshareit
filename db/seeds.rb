@@ -16,7 +16,7 @@ Impression.destroy_all
 #UsersRole.destroy_all
 
 # Admin user
-User.create!(email: "admin@letshareit.in", password: "letshareit000$$admin", name: "admin")
+User.create!(email: "admin@letshareit.in", password: "letshareit000$$admin", name: "admin", branch_id: 1)
 user = User.first
 user.add_role :admin
 ability = Ability.new(user)
