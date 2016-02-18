@@ -9,9 +9,19 @@ default: &default
   pool: 5
   timeout: 5000
 
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
+
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  database: letshareit_development
+
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,5 +31,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  database: letshareit_production
+  username: letshareit
+  password: <%= ENV['LETSHAREIT_DATABASE_PASSWORD'] %>
