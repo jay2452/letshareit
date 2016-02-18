@@ -15,12 +15,13 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
-  gem 'sqlite3'
+  # gem 'sqlite3'
   # gem 'sunspot_solr'
   gem "rails-erd"
   gem 'railroady'
   gem 'yard'
   gem 'awesome_print'
+  gem 'pg'
 end
 
 group :production do
