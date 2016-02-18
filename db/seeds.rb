@@ -15,6 +15,17 @@ UserPreference.destroy_all
 Impression.destroy_all
 #UsersRole.destroy_all
 
+Branch.create(name: "First Year")
+Branch.create(name: "Computer Science & Engineering")
+Branch.create(name: "Information Technology")
+Branch.create(name: "Civil Engineering")
+Branch.create(name: "Mechanical Engineering")
+Branch.create(name: "Electrical Engineering")
+Branch.create(name: "Electronics & Telecommunication Engineering")
+Branch.create(name: "Electronics & Electrical Engineering")
+Branch.create(name: "Electronics & Instrumentation Engineering")
+
+
 # Admin user
 User.create!(email: "admin@letshareit.in", password: "letshareit000$$admin", name: "admin", branch_id: 1)
 user = User.first
@@ -244,15 +255,6 @@ Subject.create(name: "Process Control-2",                    code: "EI-4003", br
 
 
 
-Branch.create(name: "First Year")
-Branch.create(name: "Computer Science & Engineering")
-Branch.create(name: "Information Technology")
-Branch.create(name: "Civil Engineering")
-Branch.create(name: "Mechanical Engineering")
-Branch.create(name: "Electrical Engineering")
-Branch.create(name: "Electronics & Telecommunication Engineering")
-Branch.create(name: "Electronics & Electrical Engineering")
-Branch.create(name: "Electronics & Instrumentation Engineering")
 
 
 puts "Seeding Complete"
