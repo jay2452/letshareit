@@ -23,10 +23,10 @@ group :development, :test do
   gem 'awesome_print'
 
     gem 'capistrano',         require: false
-    gem 'capistrano-rbenv',     require: false
+    gem 'capistrano-rbenv', github: "capistrano/rbenv",     require: false
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
+    # gem 'capistrano3-puma',   require: false
 end
 
 gem 'mysql2'
@@ -34,7 +34,7 @@ gem 'mysql2'
 group :production do
 	gem 'rails_12factor'
 end
-gem 'puma'
+# gem 'puma'
 gem 'devise'
 gem 'rolify'
 gem 'cancancan'

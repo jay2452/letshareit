@@ -5,7 +5,7 @@ require 'capistrano/deploy'
 require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
-require 'capistrano/puma'
+# require 'capistrano/puma'
 
 # config/deploy.rb
 set :rbenv_type, :user # or :system, depends on your rbenv setup
