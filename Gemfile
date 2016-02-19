@@ -21,11 +21,11 @@ group :development, :test do
   gem 'railroady'
   gem 'yard'
   gem 'awesome_print'
-  gem 'pg'
 end
 
+gem 'mysql2'
+
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 gem 'puma'
