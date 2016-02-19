@@ -8,7 +8,7 @@ require 'capistrano/rbenv'
 require 'capistrano/puma'
 
 # config/deploy.rb
-set :rbenv_type, :system # or :system, depends on your rbenv setup
+set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.3p173'
 
 # in case you want to set ruby version from the file:
