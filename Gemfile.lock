@@ -162,6 +162,7 @@ GEM
       railties (>= 3.2, < 5.0)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
+    puma (2.16.0)
     rack (1.6.4)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
@@ -303,6 +304,7 @@ DEPENDENCIES
   mysql2
   paperclip
   pjax_rails
+  puma
   railroady
   rails
   rails-erd
