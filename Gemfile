@@ -23,6 +23,7 @@ group :development, :test do
   gem 'awesome_print'
 end
 
+gem 'puma'
 gem 'mysql2'
 
 group :production do

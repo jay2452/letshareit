@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: letshareit_production
-  username: letshareit
+  username: root
   password: <%= ENV['LETSHAREIT_DATABASE_PASSWORD'] %>
