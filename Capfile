@@ -13,11 +13,12 @@ require 'capistrano/rvm'
 require 'capistrano/puma'
 
 
+# deploy.rb or stage file (staging.rb, production.rb or else)
+ set :rvm_type, :system                     # Defaults to: :auto
+ set :rvm_ruby_version, 'ruby 2.0.0p643'      # Defaults to: 'default'
+ set :rvm_custom_path, '~/usr/local/rvm'  # only needed if not detected
+
+
+
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
-
-
-# deploy.rb or stage file (staging.rb, production.rb or else)
- set :rvm_type, :auto                     # Defaults to: :auto
-# set :rvm_ruby_version, '2.0.0-p247'      # Defaults to: 'default'
-# set :rvm_custom_path, '~/.myveryownrvm'  # only needed if not detected
