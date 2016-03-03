@@ -18,6 +18,6 @@ Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
 
 # deploy.rb or stage file (staging.rb, production.rb or else)
-# set :rvm_type, :user                     # Defaults to: :auto
+ set :rvm_type, :auto                     # Defaults to: :auto
 # set :rvm_ruby_version, '2.0.0-p247'      # Defaults to: 'default'
 # set :rvm_custom_path, '~/.myveryownrvm'  # only needed if not detected
