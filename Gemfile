@@ -21,6 +21,12 @@ group :development, :test do
   gem 'railroady'
   gem 'yard'
   gem 'awesome_print'
+  #  capistrano setup gems 
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 end
 
 gem 'puma'

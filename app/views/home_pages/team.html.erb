@@ -1,6 +1,6 @@
 <% provide(:title, "Meet Our Team") %>
-<div class="container-fluid">
-		<div class="row" style="margin-top:10%; height: 60vh;">
+<div class="container-fluid" style="background-image: url('team.jpg')">
+		<div class="row" style="margin-top:10%; height: 60vh;" id="top">
 			<div class="col-md-4 team_1">
 				<div align="center">
 					<%# image_tag("sakshi", size: "200x300") %>
@@ -51,12 +51,21 @@
 		</div>
 </div>
 
-<div class="container-fluid">
-	<div class="nav navbar" align="center" id="feed_slide">
-		Feedback
+<div class="container-fluid" style="background-image: url('team.jpg')">
+	<div class="col-md-3">
+
 	</div>
-	<div class="feedback" style="height: 78vh;">
-		<%= render 'home_pages/feedback' %>
+
+	<div class="col-md-6">
+
+		<h4 align="center"><%= link_to "Feedback", '#', id: "feed_slide" %></h4>
+		<div class="feedback" style="height: 78vh;">
+			<%= render 'home_pages/feedback' %>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<a href="#top">goto top</a>
 	</div>
 </div>
 
@@ -64,6 +73,6 @@
   $("#feed_slide").hover(function () {
     $('html, body').animate({
       scrollTop: $("#feed_slide").offset().top
-    }, 500);
+    }, 5000);
   });
 </script>
