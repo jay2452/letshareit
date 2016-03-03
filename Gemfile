@@ -21,7 +21,7 @@ group :development, :test do
   gem 'railroady'
   gem 'yard'
   gem 'awesome_print'
-  #  capistrano setup gems 
+  #  capistrano setup gems
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false
     gem 'capistrano-rails',   require: false
@@ -56,3 +56,10 @@ gem 'friendly_id'
 gem 'pjax_rails'
 gem 'impressionist'
 gem 'social-share-button'
+
+
+
+gem "sshkit"
+gem "net-scp"
+gem "net-ssh"
+gem "term-ansicolor"
