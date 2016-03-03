@@ -4,6 +4,7 @@ server '128.199.195.86', port: 4000, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/jay2452/letshareit.git'
 set :application,     'letshareit'
+set :user,            'root'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
