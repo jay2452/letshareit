@@ -73,9 +73,6 @@ GEM
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
@@ -255,6 +252,8 @@ GEM
       railties (>= 4.2.0, < 5.1)
     rolify (5.0.0)
     ruby-graphviz (1.2.2)
+    rvm-capistrano (1.5.0)
+      capistrano (>= 2.15.4)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -318,7 +317,6 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-rails
-  capistrano-rvm
   capistrano3-puma
   chosen-rails
   coffee-rails
@@ -344,6 +342,7 @@ DEPENDENCIES
   rails_admin
   ransack
   rolify
+  rvm-capistrano
   sass-rails
   sdoc
   social-share-button
