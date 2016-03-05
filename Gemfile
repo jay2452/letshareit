@@ -29,7 +29,7 @@ group :development, :test do
     # gem 'capistrano3-puma',   require: false
 end
 
-# gem 'puma'
+gem 'puma'
 gem 'mysql2'
 
 group :production do
