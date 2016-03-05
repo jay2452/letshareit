@@ -1,32 +1,32 @@
-# Load DSL and Setup Up Stages
+# Load DSL and set up stages
 require 'capistrano/setup'
+
+# Include default deployment tasks
 require 'capistrano/deploy'
 
+# Uncomment if you are using Rails' asset pipeline
+
+
+# Include tasks from other gems included in your Gemfile
 #
-# require 'net-ssh'
-# require 'net-scp'
-# require 'sshkit'
-
-require 'capistrano/rails'
-require 'capistrano/bundler'
+# For documentation on these, see for example:
+#
+#   https://github.com/capistrano/rvm
+#   https://github.com/capistrano/rbenv
+#   https://github.com/capistrano/chruby
+#   https://github.com/capistrano/bundler
+#   https://github.com/capistrano/rails
+#   https://github.com/capistrano/passenger
+#
 # require 'capistrano/rvm'
-require 'capistrano/puma'
+# require 'capistrano/rbenv'
+# require 'capistrano/chruby'
+# require 'capistrano/bundler'
+ #require 'capistrano/rails/assets'
+# require 'capistrano/rails/migrations'
+# require 'capistrano/passenger'
 
+# Load custom tasks from `lib/capistrano/tasks` if you have any defined
 
-# # deploy.rb or stage file (staging.rb, production.rb or else)
-#  set :rvm_type, :system                     # Defaults to: :auto
-#  set :rvm_ruby_version, 'ruby 2.0.0p643'      # Defaults to: 'default'
-#  set :rvm_custom_path, '~/usr/local/rvm'  # only needed if not detected
-
-
-require "rvm/capistrano"
-
-set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
-set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
-
-before 'deploy:setup', 'rvm:install_rvm'  # install/update RVM
-before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset, OR:
-# before 'deploy:setup', 'rvm:create_gemset' # only create gemset
-
-# Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
+Rake::Task[:production].invoke

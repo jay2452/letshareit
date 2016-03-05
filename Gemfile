@@ -23,14 +23,13 @@ group :development, :test do
   gem 'awesome_print'
   #  capistrano setup gems
     gem 'capistrano',         require: false
-    # gem 'capistrano-rvm',     require: false
-    gem 'rvm-capistrano'
+    gem 'capistrano-rvm',     require: false
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
+    # gem 'capistrano3-puma',   require: false
 end
 
-gem 'puma'
+# gem 'puma'
 gem 'mysql2'
 
 group :production do

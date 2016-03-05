@@ -1,3 +1,19 @@
+
+set :ssh_options, {
+  forward_agent: true,
+  paranoid: true,
+  keys: "~/.ssh/id_rsa"
+}
+
+
+role :app, %w{root@128.199.195.86}
+role :web, %w{root@128.199.195.86}
+role :db,  %w{root@128.199.195.86}
+
+# Define server(s)
+server '128.199.195.86', user: 'root', roles: %w{web}
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
