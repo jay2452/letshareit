@@ -29,6 +29,8 @@ group :development, :test do
     # gem 'capistrano3-puma',   require: false
 end
 
+gem 'autoprefixer-rails'
+
 gem 'puma'
 gem 'mysql2'
 
