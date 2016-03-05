@@ -19,7 +19,7 @@ require 'capistrano/puma'
 #   https://github.com/capistrano/passenger
 #
  require 'capistrano/rails'
-# require 'capistrano/rbenv'
+require 'capistrano/rvm'
 # require 'capistrano/chruby'
  require 'capistrano/bundler'
  require 'capistrano/rails/assets'
