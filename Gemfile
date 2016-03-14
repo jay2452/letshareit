@@ -53,7 +53,7 @@ gem 'ransack'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'google-webfonts-rails'
-gem 'aws-sdk', '< 2.0'
+# gem 'aws-sdk', '< 2.0'
 gem 'friendly_id'
 gem 'pjax_rails'
 gem 'impressionist'
