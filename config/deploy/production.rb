@@ -11,7 +11,7 @@ role :web, %w{root@128.199.195.86}
 role :db,  %w{root@128.199.195.86}
 
 # Define server(s)
-server '128.199.195.86', user: 'root', roles: %w{web}
+server '128.199.195.86', user: 'root', roles: %w{web app db}
 
 
 # server-based syntax
