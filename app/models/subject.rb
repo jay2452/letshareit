@@ -20,22 +20,28 @@ class Subject < ActiveRecord::Base
 
 	  def same_subject_uploads
 	    #sids = Subject.where(code: self.code ).select(id).map(&:id)
-			sids = "SELECT id from subjects where code = '#{self.code}'"
+			# sids = "SELECT id from subjects where code = '#{self.code}'"
+
+
+			sids1 = Subject.where("code = ?", self.code).first.id
 			# puts "-----------------------------"
 			# 	p Subject.where(sids)
 			# puts "-----------------------------"
-			ups = Upload.where("subject_id IN (#{sids})")
+			# ups = Upload.where("subject_id IN (#{sids}) AND approved = ?", true)
+			ups = Upload.where("subject_id = ? AND approved = ?", sids1, true)
 
 			puts "-----------------------------"
 				p ups
+				puts sids1
 			puts "-----------------------------"
 
 			return ups
 	  end
 
 		def same_subject_links
-			sids = "SELECT id from subjects where code = '#{self.code}'"
-			Link.where("subject_id IN (#{sids})")
+			# sids = "SELECT id from subjects where code = '#{self.code}'"
+			sids1 = Subject.where("code = ?", self.code).first.id
+			Link.where("subject_id = ? AND approved = ?", sids1, true)
 		end
 
 end

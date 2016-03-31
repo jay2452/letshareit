@@ -6,12 +6,12 @@ module HomePagesHelper
 
 	def recent_uploads(branch)
 		subject_ids = Subject.where('branch_id = ?', branch.id).select(:id).map(&:id)
-		Upload.where("subject_id IN (?)", subject_ids).order(created_at: :desc).limit(4)
+		Upload.where("subject_id IN (?) AND approved = ?", subject_ids, true).order(created_at: :desc).limit(4)
 	end
 
 	def recent_links(branch)
 		subject_ids = Subject.where('branch_id = ?', branch.id).select(:id).map(&:id)
-		Link.where("subject_id IN (?)", subject_ids).order(created_at: :desc).limit(4)
+		Link.where("subject_id IN (?) AND approved = ?", subject_ids, true).order(created_at: :desc).limit(4)
 	end
 
 
